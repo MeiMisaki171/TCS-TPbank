@@ -1,0 +1,13 @@
+.header-text {
+    font-size: 22px;
+    margin-left: 10px;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+    color: #904c99;
+}
+
+@media screen and (max-width: 1024px) {
+    .header-text {
+        display: none;
+    }
+}

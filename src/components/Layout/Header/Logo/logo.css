@@ -1,0 +1,23 @@
+.logo-icon {
+    width: 75px;
+    padding: 5px 0;
+}
+
+.logo-text {
+    display: none;
+    font-size: 22px;
+    margin-left: 10px;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+    color: #904c99;
+}
+
+@media screen and (max-width: 1024px){
+    .logo-text {
+        display: flex !important;
+        font-size: 18px;
+    }
+    .logo-icon{
+        width: 45px;
+    }
+}
