@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import Dropdown from '../Dropdown'
-import { Children, MenuData } from '../Menu'
-import { useOutsideClick } from '../../../../../hook';
+import { useOutsideClick } from '~/hook';
+import { BiChevronLeft } from 'react-icons/bi';
+import './menuItems.css'
 
-const MenuItems = ({ item }: any) => {
+const MenuItems = ({ item , depthLevel }: any) => {
     
     const [dropdown, setDropdown] = useState(false);
     const handleClick = () => {
@@ -13,24 +14,28 @@ const MenuItems = ({ item }: any) => {
     }
     const ref = useOutsideClick(handleClick);
   return (
-      <div>
+      <li className='menuitem-wrapper'>
           {item.children ? (
-              <div ref={ref}>
-                  <button type='button'
+              <div ref={ref} className='menuitem-container'>
+                  <button
+                      className='menu-item'
+                      type='button'
                       onClick={() => setDropdown((prev : boolean) => !prev)}
                   >
-                      {item.icon} {item.title}
+                      <div className='button-title'>{item.icon} {item.title}</div> 
+                      {depthLevel > 1 ? <></> : <BiChevronLeft className='dropdown-icon' /> }
                   </button>
                   <Dropdown
                       submenu={item.children}
-                      dropdown = {dropdown}
+                      dropdown={dropdown}
+                      depthLevel={depthLevel}
                   />
               </div>
             ) : (
-            <a href='/'>{ item.title }</a>
+                  <a href={item.url} className='menu-item__2'>{ item.icon }{ item.title }</a>
                 )
           }
-    </div>
+    </li>
   )
 }
 

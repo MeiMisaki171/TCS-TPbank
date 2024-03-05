@@ -1,5 +1,5 @@
 import React from 'react'
-import avatar from '../../../../assets/image/avatar-1.png'
+import avatar from '~/assets/image/avatar-1.png'
 import { BiCog, BiLogOutCircle, BiUser } from "react-icons/bi";
 import './UserBox.css';
 import  Dropdown from 'react-bootstrap/Dropdown';
@@ -27,16 +27,16 @@ const UserBox = () => {
               }
           >
               <Dropdown.Item eventKey="1" >
-                    <BiUser className='dd-items' />
+                    <BiUser className='user-items' />
                     <span className='dd-text'>Profile</span>
               </Dropdown.Item>
               <Dropdown.Item eventKey="2">
-                    <BiCog className='dd-items' />
+                    <BiCog className='user-items' />
                     <span>Setting</span>
               </Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item eventKey="3" >
-                    <BiLogOutCircle className='dd-items' />
+                    <BiLogOutCircle className='user-items' />
                     <span>Logout</span>
               </Dropdown.Item>
           </DropdownButton>

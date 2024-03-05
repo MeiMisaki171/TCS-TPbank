@@ -1,7 +1,24 @@
-.dropdown {
+.dropdown-menus {
     display: none;
 }
 
-.show{
-    display: block;
+.show-dropdown{
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    position: absolute;
+}
+
+.dropdown-submenu {
+    position: relative !important;
+    border: none !important;
+}
+
+@media screen and (max-width: 1024px) {
+    .show-dropdown {
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        position: relative !important;
+    }
 }

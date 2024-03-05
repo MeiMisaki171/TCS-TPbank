@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import NotFoundPage from "./pages/404";
-import XuLyChungTu from "./pages/XuLyChungTu";
+import LapChungTuThueHQ from "./pages/LapChungTuThueHQ";
 
 export const router = createBrowserRouter([
     {
@@ -10,8 +10,8 @@ export const router = createBrowserRouter([
         errorElement: <NotFoundPage />
     },
     {
-        path: "/xuLyChungTuThueHQ",
-        element: <XuLyChungTu />,
+        path: "/lapChungTuThueHQ",
+        element: <LapChungTuThueHQ />,
         errorElement: <NotFoundPage />
     },
 ])

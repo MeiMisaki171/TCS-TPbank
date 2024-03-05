@@ -1,9 +1,9 @@
-
-import React from 'react'
-
 const NotFoundPage = () => {
   return (
-    <div>NotFoundPage</div>
+    <div className='notfound-page'>
+      <a className="notFoundBtn"
+        href="/">Back to Home</a>
+    </div>
   )
 }
 
