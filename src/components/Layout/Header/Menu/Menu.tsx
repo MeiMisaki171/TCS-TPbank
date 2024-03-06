@@ -20,60 +20,60 @@ export interface MenuData {
 
 export const IMenuData: MenuData[] = [
     {
-        icon: <BiCog className='dd-items' />,
+        icon: <BiCog className='first-icon' />,
         title: 'Hệ thống',
         children: [
             {
-                icon: <BiSolidUserCircle className='dd-items'/>,
+                icon: <BiSolidUserCircle className='second-icon'/>,
                 title: 'Đăng nhập hệ thống',
                 url: '/dangNhapHeThong'
             },
             {
-                icon: <BiLogOut className='dd-items'/>,
+                icon: <BiLogOut className='second-icon'/>,
                 title: 'Ra khỏi hệ thống',
                 url: '/raKhoiHeThong'
             },
             {
-                icon: <BiFoodMenu className='dd-items'/>,
+                icon: <BiFoodMenu className='second-icon'/>,
                 title: 'Tham số hệ thống',
             },
             {
-                icon: <BiSolidUser className='dd-items'/>,
+                icon: <BiSolidUser className='second-icon'/>,
                 title: 'Quản trị hệ thống',
                 children: [
                     {
-                        icon: <BiCog className='dd-items' />,
+                        icon: <BiCog className='third-icon' />,
                         title: 'Quản lý người sử dụng',
                         url: './quantriHT/quanLyNSD'
                     },
                     {
-                        icon: <BiCog className='dd-items' />,
+                        icon: <BiCog className='third-icon' />,
                         title: 'Quản lý nhóm người sử dụng',
                         url: './quantriHT/quanLyNhomNSD'
                     },
                     {
-                        icon: <BiCog className='dd-items' />,
+                        icon: <BiCog className='third-icon' />,
                         title: 'Quản lý phân nhóm NSD',
                         url: './quantriHT/quanLyPhanNhomNSD'
                     },
                     {
-                        icon: <BiCog className='dd-items' />,
+                        icon: <BiCog className='third-icon' />,
                         title: 'Quản lý phân quyền chức năng',
                         url: './quantriHT/quanLyPhanQuyenCN'
                     },
                     {
-                        icon: <BiCog className='dd-items' />,
+                        icon: <BiCog className='third-icon' />,
                         title: 'Quản lý phê duyệt người sử dụng',
                         url: './quantriHT/quanLyPheDuyetNSD'
                     },
                 ]
             },
             {
-                icon: <BiSolidArchiveOut className='dd-items'/>,
+                icon: <BiSolidArchiveOut className='second-icon'/>,
                 title: 'Tiện ích',
                 children: [
                     {
-                        icon: <BiCog className='dd-items' />,
+                        icon: <BiCog className='third-icon' />,
                         title: 'Lịch sử tra cứu thông tin tờ khai'
                     },
                 ]
@@ -81,29 +81,29 @@ export const IMenuData: MenuData[] = [
         ]
     },
     {
-        icon: <BiSolidBook className='dd-items'/>,
+        icon: <BiSolidBook className='first-icon'/>,
         title: 'Danh mục',
         children: [
             {
-                icon: <BiCopyAlt className='dd-items'/>,
+                icon: <BiCopyAlt className='second-icon'/>,
                 title: 'Danh mục Mã chương'
             },
             {
-                icon: <BiCopyAlt className='dd-items'/>,
+                icon: <BiCopyAlt className='second-icon'/>,
                 title: 'Danh mục Mã nội dung kinh tế'
             },
             {
-                icon: <BiCopyAlt className='dd-items'/>,
+                icon: <BiCopyAlt className='second-icon'/>,
                 title: 'Danh mục Cơ quan thu'
             },
             {
-                icon: <BiCopyAlt className='dd-items'/>,
+                icon: <BiCopyAlt className='second-icon'/>,
                 title: 'Danh mục Cơ quan kho bạc'
             },
         ]
     },
     {
-        icon: <BiLayer className='dd-items'/>,
+        icon: <BiLayer className='first-icon'/>,
         title: 'Xử lý chứng từ thuế',
         children: [
             {
@@ -111,24 +111,24 @@ export const IMenuData: MenuData[] = [
                 title: 'Lập chứng từ',
                 children: [
                     {
-                        icon: <BiCog className='dd-items' />,
+                        icon: <BiCog className='second-icon' />,
                         title: 'Lập chứng từ thuế nội địa'
                     },
                     {
-                        icon: <BiCog className='dd-items' />,
+                        icon: <BiCog className='second-icon' />,
                         title: 'Lập chứng từ thuế cá nhân'
                     },
                     {
-                        icon: <BiCog className='dd-items' />,
+                        icon: <BiCog className='second-icon' />,
                         title: 'Lập chứng từ thuế hải quan',
                         url: '/lapChungTuThueHQ'
                     },
                     {
-                        icon: <BiCog className='dd-items' />,
+                        icon: <BiCog className='second-icon' />,
                         title: 'Lập chứng từ phí hạ tầng'
                     },
                     {
-                        icon: <BiCog className='dd-items' />,
+                        icon: <BiCog className='second-icon' />,
                         title: 'Lập biên lai thu'
                     },
                 ]
@@ -136,7 +136,7 @@ export const IMenuData: MenuData[] = [
         ]
     },
     {
-        icon: <BiSolidLayer className='dd-items'/>,
+        icon: <BiSolidLayer className='first-icon'/>,
         title: 'Xử lý chứng từ BBN',
         children: [
             {
@@ -154,7 +154,7 @@ export const IMenuData: MenuData[] = [
         ]
     },
     {
-        icon: <BiLogoInternetExplorer className='dd-items'/>,
+        icon: <BiLogoInternetExplorer className='first-icon'/>,
         title: 'Hải quan điện tử',
         children: [
             {
@@ -170,7 +170,7 @@ export const IMenuData: MenuData[] = [
         ]
     },
     {
-        icon: <BiSolidAmbulance className='dd-items'/>,
+        icon: <BiSolidAmbulance className='first-icon'/>,
         title: 'Xử lý cuối ngày',
         children: [
             {
@@ -184,7 +184,7 @@ export const IMenuData: MenuData[] = [
         ]
     },
     {
-        icon:<BiRecycle className='dd-items'/>,
+        icon:<BiRecycle className='first-icon'/>,
         title: 'Hoàn thuế VAT',
         children: [
             {

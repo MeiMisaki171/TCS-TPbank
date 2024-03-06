@@ -10,8 +10,11 @@
 }
 
 .dropdown-submenu {
-    position: relative !important;
     border: none !important;
+    left: 100%;
+    white-space: nowrap;
+    position: absolute;
+    top: 0;
 }
 
 @media screen and (max-width: 1024px) {
@@ -19,6 +22,7 @@
         display: flex;
         flex-direction: column;
         top: 0;
-        position: relative !important;
+        left: 100%;
+        border: 1px solid #ffffff;
     }
 }

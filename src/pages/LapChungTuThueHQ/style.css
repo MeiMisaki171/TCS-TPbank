@@ -1,0 +1,12 @@
+.form-title {
+    padding-top: 15px;
+    color: #137675;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.hr-ctbc {
+    margin: 0.2rem 0 1.5rem 0;
+}

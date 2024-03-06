@@ -1,22 +1,34 @@
 import React, { useState } from 'react'
 import Dropdown from '../Dropdown'
-import { useOutsideClick } from '~/hook';
+// import { useOutsideClick } from '~/hook';
 import { BiChevronLeft } from 'react-icons/bi';
 import './menuItems.css'
 
 const MenuItems = ({ item , depthLevel }: any) => {
     
     const [dropdown, setDropdown] = useState(false);
-    const handleClick = () => {
-        if (dropdown) {
-            setDropdown(!dropdown)
-        }
-    }
-    const ref = useOutsideClick(handleClick);
+    const onMouseEnter = () => {
+        setDropdown(true);
+      };
+    
+      const onMouseLeave = () => {
+        setDropdown(false);
+      };
+    // const handleClick = () => {
+    //     if (dropdown) {
+    //         setDropdown(!dropdown)
+    //     }
+    // }
+    // const ref = useOutsideClick(handleClick);
   return (
       <li className='menuitem-wrapper'>
           {item.children ? (
-              <div ref={ref} className='menuitem-container'>
+              <div
+                //   ref={ref}
+                  className='menuitem-container'
+                  onMouseEnter={onMouseEnter}
+                  onMouseLeave={onMouseLeave}
+              >
                   <button
                       className='menu-item'
                       type='button'

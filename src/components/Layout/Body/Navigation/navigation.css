@@ -1,0 +1,17 @@
+.navigation {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem !important;
+    font-size: 18px;
+    color: #6c757d;
+}
+
+.nav-icon__home {
+    font-size: 24px;
+    margin-bottom: 3px;
+    color: #6c757d;
+}
+
+.nav-icon__arrow {
+    font-size: 40px;
+}
