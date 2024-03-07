@@ -1,17 +1,32 @@
+.navigation-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
 .navigation {
     display: flex;
     align-items: center;
     margin-bottom: 1rem !important;
     font-size: 18px;
-    color: #6c757d;
+    color: #13477c;
 }
 
 .nav-icon__home {
     font-size: 24px;
     margin-bottom: 3px;
-    color: #6c757d;
+    color: #13477c;
 }
 
 .nav-icon__arrow {
-    font-size: 40px;
+    font-size: 30px;
+}
+
+.current-date,
+.user-name {
+    color: #13477c;
+    font-size: 14px;
+}
+
+.current-date {
+    margin-right: 1rem;
 }

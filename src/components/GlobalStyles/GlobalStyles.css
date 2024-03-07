@@ -213,9 +213,14 @@ ul {
     height: 100%;
     margin-top: 115px;
     margin-bottom: 30px;
-    padding-left: 2%;
-    padding-right: 2%;
-    background-color: #e6e6e6;
+    background-color: #e7f1fe;
+}
+
+@media screen and (min-width: 1400px){
+    .page-wrapper {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
 }
 
 .page-content {
