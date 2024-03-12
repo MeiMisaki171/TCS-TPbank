@@ -1,0 +1,26 @@
+.page-wrapper {
+    height: 100%;
+    margin-top: 115px;
+    margin-bottom: 30px;
+    background-color: #e7f1fe;
+}
+
+@media screen and (min-width: 1400px){
+    .page-wrapper {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}
+
+.page-content {
+    padding: 1.5rem;
+}
+
+.form-title {
+    padding-top: 15px;
+    color: #13477c;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
