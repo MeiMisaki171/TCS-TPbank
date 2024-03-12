@@ -2,8 +2,14 @@ import React from 'react'
 import Body from '~/components/Layout/Body'
 import DataTable from '~/components/Layout/Body/DataTable'
 import Header from '~/components/Layout/Header'
+import { GetAllMaCQT } from '~/services/DM/maCQT.service'
+import { GetAllMaChuong } from '~/services/DM/maChuong.service'
 
 const CoQuanThu = () => {
+    const data = GetAllMaChuong();
+    console.log(data);
+    const maCqt = GetAllMaCQT();
+    console.log(maCqt);
     return (
         <div>
             <Header></Header>
@@ -49,7 +55,7 @@ const CoQuanThu = () => {
                         </div>
                     </div>
                 </div>
-                <DataTable />
+                <DataTable data={data} />
             </Body>
         </div>
     )

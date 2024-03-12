@@ -2,8 +2,14 @@ import React from 'react'
 import Body from '~/components/Layout/Body'
 import DataTable from '~/components/Layout/Body/DataTable'
 import Header from '~/components/Layout/Header'
+import { GetAllMaChuong } from '~/services/DM/maChuong.service'
+import { GetAllMaNDKT } from '~/services/DM/maNDKT.service'
 
 const MaNdkt = () => {
+    const data = GetAllMaChuong();
+    const maNDKT = GetAllMaNDKT();
+    console.log(data);
+    console.log(maNDKT);
     return (
         <div>
             <Header></Header>
@@ -49,7 +55,7 @@ const MaNdkt = () => {
                         </div>
                     </div>
                 </div>
-                <DataTable />
+                <DataTable data={data} />
             </Body>
         </div>
     )

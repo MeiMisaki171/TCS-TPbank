@@ -1,40 +1,59 @@
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid'
+import { DataGrid, GridActionsCellItem, GridColDef } from '@mui/x-data-grid'
 import './style.css'
+import { BiAlarm } from 'react-icons/bi';
 
-const DataTable = () => {
+export interface dataTable {
+    maQG: string;
+    ten: string;
+    tinhTrang: boolean | string;
+    createdBy?: string;
+    updatedBy?: string;
+    createdDate?: string;
+    updatedDate?: string;
+}
+
+interface DataTableProps {
+    data: dataTable[]
+}
+
+const DataTable: React.FC<DataTableProps> = ({ data }) => {
+
+    data.forEach(item => {
+        if (item.tinhTrang === true) {
+            item.tinhTrang = 'Hieu luc';
+        } else {
+            item.tinhTrang = "Het hieu luc"
+        }
+    })
+
+    const handleEditClick = (id: any) => {
+        console.log(id)
+    }
+
+
 
     const columns: GridColDef[] = [
-        { field: 'id', headerName: 'ID', width: 70 },
-        { field: 'firstName', headerName: 'First name', width: 130 },
-        { field: 'lastName', headerName: 'Last name', width: 130 },
+        { field: 'maQG', headerName: 'Mã Quốc gia', width: 160 },
+        { field: 'ten', headerName: 'Tên', width: 190 },
+        { field: 'tinhTrang', headerName: 'Tình Trạng', width: 130, },
         {
-            field: 'age',
-            headerName: 'Age',
-            type: 'number',
-            width: 90,
-        },
-        {
-            field: 'fullName',
-            headerName: 'Full name',
-            description: 'This column has a value getter and is not sortable.',
-            sortable: false,
-            width: 160,
-            valueGetter: (params: GridValueGetterParams) =>
-                `${params.row.firstName || ''} ${params.row.lastName || ''}`,
-        },
+            field: 'actions', headerName: 'Sua', width: 130, type: 'actions',
+            getActions: ({ id }) => {
+                return [
+                    <GridActionsCellItem
+                        icon={<BiAlarm />}
+                        label="Edit"
+                        className="textPrimary"
+                        onClick={() => {
+                            handleEditClick(id)
+                        }}
+                        color="inherit"
+                    />,
+                ]
+            }
+        }
     ];
 
-    const rows = [
-        { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-        { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-        { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-        { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-        { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-        { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-        { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-        { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-        { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
-    ];
     return (
         <div className='row'>
             <div className='col-xl-12 mx-auto'>
@@ -48,7 +67,8 @@ const DataTable = () => {
                         </div>
                         <div>
                             <DataGrid
-                                rows={rows}
+                                getRowId={row => row.maQG}
+                                rows={data}
                                 columns={columns}
                                 initialState={{
                                     pagination: {
@@ -57,6 +77,7 @@ const DataTable = () => {
                                 }}
                                 pageSizeOptions={[5, 10]}
                                 checkboxSelection
+                                onRowSelectionModelChange={item => console.log(item)}
                             />
                         </div>
                     </div>

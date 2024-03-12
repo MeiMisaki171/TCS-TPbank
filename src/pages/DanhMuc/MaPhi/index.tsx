@@ -2,8 +2,11 @@ import React from 'react'
 import Body from '~/components/Layout/Body'
 import DataTable from '~/components/Layout/Body/DataTable'
 import Header from '~/components/Layout/Header'
+import { GetAllMaChuong } from '~/services/DM/maChuong.service'
 
 const MaPhi = () => {
+    const data = GetAllMaChuong()
+    console.log(data)
     return (
         <div>
             <Header></Header>
@@ -49,7 +52,7 @@ const MaPhi = () => {
                         </div>
                     </div>
                 </div>
-                <DataTable />
+                <DataTable data={data} />
             </Body>
         </div>
     )
