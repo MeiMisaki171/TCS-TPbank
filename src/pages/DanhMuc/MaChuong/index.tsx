@@ -4,11 +4,13 @@ import DataTable from '~/components/Layout/Body/DataTable'
 import Header from '~/components/Layout/Header'
 import './style.css'
 import { GetAllMaChuong } from '~/services/DM/maChuong.service'
+import { Link } from 'react-router-dom'
 
 const MaChuong = () => {
 
+
     const data = GetAllMaChuong()
-    console.log(data)
+
 
     return (
         <div>
@@ -48,7 +50,7 @@ const MaChuong = () => {
                         <div className="row mb-3 text-center">
                             <div className="col-sm-12">
                                 <button type="button" className="btn crud-btn px-5 radius-30"><i className="fadeIn animated bx bx-search-alt mr-1"></i>Tìm kiếm</button>
-                                <button type="button" className="btn crud-btn px-5 radius-30"><i className="fadeIn animated bx bx-plus-circle mr-1"></i>Thêm mới</button>
+                                <button type='button' className='btn crud-btn px-5 radius-30'><Link to={'./create'}>Thêm mới</Link></button>
                                 <button type="button" className="btn crud-btn px-5 radius-30"><i className="fadeIn animated bx bx-eraser mr-1"></i>Xoá</button>
                                 <button type="button" className="btn crud-btn px-5 radius-30"><i className="fadeIn animated bx bx-log-out mr-1"></i>Thoát</button>
                             </div>

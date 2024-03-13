@@ -11,6 +11,7 @@ import TaiKhoan from "./pages/DanhMuc/TaiKhoan";
 import MaPhi from "./pages/DanhMuc/MaPhi";
 import LoaiHinhXnk from "./pages/DanhMuc/LoaiHinhXnk";
 import CoQuanThu from "./pages/DanhMuc/CoQuanThu";
+import CreateNew from "./pages/DanhMuc/MaChuong/createNew";
 
 export const router = createBrowserRouter([
     {
@@ -28,6 +29,11 @@ export const router = createBrowserRouter([
     {
         path: "/danhmuc/machuong",
         element: <MaChuong />,
+        errorElement: <NotFoundPage />
+    },
+    {
+        path: "/danhmuc/machuong/create",
+        element: <CreateNew />,
         errorElement: <NotFoundPage />
     },
     {

@@ -9,4 +9,6 @@
 .crud-btn {
     color: #13477c !important;
     border: 1px solid #13477c !important;
+    text-decoration: none;
+    margin: 0 20px;
 }

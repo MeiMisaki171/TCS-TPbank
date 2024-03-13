@@ -1,6 +1,7 @@
-import { DataGrid, GridActionsCellItem, GridColDef } from '@mui/x-data-grid'
+import { DataGrid, GridActionsCellItem, GridColDef, GridRowSelectionModel } from '@mui/x-data-grid'
 import './style.css'
-import { BiAlarm } from 'react-icons/bi';
+import { BiAlarm, BiFolder, BiRecycle } from 'react-icons/bi';
+import { deleteMaChuong } from '~/services/DM/maChuong.service';
 
 export interface dataTable {
     maQG: string;
@@ -13,7 +14,7 @@ export interface dataTable {
 }
 
 interface DataTableProps {
-    data: dataTable[]
+    data: dataTable[],
 }
 
 const DataTable: React.FC<DataTableProps> = ({ data }) => {
@@ -27,17 +28,19 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
     })
 
     const handleEditClick = (id: any) => {
-        console.log(id)
+        deleteMaChuong(id)
     }
 
-
+    const handleCheckBox = (item: GridRowSelectionModel) => {
+        console.log(item)
+    }
 
     const columns: GridColDef[] = [
-        { field: 'maQG', headerName: 'Mã Quốc gia', width: 160 },
-        { field: 'ten', headerName: 'Tên', width: 190 },
-        { field: 'tinhTrang', headerName: 'Tình Trạng', width: 130, },
+        { field: 'maQG', headerName: 'Mã Quốc gia', width: 360, headerAlign: 'center', align: 'center' },
+        { field: 'ten', headerName: 'Tên', width: 400, headerAlign: 'center', align: 'center' },
+        { field: 'tinhTrang', headerName: 'Tình Trạng', width: 430, headerAlign: 'center', align: 'center' },
         {
-            field: 'actions', headerName: 'Sua', width: 130, type: 'actions',
+            field: 'actions', headerName: 'Sua', width: 430, type: 'actions', headerAlign: 'center', align: 'center',
             getActions: ({ id }) => {
                 return [
                     <GridActionsCellItem
@@ -45,10 +48,19 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
                         label="Edit"
                         className="textPrimary"
                         onClick={() => {
-                            handleEditClick(id)
+                            handleEditClick(id);
                         }}
                         color="inherit"
                     />,
+                    <GridActionsCellItem
+                        icon={<BiRecycle />}
+                        label="Edit"
+                        className="textPrimary"
+                        onClick={() => {
+                            handleEditClick(id);
+                        }}
+                        color="inherit"
+                    />
                 ]
             }
         }
@@ -61,7 +73,7 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
                     <div className='card-body'>
                         <div>
                             <div className='card-title d-flex align-items-center'>
-                                <div>Icon</div>
+                                <div className='result-search_icon'><BiFolder /></div>
                                 <h5 className='mb-0 dt-title'>Kết quả tìm kiếm</h5>
                             </div>
                         </div>
@@ -77,7 +89,9 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
                                 }}
                                 pageSizeOptions={[5, 10]}
                                 checkboxSelection
-                                onRowSelectionModelChange={item => console.log(item)}
+                                onRowSelectionModelChange={(item) => {
+                                    handleCheckBox(item)
+                                }}
                             />
                         </div>
                     </div>
