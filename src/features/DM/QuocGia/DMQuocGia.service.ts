@@ -4,8 +4,8 @@ const getAll = async () => {
     return http.get("/DMQuocGia")
 };
 
-const deleteById = (maQG: string) => {
-    return http.delete(`/DMQuocGia/${maQG}`);
+const deleteById = (id: string) => {
+    return http.delete(`/DMQuocGia/${id}`);
 }
 
 const DMQuocGiaService = {

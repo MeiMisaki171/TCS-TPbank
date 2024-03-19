@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { dataTable } from '~/components/Layout/Body/DataTable';
-import DMQuocGiaService from '~/services/DM/DMQuocGia.service'
+import DMQuocGiaService from '~/features/DM/QuocGia/DMQuocGia.service'
+import { dataTable } from '~/types/DM/quocGia'
 
 interface danhmucState {
     data: dataTable[],
@@ -32,6 +32,7 @@ export const deleteById = createAsyncThunk(
     async (maQG: string) => {
         try {
             const res = await DMQuocGiaService.deleteById(maQG)
+            console.log(maQG)
             return res.data;
         } catch (err) {
             console.error(err);
@@ -63,13 +64,16 @@ export const danhmucSlice = createSlice({
             })
             .addCase(deleteById.pending, (state) => {
                 state.loading = false;
+                console.log('isLoading delete')
             })
             .addCase(deleteById.fulfilled, (state, action) => {
                 state.loading = false;
+                console.log('isFullfilled delete')
                 const maQG: string = action.payload;
                 if (maQG) {
                     state.data = state.data.filter((item) => item.maQG !== maQG);
                 }
+
             })
     }
 },)

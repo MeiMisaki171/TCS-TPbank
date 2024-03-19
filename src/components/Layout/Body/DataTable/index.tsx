@@ -1,78 +1,19 @@
-import { DataGrid, GridActionsCellItem, GridColDef, GridRowSelectionModel } from '@mui/x-data-grid'
+import { DataGrid, GridColDef, GridRowSelectionModel } from '@mui/x-data-grid'
 import './style.css'
-import { BiAlarm, BiFolder, BiRecycle } from 'react-icons/bi';
-import { deleteMaChuong } from '~/services/DM/maChuong.service';
-import { useAppDispatch } from '~/hook/hook';
-import { deleteById } from '~/redux/danhmucSlice';
-
-export interface dataTable {
-    maQG: string;
-    ten: string;
-    tinhTrang: boolean | string;
-    createdBy?: string;
-    updatedBy?: string;
-    createdDate?: string;
-    updatedDate?: string;
-}
-
+import { BiFolder } from 'react-icons/bi';
+import { dataTable } from '~/types/DM/quocGia';
 interface DataTableProps {
     data: dataTable[],
+    tableHeader: GridColDef[]
 }
 
-const DataTable: React.FC<DataTableProps> = ({ data }) => {
-
-    let customData = data.map(item => {
-        let newItem = { ...item };
-        if (item.tinhTrang === true) {
-            newItem.tinhTrang = "Hiệu lực"
-        } else {
-            newItem.tinhTrang = "Hết hiệu lực"
-        }
-        return newItem;
-    })
-
-
-    console.log(customData)
-    const dispatch = useAppDispatch()
-
-    const handleEditClick = (maQG: any) => {
-        dispatch(deleteById(maQG))
-    }
+const DataTable: React.FC<DataTableProps> = ({ data, tableHeader }) => {
 
     const handleCheckBox = (item: GridRowSelectionModel) => {
         console.log(item)
     }
 
-    const columns: GridColDef[] = [
-        { field: 'maQG', headerName: 'Mã Quốc gia', width: 360, headerAlign: 'center', align: 'center' },
-        { field: 'ten', headerName: 'Tên', width: 400, headerAlign: 'center', align: 'center' },
-        { field: 'tinhTrang', headerName: 'Tình Trạng', width: 430, headerAlign: 'center', align: 'center' },
-        {
-            field: 'actions', headerName: 'Sua', width: 430, type: 'actions', headerAlign: 'center', align: 'center',
-            getActions: ({ id }) => {
-                return [
-                    <GridActionsCellItem
-                        icon={<BiAlarm />}
-                        label="Edit"
-                        className="textPrimary"
-                        onClick={() => {
-                            handleEditClick(id);
-                        }}
-                        color="inherit"
-                    />,
-                    <GridActionsCellItem
-                        icon={<BiRecycle />}
-                        label="Edit"
-                        className="textPrimary"
-                        onClick={() => {
-                            handleEditClick(id);
-                        }}
-                        color="inherit"
-                    />
-                ]
-            }
-        }
-    ];
+    const columns: GridColDef[] = tableHeader
 
     return (
         <div className='row'>
@@ -88,7 +29,7 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
                         <div>
                             <DataGrid
                                 getRowId={row => row.maQG}
-                                rows={customData}
+                                rows={data}
                                 columns={columns}
                                 initialState={{
                                     pagination: {

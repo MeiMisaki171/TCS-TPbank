@@ -1,42 +1,76 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Body from '~/components/Layout/Body'
 import DataTable from '~/components/Layout/Body/DataTable'
 import Header from '~/components/Layout/Header'
 import './style.css'
-// import { GetAllMaChuong } from '~/services/DM/maChuong.service'
-import { Link } from 'react-router-dom'
-// import DMQuocGiaService from '~/services/DM/DMQuocGia.service'
+// import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '~/hook/hook'
-import { getAllDMQuocGia } from '~/redux/danhmucSlice'
+import { GridActionsCellItem, GridColDef } from '@mui/x-data-grid'
+import { BiEdit, BiTrash } from 'react-icons/bi'
+import { dataTable } from '~/types/DM/quocGia'
+import { deleteById, getAllDMQuocGia } from '~/features/DM/QuocGia/dmQuocGiaSlice'
+import BasicModal from '~/components/Layout/Body/Modal'
 
 const MaChuong = () => {
 
-    //     const [maChuong, setMaChuong] = useState([]);
-
-    //     const getMaChuong = useCallback(async () => {
-    //         try {
-    //             const response = await DMQuocGiaService.getAll();
-    //             const data = response.data
-    //             setMaChuong(data);
-    //         } catch (error) {
-    //             console.error('Error fetching data:', error)
-    //         }
-    //     }, [])
-
-    //     useEffect(() => {
-
-    //         getMaChuong();
-
-    //     }, [getMaChuong]);
-
     const dispatch = useAppDispatch();
 
-    const data = useAppSelector(state => state.danhmuc.data);
-    const isLoading = useAppSelector(state => state.danhmuc.loading);
-
     useEffect(() => {
-        dispatch(getAllDMQuocGia())
+        dispatch(getAllDMQuocGia());
     }, [dispatch])
+
+    const data: dataTable[] = useAppSelector(state => state.danhmuc.data);
+
+    //Format lại data
+    let newData = data.map(item => {
+        let newItem = { ...item };
+        if (item.tinhTrang === true) {
+            newItem.tinhTrang = "Hiệu lực"
+        } else {
+            newItem.tinhTrang = "Hết hiệu lực"
+        }
+        return newItem;
+    })
+
+    //Xóa hàng
+    const deleteRowById = (id: any) => {
+        dispatch(deleteById(id)).then(
+            response => {
+                dispatch(getAllDMQuocGia());
+            }
+        )
+    }
+
+    //Tạo header cho table
+    const tableHeader: GridColDef[] = [
+        { field: 'maQG', headerName: 'Mã Quốc gia', width: 360, headerAlign: 'center', align: 'center' },
+        { field: 'ten', headerName: 'Tên', width: 400, headerAlign: 'center', align: 'center' },
+        { field: 'tinhTrang', headerName: 'Tình Trạng', width: 430, headerAlign: 'center', align: 'center' },
+        {
+            field: 'actions', headerName: 'Thao tác', width: 430, type: 'actions', headerAlign: 'center', align: 'center',
+            getActions: ({ id }: any) => {
+                return [
+                    <GridActionsCellItem
+                        icon={<BiEdit className="textPrimary" />}
+                        label="Edit"
+                        onClick={() => {
+                            alert('Edit')
+                        }}
+                        color="inherit"
+                    />,
+                    <GridActionsCellItem
+                        icon={<BiTrash className="textPrimary" />}
+                        label="Delete"
+                        onClick={() => {
+                            deleteRowById(id);
+                        }}
+                        color="inherit"
+                    />
+                ]
+            }
+        }
+    ];
+
 
     return (
         <div>
@@ -76,14 +110,15 @@ const MaChuong = () => {
                         <div className="row mb-3 text-center">
                             <div className="col-sm-12">
                                 <button type="button" className="btn crud-btn px-5 radius-30"><i className="fadeIn animated bx bx-search-alt mr-1"></i>Tìm kiếm</button>
-                                <button type='button' className='btn crud-btn px-5 radius-30'><Link to={'./create'}>Thêm mới</Link></button>
+                                {/* <button type='button' className='btn crud-btn px-5 radius-30'><Link to={'./create'}>Thêm mới</Link></button> */}
+                                <BasicModal></BasicModal>
                                 <button type="button" className="btn crud-btn px-5 radius-30"><i className="fadeIn animated bx bx-eraser mr-1"></i>Xoá</button>
                                 <button type="button" className="btn crud-btn px-5 radius-30"><i className="fadeIn animated bx bx-log-out mr-1"></i>Thoát</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                {isLoading ? <>Loading</> : <DataTable data={data} />}
+                <DataTable data={newData} tableHeader={tableHeader} />
             </Body>
         </div>
     )

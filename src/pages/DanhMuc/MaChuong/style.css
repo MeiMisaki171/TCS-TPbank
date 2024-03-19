@@ -12,3 +12,8 @@
     text-decoration: none;
     margin: 0 20px;
 }
+
+.textPrimary {
+    font-size: 20px;
+    margin: 0 7px;
+}

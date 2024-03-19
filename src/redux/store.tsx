@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import danhmucReducer from "../redux/danhmucSlice";
+import danhmucReducer from "../features/DM/QuocGia/dmQuocGiaSlice";
 
 export const store = configureStore({
     reducer: {
