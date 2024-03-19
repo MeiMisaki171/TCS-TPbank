@@ -5,16 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyles from './components/GlobalStyles';
 import "bootstrap-icons/font/bootstrap-icons.css";
-import 'bootstrap/dist/css/bootstrap.css'; 
+import 'bootstrap/dist/css/bootstrap.css';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <GlobalStyles>
-    <App />
-  </GlobalStyles>
+  <Provider store={store}>
+    <GlobalStyles>
+      <App />
+    </GlobalStyles>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

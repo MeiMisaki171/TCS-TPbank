@@ -2,6 +2,8 @@ import { DataGrid, GridActionsCellItem, GridColDef, GridRowSelectionModel } from
 import './style.css'
 import { BiAlarm, BiFolder, BiRecycle } from 'react-icons/bi';
 import { deleteMaChuong } from '~/services/DM/maChuong.service';
+import { useAppDispatch } from '~/hook/hook';
+import { deleteById } from '~/redux/danhmucSlice';
 
 export interface dataTable {
     maQG: string;
@@ -19,16 +21,22 @@ interface DataTableProps {
 
 const DataTable: React.FC<DataTableProps> = ({ data }) => {
 
-    data.forEach(item => {
+    let customData = data.map(item => {
+        let newItem = { ...item };
         if (item.tinhTrang === true) {
-            item.tinhTrang = 'Hieu luc';
+            newItem.tinhTrang = "Hiệu lực"
         } else {
-            item.tinhTrang = "Het hieu luc"
+            newItem.tinhTrang = "Hết hiệu lực"
         }
+        return newItem;
     })
 
-    const handleEditClick = (id: any) => {
-        deleteMaChuong(id)
+
+    console.log(customData)
+    const dispatch = useAppDispatch()
+
+    const handleEditClick = (maQG: any) => {
+        dispatch(deleteById(maQG))
     }
 
     const handleCheckBox = (item: GridRowSelectionModel) => {
@@ -80,7 +88,7 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
                         <div>
                             <DataGrid
                                 getRowId={row => row.maQG}
-                                rows={data}
+                                rows={customData}
                                 columns={columns}
                                 initialState={{
                                     pagination: {

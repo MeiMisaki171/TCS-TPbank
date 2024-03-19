@@ -1,16 +1,42 @@
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Body from '~/components/Layout/Body'
 import DataTable from '~/components/Layout/Body/DataTable'
 import Header from '~/components/Layout/Header'
 import './style.css'
-import { GetAllMaChuong } from '~/services/DM/maChuong.service'
+// import { GetAllMaChuong } from '~/services/DM/maChuong.service'
 import { Link } from 'react-router-dom'
+// import DMQuocGiaService from '~/services/DM/DMQuocGia.service'
+import { useAppDispatch, useAppSelector } from '~/hook/hook'
+import { getAllDMQuocGia } from '~/redux/danhmucSlice'
 
 const MaChuong = () => {
 
+    //     const [maChuong, setMaChuong] = useState([]);
 
-    const data = GetAllMaChuong()
+    //     const getMaChuong = useCallback(async () => {
+    //         try {
+    //             const response = await DMQuocGiaService.getAll();
+    //             const data = response.data
+    //             setMaChuong(data);
+    //         } catch (error) {
+    //             console.error('Error fetching data:', error)
+    //         }
+    //     }, [])
 
+    //     useEffect(() => {
+
+    //         getMaChuong();
+
+    //     }, [getMaChuong]);
+
+    const dispatch = useAppDispatch();
+
+    const data = useAppSelector(state => state.danhmuc.data);
+    const isLoading = useAppSelector(state => state.danhmuc.loading);
+
+    useEffect(() => {
+        dispatch(getAllDMQuocGia())
+    }, [dispatch])
 
     return (
         <div>
@@ -57,7 +83,7 @@ const MaChuong = () => {
                         </div>
                     </div>
                 </div>
-                <DataTable data={data} />
+                {isLoading ? <>Loading</> : <DataTable data={data} />}
             </Body>
         </div>
     )
