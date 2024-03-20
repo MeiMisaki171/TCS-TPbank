@@ -2,12 +2,21 @@ import { DataGrid, GridColDef, GridRowSelectionModel } from '@mui/x-data-grid'
 import './style.css'
 import { BiFolder } from 'react-icons/bi';
 import { dataTable } from '~/types/DM/quocGia';
+import { findById } from '~/features/DM/QuocGia/dmQuocGiaSlice';
+import { useAppDispatch } from '~/hook/hook';
 interface DataTableProps {
     data: dataTable[],
     tableHeader: GridColDef[]
 }
 
 const DataTable: React.FC<DataTableProps> = ({ data, tableHeader }) => {
+
+    const dispatch = useAppDispatch();
+
+    const findItem = (maQG: string) => {
+        dispatch(findById(maQG));
+        console.log(data)
+    }
 
     const handleCheckBox = (item: GridRowSelectionModel) => {
         console.log(item)

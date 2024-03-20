@@ -3,13 +3,14 @@ import Body from '~/components/Layout/Body'
 import DataTable from '~/components/Layout/Body/DataTable'
 import Header from '~/components/Layout/Header'
 import './style.css'
-// import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '~/hook/hook'
 import { GridActionsCellItem, GridColDef } from '@mui/x-data-grid'
 import { BiEdit, BiTrash } from 'react-icons/bi'
 import { dataTable } from '~/types/DM/quocGia'
-import { deleteById, getAllDMQuocGia } from '~/features/DM/QuocGia/dmQuocGiaSlice'
+import { deleteById, findById, getAllDMQuocGia } from '~/features/DM/QuocGia/dmQuocGiaSlice'
 import BasicModal from '~/components/Layout/Body/Modal'
+import CreateFormMC from './create/maChuong.create'
+import EditFormQG from './update/maChuong.update'
 
 const MaChuong = () => {
 
@@ -41,6 +42,12 @@ const MaChuong = () => {
         )
     }
 
+    const findItem = (maQG: string) => {
+        dispatch(findById(maQG));
+        console.log(data)
+    }
+
+
     //Tạo header cho table
     const tableHeader: GridColDef[] = [
         { field: 'maQG', headerName: 'Mã Quốc gia', width: 360, headerAlign: 'center', align: 'center' },
@@ -51,12 +58,12 @@ const MaChuong = () => {
             getActions: ({ id }: any) => {
                 return [
                     <GridActionsCellItem
-                        icon={<BiEdit className="textPrimary" />}
+                        icon={<BasicModal children={<EditFormQG />} title={<BiEdit className="textPrimary" />} />}
                         label="Edit"
-                        onClick={() => {
-                            alert('Edit')
-                        }}
                         color="inherit"
+                        onClick={() => {
+                            findItem(id)
+                        }}
                     />,
                     <GridActionsCellItem
                         icon={<BiTrash className="textPrimary" />}
@@ -109,11 +116,22 @@ const MaChuong = () => {
                         <hr></hr>
                         <div className="row mb-3 text-center">
                             <div className="col-sm-12">
-                                <button type="button" className="btn crud-btn px-5 radius-30"><i className="fadeIn animated bx bx-search-alt mr-1"></i>Tìm kiếm</button>
-                                {/* <button type='button' className='btn crud-btn px-5 radius-30'><Link to={'./create'}>Thêm mới</Link></button> */}
-                                <BasicModal></BasicModal>
-                                <button type="button" className="btn crud-btn px-5 radius-30"><i className="fadeIn animated bx bx-eraser mr-1"></i>Xoá</button>
-                                <button type="button" className="btn crud-btn px-5 radius-30"><i className="fadeIn animated bx bx-log-out mr-1"></i>Thoát</button>
+                                <button type="button" className="btn crud-btn px-5 radius-30">
+                                    <i className="fadeIn animated bx bx-search-alt mr-1"></i>
+                                    Tìm kiếm
+                                </button>
+                                <button type="button" className="btn crud-btn px-5 radius-30">
+                                    <i className="fadeIn animated bx bx-search-alt mr-1"></i>
+                                    <BasicModal children={<CreateFormMC />} title={'Thêm mới'} />
+                                </button>
+                                <button type="button" className="btn crud-btn px-5 radius-30" >
+                                    <i className="fadeIn animated bx bx-eraser mr-1"></i>
+                                    Xoá
+                                </button>
+                                <button type="button" className="btn crud-btn px-5 radius-30">
+                                    <i className="fadeIn animated bx bx-log-out mr-1"></i>
+                                    Thoát
+                                </button>
                             </div>
                         </div>
                     </div>

@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import NotFoundPage from "./pages/404";
 import LapChungTuThueHQ from "./pages/XuLyChungTuThue/LapChungTu/LapChungTuThueHQ";
 import Login from "./pages/Account/Login";
-import MaChuong from "./pages/DanhMuc/MaChuong";
+import MaChuong from "./pages/DanhMuc/MaChuong/maChuong";
 // import MaNdkt from "./pages/DanhMuc/MaNdkt";
 // import CoQuanKhoBac from "./pages/DanhMuc/CoQuanKhoBac";
 // import DiaBanHanhChinh from "./pages/DanhMuc/DiaBanHanhChinh";

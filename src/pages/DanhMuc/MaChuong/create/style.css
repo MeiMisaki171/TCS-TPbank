@@ -1,0 +1,12 @@
+.crud-form {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+
+}
+
+.form-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

@@ -27,12 +27,48 @@ export const getAllDMQuocGia = createAsyncThunk(
     }
 )
 
+export const createQG = createAsyncThunk(
+    "danhmuc/create",
+    async (QG: dataTable) => {
+        try {
+            const res = await DMQuocGiaService.createQG(QG);
+            return res.data
+        } catch (err) {
+            alert(`Them moi khong thanh cong ${err}`);
+            console.error(err)
+        }
+    }
+)
+
+export const findById = createAsyncThunk(
+    "danhmuc/findById",
+    async (maQG: string) => {
+        try {
+            const res = await DMQuocGiaService.findById(maQG);
+            return res.data;
+        } catch (err) {
+            console.error(err)
+        }
+    }
+)
+
+export const updateQG = createAsyncThunk(
+    "danhmuc/update",
+    async (qg: dataTable) => {
+        try {
+            const res = await DMQuocGiaService.updateQG(qg)
+            return res.data;
+        } catch (err) {
+            console.error(err)
+        }
+    }
+)
+
 export const deleteById = createAsyncThunk(
     "danhmuc/delete",
     async (maQG: string) => {
         try {
-            const res = await DMQuocGiaService.deleteById(maQG)
-            console.log(maQG)
+            const res = await DMQuocGiaService.deleteById(maQG);
             return res.data;
         } catch (err) {
             console.error(err);
@@ -63,7 +99,7 @@ export const danhmucSlice = createSlice({
                 console.log('isReject')
             })
             .addCase(deleteById.pending, (state) => {
-                state.loading = false;
+                state.loading = true;
                 console.log('isLoading delete')
             })
             .addCase(deleteById.fulfilled, (state, action) => {
@@ -74,6 +110,22 @@ export const danhmucSlice = createSlice({
                     state.data = state.data.filter((item) => item.maQG !== maQG);
                 }
 
+            })
+            .addCase(createQG.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(createQG.fulfilled, (state, action) => {
+                state.loading = false;
+            })
+            .addCase(findById.fulfilled, (state, action) => {
+                state.loading = false;
+                const maQG: string = action.payload;
+                if (maQG) {
+                    state.data = state.data.filter((item) => item.maQG === maQG)
+                }
+            })
+            .addCase(updateQG.fulfilled, (state, action) => {
+                state.loading = false;
             })
     }
 },)
