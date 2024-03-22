@@ -1,6 +1,6 @@
 import dmMaChuong from "~/api/danhmuc.api";
 import http from "~/api/http-common";
-import { maChuong } from "~/types/DM/maChuong";
+import { IDbhc } from "~/types/DM/diaBanHanhChinh";
 
 const getAll = () => {
     return http.get(`${dmMaChuong}`)
@@ -10,7 +10,7 @@ const findById = (id: string) => {
     return http.get(`${dmMaChuong}/${id}`)
 }
 
-const updateMC = (qg: maChuong) => {
+const updateDBHC = (qg: IDbhc) => {
     return http.put(`${dmMaChuong}`, qg)
 }
 
@@ -18,16 +18,16 @@ const deleteById = (id: string) => {
     return http.delete(`${dmMaChuong}/${id}`);
 }
 
-const createMC = (qg: maChuong) => {
+const createDBHC = (qg: IDbhc) => {
     return http.post(`${dmMaChuong}`, qg)
 }
 
-const DMMaChuongService = {
+const DMDiaBanHCService = {
     getAll,
     findById,
-    updateMC,
-    createMC,
+    updateDBHC,
+    createDBHC,
     deleteById,
 }
 
-export default DMMaChuongService;
+export default DMDiaBanHCService;

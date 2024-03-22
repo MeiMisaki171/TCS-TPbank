@@ -5,23 +5,23 @@ import Body from '~/components/Layout/Body'
 import DataTable from '~/components/Layout/Body/DataTable'
 import BasicModal from '~/components/Layout/Body/Modal'
 import Header from '~/components/Layout/Header'
-import { deleteById, getAllDmCQT } from '~/features/DM/CoQuanThu/dmCoQuanThuSlide'
+import { deleteById, getAllDmCQKB } from '~/features/DM/CoQuanKhoBac/dmCoQuanKhoBacSlide'
 import { useAppDispatch, useAppSelector } from '~/hook/redux-hook'
-import { ICoQuanThu } from '~/types/DM/coQuanThu'
-import EditFormCQT from './update/coQuanThu.update'
-import CreateFormCQT from './create/coQuanThu.create'
+import { ICoQuanKB } from '~/types/DM/coQuanKhoBac'
+import EditFormCQKB from './update/cqkb.update'
+import CreateFormCQKB from './create/cqkb.create'
 import { useNavigate } from 'react-router-dom'
 import '../../DanhMuc/style.css'
 
 
-const CoQuanThu = () => {
+const CoQuanKhoBac = () => {
 
     const dispatch = useAppDispatch();
 
-    const data: ICoQuanThu[] = useAppSelector(state => state.danhmuc.data);
+    const data: ICoQuanKB[] = useAppSelector(state => state.danhmuc.data);
 
     useEffect(() => {
-        dispatch(getAllDmCQT());
+        dispatch(getAllDmCQKB());
     }, [dispatch])
 
 
@@ -46,11 +46,12 @@ const CoQuanThu = () => {
     const handleDeleteRow = (id: any) => {
         dispatch(deleteById(id)).then(
             response => {
-                dispatch(getAllDmCQT());
+                dispatch(getAllDmCQKB());
             }
         )
     }
 
+    // Thoat
     const navigate = useNavigate();
     const exitPage = () => {
         navigate('/home')
@@ -67,7 +68,7 @@ const CoQuanThu = () => {
             getActions: ({ id }: any) => {
                 return [
                     <GridActionsCellItem
-                        icon={<BasicModal children={<EditFormCQT id={id} />} title={<BiEdit className="textPrimary" />} />}
+                        icon={<BasicModal children={<EditFormCQKB id={id} />} title={<BiEdit className="textPrimary" />} />}
                         label="Edit"
                         color="inherit"
                     />,
@@ -127,7 +128,7 @@ const CoQuanThu = () => {
                                 </button>
                                 <button type="button" className="btn crud-btn px-5 radius-30">
                                     <i className="fadeIn animated bx bx-search-alt mr-1"></i>
-                                    <BasicModal children={<CreateFormCQT />} title={'Thêm mới'} />
+                                    <BasicModal children={<CreateFormCQKB />} title={'Thêm mới'} />
                                 </button>
                                 <button type="button" className="btn crud-btn px-5 radius-30" >
                                     <i className="fadeIn animated bx bx-eraser mr-1"></i>
@@ -147,4 +148,4 @@ const CoQuanThu = () => {
     )
 }
 
-export default CoQuanThu
+export default CoQuanKhoBac

@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Button from '~/components/Button'
+import { findById, getAllDmDBHC, updateDBHC } from '~/features/DM/DiaBanHanhChinh/dmDBHCSlice';
 import { useAppDispatch, useAppSelector } from '~/hook/redux-hook';
-import { findById, getAllMaNDKT, updateMaNDKT } from '~/features/DM/MaNDKT/dmMaNDKTSlice';
-import { ImaNDKT } from '~/types/DM/maNDKT';
+import { IDbhc } from '~/types/DM/diaBanHanhChinh';
 
-const EditFormNDKT = ({ id }: any) => {
+const EditFormDBHC = ({ id }: any) => {
 
     const dispatch = useAppDispatch();
 
-    const item: ImaNDKT = useAppSelector(state => state.danhmuc.item);
+    const item: IDbhc = useAppSelector(state => state.danhmuc.item);
 
     useEffect(() => {
         dispatch(findById(id)).then(
@@ -24,7 +24,7 @@ const EditFormNDKT = ({ id }: any) => {
         item
     )
 
-    const formatData = (formData: ImaNDKT) => {
+    const formatData = (formData: IDbhc) => {
         if (formData.tinhTrang === 'True') {
             formData.tinhTrang = true;
         } else if (formData.tinhTrang === 'False') {
@@ -41,9 +41,9 @@ const EditFormNDKT = ({ id }: any) => {
             formatData(formData);
         }
         console.log(formData);
-        dispatch(updateMaNDKT(formData)).then(
+        dispatch(updateDBHC(formData)).then(
             response => {
-                dispatch(getAllMaNDKT())
+                dispatch(getAllDmDBHC())
             }
         );
     }
@@ -58,9 +58,9 @@ const EditFormNDKT = ({ id }: any) => {
         setFormData({ ...formData, [name]: value })
     }
 
-    const navtigate = useNavigate();
+    const navigate = useNavigate();
     const handleExit = () => {
-        navtigate(0);
+        navigate(0);
     }
 
     return (
@@ -92,4 +92,4 @@ const EditFormNDKT = ({ id }: any) => {
     )
 }
 
-export default EditFormNDKT
+export default EditFormDBHC

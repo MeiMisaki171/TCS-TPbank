@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import Button from '~/components/Button'
 import { findById, getAllDMMaChuong, updateMC } from '~/features/DM/MaChuong/dmMaChuongSlice';
 import { maChuong } from '~/types/DM/maChuong';
-import { useAppDispatch, useAppSelector } from '~/hook/hook';
+import { useAppDispatch, useAppSelector } from '~/hook/redux-hook';
+// import { hideModal } from '~/features/Modal/modalSlice';
 
 const EditFormQG = ({ id }: any) => {
 
@@ -40,7 +41,6 @@ const EditFormQG = ({ id }: any) => {
         if (formData) {
             formatData(formData);
         }
-        console.log(formData);
         dispatch(updateMC(formData)).then(
             response => {
                 dispatch(getAllDMMaChuong())
@@ -58,34 +58,34 @@ const EditFormQG = ({ id }: any) => {
         setFormData({ ...formData, [name]: value })
     }
 
-    const navtigate = useNavigate();
-    const handleExit = () => {
-        navtigate(0);
+    const navigate = useNavigate();
+    const handleClose = () => {
+        navigate(0)
     }
 
     return (
         <div className='crud-form'>
             <form onSubmit={handleSubmit}>
                 <div className='form-group row'>
-                    <label className='col-sm-4 col-form-label mb-3'>Mã quốc gia:</label>
+                    <label className='col-sm-4 col-form-label mb-3'>Chương (<span style={{ color: 'red' }}>*</span>):</label>
                     <div className='col-sm-8'>
-                        <input type='text' name='maQG' value={formData.maQG} onChange={handleInputChange} className='form-control'></input>
+                        <input type='text' name='maQG' value={formData.maQG} readOnly className='form-control read-only'></input>
                     </div>
-                    <label className='col-sm-4 col-form-label mb-3'>Tên:</label>
+                    <label className='col-sm-4 col-form-label mb-3'>Tên (<span style={{ color: 'red' }}>*</span>):</label>
                     <div className='col-sm-8'>
                         <input type='text' name='ten' value={formData.ten} onChange={handleInputChange} className='form-control'></input>
                     </div>
                     <label className='col-sm-4 col-form-label mb-3'> Tình trạng:</label>
                     <div className='col-sm-8'>
                         <select name='tinhTrang' onChange={handleSelectChange} defaultValue='True'>
-                            <option value='True'>True</option>
-                            <option value='False'>False</option>
+                            <option value='True'>Hiệu lực</option>
+                            <option value='False'>Hết hiệu lực</option>
                         </select>
                     </div>
                 </div>
                 <div className='form-button'>
                     <Button title={'Lưu'} ></Button>
-                    <button type='button' onClick={handleExit}>Thoat</button>
+                    <button type='button' onClick={handleClose}>Thoat</button>
                 </div>
             </form>
         </div>

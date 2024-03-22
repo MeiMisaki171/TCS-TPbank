@@ -1,4 +1,4 @@
-export const findTitleByPath = (menuData: any, path: any) => {
+export const findTitleByPath = (menuData: any, path: string) => {
   for (const menuItem of menuData) {
     if (menuItem.url && menuItem.url === path) {
       return menuItem.title;

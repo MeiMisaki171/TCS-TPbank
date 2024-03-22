@@ -2,7 +2,7 @@ import React from 'react'
 import './style.css'
 import Button from '~/components/Button';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '~/hook/hook';
+import { useAppDispatch } from '~/hook/redux-hook';
 import { createMC, getAllDMMaChuong } from '~/features/DM/MaChuong/dmMaChuongSlice';
 import { maChuong } from '~/types/DM/maChuong';
 
@@ -67,9 +67,9 @@ const CreateFormMC = () => {
     }
 
 
-    const navtigate = useNavigate();
+    const navigate = useNavigate();
     const handleExit = () => {
-        navtigate(0);
+        navigate(0);
     }
 
 
@@ -77,7 +77,7 @@ const CreateFormMC = () => {
         <div className='crud-form'>
             <form onSubmit={handleSubmit}>
                 <div className='form-group row'>
-                    <label className='col-sm-4 col-form-label mb-3'>Mã quốc gia:</label>
+                    <label className='col-sm-4 col-form-label mb-3'>Chương:</label>
                     <div className='col-sm-8'>
                         <input type='text' name='maQG' value={formData.maQG} onChange={handleInputChange} className='form-control'></input>
                     </div>

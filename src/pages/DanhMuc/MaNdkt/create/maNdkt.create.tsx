@@ -2,7 +2,7 @@ import React from 'react'
 // import './style.css'
 import Button from '~/components/Button';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '~/hook/hook';
+import { useAppDispatch } from '~/hook/redux-hook';
 import { ImaNDKT } from '~/types/DM/maNDKT';
 import { createMaNDKT, getAllMaNDKT } from '~/features/DM/MaNDKT/dmMaNDKTSlice';
 

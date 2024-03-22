@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import Body from '~/components/Layout/Body'
 import DataTable from '~/components/Layout/Body/DataTable'
 import Header from '~/components/Layout/Header'
-import './style.css'
-import { useAppDispatch, useAppSelector } from '~/hook/hook'
+import '../../DanhMuc/style.css'
+import { useAppDispatch, useAppSelector } from '~/hook/redux-hook'
 import { GridActionsCellItem, GridColDef } from '@mui/x-data-grid'
 import { BiEdit, BiTrash } from 'react-icons/bi'
 import { maChuong } from '~/types/DM/maChuong'
@@ -11,6 +11,7 @@ import { deleteById, getAllDMMaChuong } from '~/features/DM/MaChuong/dmMaChuongS
 import BasicModal from '~/components/Layout/Body/Modal'
 import CreateFormMC from './create/maChuong.create'
 import EditFormQG from './update/maChuong.update'
+import { useNavigate } from 'react-router-dom'
 
 const MaChuong = () => {
 
@@ -41,7 +42,7 @@ const MaChuong = () => {
     // }
 
     //Xóa hàng
-    const deleteRowById = (id: any) => {
+    const handleDeleteRow = (id: any) => {
         dispatch(deleteById(id)).then(
             response => {
                 dispatch(getAllDMMaChuong());
@@ -49,7 +50,10 @@ const MaChuong = () => {
         )
     }
 
-
+    const navigate = useNavigate();
+    const exitPage = () => {
+        navigate('/home')
+    }
 
 
     //Tạo header cho table
@@ -70,7 +74,7 @@ const MaChuong = () => {
                         icon={<BiTrash className="textPrimary" />}
                         label="Delete"
                         onClick={() => {
-                            deleteRowById(id);
+                            handleDeleteRow(id);
                         }}
                         color="inherit"
                     />
@@ -129,7 +133,7 @@ const MaChuong = () => {
                                     <i className="fadeIn animated bx bx-eraser mr-1"></i>
                                     Xoá
                                 </button>
-                                <button type="button" className="btn crud-btn px-5 radius-30">
+                                <button type="button" className="btn crud-btn px-5 radius-30" onClick={exitPage}>
                                     <i className="fadeIn animated bx bx-log-out mr-1"></i>
                                     Thoát
                                 </button>

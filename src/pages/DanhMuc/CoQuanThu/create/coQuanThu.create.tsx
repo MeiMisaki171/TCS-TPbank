@@ -2,7 +2,7 @@ import React from 'react'
 // import './style.css'
 import Button from '~/components/Button';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '~/hook/hook';
+import { useAppDispatch } from '~/hook/redux-hook';
 import { ICoQuanThu } from '~/types/DM/coQuanThu';
 import { createCQT, getAllDmCQT } from '~/features/DM/CoQuanThu/dmCoQuanThuSlide';
 
@@ -67,9 +67,9 @@ const CreateFormCQT = () => {
     }
 
 
-    const navtigate = useNavigate();
+    const navigate = useNavigate();
     const handleExit = () => {
-        navtigate(0);
+        navigate(0);
     }
 
 

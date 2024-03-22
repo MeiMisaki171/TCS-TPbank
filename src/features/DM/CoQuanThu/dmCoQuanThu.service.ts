@@ -1,24 +1,25 @@
+import dmMaChuong from "~/api/danhmuc.api";
 import http from "~/api/http-common";
 import { ICoQuanThu } from "~/types/DM/coQuanThu";
 
 const getAll = () => {
-    return http.get("/DMQuocGia")
+    return http.get(`${dmMaChuong}`)
 };
 
 const findById = (id: string) => {
-    return http.get(`/DMQuocGia/${id}`)
+    return http.get(`${dmMaChuong}/${id}`)
 }
 
 const updateCQT = (qg: ICoQuanThu) => {
-    return http.put(`/DMQuocGia`, qg)
+    return http.put(`${dmMaChuong}`, qg)
 }
 
 const deleteById = (id: string) => {
-    return http.delete(`/DMQuocGia/${id}`);
+    return http.delete(`${dmMaChuong}/${id}`);
 }
 
 const createCQT = (qg: ICoQuanThu) => {
-    return http.post(`/DMQuocGia`, qg)
+    return http.post(`${dmMaChuong}`, qg)
 }
 
 const DMCoQuanThuService = {

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Button from '~/components/Button'
-import { useAppDispatch, useAppSelector } from '~/hook/hook';
+import { useAppDispatch, useAppSelector } from '~/hook/redux-hook';
 import { findById, getAllDmCQT, updateCQT } from '~/features/DM/CoQuanThu/dmCoQuanThuSlide';
 import { ICoQuanThu } from '~/types/DM/coQuanThu';
 
@@ -58,9 +58,9 @@ const EditFormCQT = ({ id }: any) => {
         setFormData({ ...formData, [name]: value })
     }
 
-    const navtigate = useNavigate();
+    const navigate = useNavigate();
     const handleExit = () => {
-        navtigate(0);
+        navigate(0);
     }
 
     return (

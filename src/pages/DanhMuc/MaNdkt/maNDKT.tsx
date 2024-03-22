@@ -6,10 +6,13 @@ import DataTable from '~/components/Layout/Body/DataTable'
 import BasicModal from '~/components/Layout/Body/Modal'
 import Header from '~/components/Layout/Header'
 import { deleteById, getAllMaNDKT } from '~/features/DM/MaNDKT/dmMaNDKTSlice'
-import { useAppDispatch, useAppSelector } from '~/hook/hook'
+import { useAppDispatch, useAppSelector } from '~/hook/redux-hook'
 import { ImaNDKT } from '~/types/DM/maNDKT'
 import CreateFormNDKT from './create/maNdkt.create'
 import EditFormNDKT from './update/maNdkt.update'
+import { useNavigate } from 'react-router-dom'
+import '../../DanhMuc/style.css'
+
 
 const MaNdkt = () => {
 
@@ -39,12 +42,17 @@ const MaNdkt = () => {
     // }
 
     //Xóa hàng
-    const deleteRowById = (id: any) => {
+    const handleDeleteRow = (id: any) => {
         dispatch(deleteById(id)).then(
             response => {
                 dispatch(getAllMaNDKT());
             }
         )
+    }
+
+    const navigate = useNavigate();
+    const exitPage = () => {
+        navigate('/home')
     }
 
     //Tạo header cho table
@@ -65,7 +73,7 @@ const MaNdkt = () => {
                         icon={<BiTrash className="textPrimary" />}
                         label="Delete"
                         onClick={() => {
-                            deleteRowById(id);
+                            handleDeleteRow(id);
                         }}
                         color="inherit"
                     />
@@ -123,7 +131,7 @@ const MaNdkt = () => {
                                     <i className="fadeIn animated bx bx-eraser mr-1"></i>
                                     Xoá
                                 </button>
-                                <button type="button" className="btn crud-btn px-5 radius-30">
+                                <button type="button" className="btn crud-btn px-5 radius-30" onClick={exitPage}>
                                     <i className="fadeIn animated bx bx-log-out mr-1"></i>
                                     Thoát
                                 </button>

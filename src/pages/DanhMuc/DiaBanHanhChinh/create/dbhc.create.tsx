@@ -1,52 +1,30 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+// import './style.css'
+import Button from '~/components/Button';
 import { useNavigate } from 'react-router-dom';
-import Button from '~/components/Button'
-import { useAppDispatch, useAppSelector } from '~/hook/redux-hook';
-import { findById, getAllMaNDKT, updateMaNDKT } from '~/features/DM/MaNDKT/dmMaNDKTSlice';
-import { ImaNDKT } from '~/types/DM/maNDKT';
+import { useAppDispatch } from '~/hook/redux-hook';
+import { createDBHC, getAllDmDBHC } from '~/features/DM/DiaBanHanhChinh/dmDBHCSlice';
+import { IDbhc } from '~/types/DM/diaBanHanhChinh';
 
-const EditFormNDKT = ({ id }: any) => {
+const CreateFormDBHC = () => {
+
+    // interface FormProps {
+    //     onSubmit: (data: dataTable) => void;
+    // }
 
     const dispatch = useAppDispatch();
 
-    const item: ImaNDKT = useAppSelector(state => state.danhmuc.item);
-
-    useEffect(() => {
-        dispatch(findById(id)).then(
-            res => {
-                setFormData(res.payload)
-                return
-            }
-        );
-    }, [dispatch, id])
 
     const [formData, setFormData] = React.useState(
-        item
+        {
+            maQG: '',
+            ten: '',
+            tinhTrang: 'True'
+        }
     )
 
-    const formatData = (formData: ImaNDKT) => {
-        if (formData.tinhTrang === 'True') {
-            formData.tinhTrang = true;
-        } else if (formData.tinhTrang === 'False') {
-            formData.tinhTrang = false;
-        }
-
-        return formData;
-    }
 
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        if (formData) {
-            formatData(formData);
-        }
-        console.log(formData);
-        dispatch(updateMaNDKT(formData)).then(
-            response => {
-                dispatch(getAllMaNDKT())
-            }
-        );
-    }
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
@@ -58,10 +36,42 @@ const EditFormNDKT = ({ id }: any) => {
         setFormData({ ...formData, [name]: value })
     }
 
-    const navtigate = useNavigate();
-    const handleExit = () => {
-        navtigate(0);
+    //format lại data
+    const formatData = (formData: IDbhc) => {
+        if (formData.tinhTrang === 'True') {
+            formData.tinhTrang = true;
+        } else if (formData.tinhTrang === 'False') {
+            formData.tinhTrang = false;
+        }
+
+        return formData;
     }
+
+    //Tao moi
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        if (formData) {
+            formatData(formData);
+        }
+        dispatch(createDBHC(formData)).then(
+            response => {
+                dispatch(getAllDmDBHC())
+            }
+        );
+
+        setFormData({
+            maQG: '',
+            ten: '',
+            tinhTrang: 'True'
+        })
+    }
+
+
+    const navigate = useNavigate();
+    const handleExit = () => {
+        navigate(0);
+    }
+
 
     return (
         <div className='crud-form'>
@@ -92,4 +102,4 @@ const EditFormNDKT = ({ id }: any) => {
     )
 }
 
-export default EditFormNDKT
+export default CreateFormDBHC

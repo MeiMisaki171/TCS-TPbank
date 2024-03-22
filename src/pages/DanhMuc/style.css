@@ -17,3 +17,8 @@
     font-size: 20px;
     margin: 0 7px;
 }
+
+.read-only {
+    background-color: #b8b8b9 !important;
+    cursor: default;
+}
