@@ -1,25 +1,24 @@
-import React, { useEffect } from 'react'
+import { GridActionsCellItem, GridColDef } from '@mui/x-data-grid'
+import { useEffect } from 'react'
+import { BiEdit, BiTrash } from 'react-icons/bi'
 import Body from '~/components/Layout/Body'
 import DataTable from '~/components/Layout/Body/DataTable'
-import Header from '~/components/Layout/Header'
-import './style.css'
-import { useAppDispatch, useAppSelector } from '~/hook/hook'
-import { GridActionsCellItem, GridColDef } from '@mui/x-data-grid'
-import { BiEdit, BiTrash } from 'react-icons/bi'
-import { maChuong } from '~/types/DM/maChuong'
-import { deleteById, getAllDMMaChuong } from '~/features/DM/MaChuong/dmMaChuongSlice'
 import BasicModal from '~/components/Layout/Body/Modal'
-import CreateFormMC from './create/maChuong.create'
-import EditFormQG from './update/maChuong.update'
+import Header from '~/components/Layout/Header'
+import { deleteById, getAllDmCQT } from '~/features/DM/CoQuanThu/dmCoQuanThuSlide'
+import { useAppDispatch, useAppSelector } from '~/hook/hook'
+import { ICoQuanThu } from '~/types/DM/coQuanThu'
+import EditFormCQT from './update/coQuanThu.update'
+import CreateFormCQT from './create/coQuanThu.create'
 
-const MaChuong = () => {
+const CoQuanThu = () => {
 
     const dispatch = useAppDispatch();
 
-    const data: maChuong[] = useAppSelector(state => state.danhmuc.data);
+    const data: ICoQuanThu[] = useAppSelector(state => state.danhmuc.data);
 
     useEffect(() => {
-        dispatch(getAllDMMaChuong());
+        dispatch(getAllDmCQT());
     }, [dispatch])
 
 
@@ -44,7 +43,7 @@ const MaChuong = () => {
     const deleteRowById = (id: any) => {
         dispatch(deleteById(id)).then(
             response => {
-                dispatch(getAllDMMaChuong());
+                dispatch(getAllDmCQT());
             }
         )
     }
@@ -62,7 +61,7 @@ const MaChuong = () => {
             getActions: ({ id }: any) => {
                 return [
                     <GridActionsCellItem
-                        icon={<BasicModal children={<EditFormQG id={id} />} title={<BiEdit className="textPrimary" />} />}
+                        icon={<BasicModal children={<EditFormCQT id={id} />} title={<BiEdit className="textPrimary" />} />}
                         label="Edit"
                         color="inherit"
                     />,
@@ -94,20 +93,19 @@ const MaChuong = () => {
                         <hr></hr>
                         <div className="row mb-2">
                             <div className="col-sm-2">
-                                <label className="col-form-label">Chương</label>
+                                <label className="col-form-label">Mã LHXNK</label>
                             </div>
                             <div className="col-sm-2">
-                                {/* onChange={Filter}s */}
                                 <input type="text" className="form-control" id="inputEnterYourMa" placeholder="Nhập mã LHXNK" />
                             </div>
                             <div className="col-sm-2">
-                                <label className="col-form-label">Tên</label>
+                                <label className="col-form-label">Tên LHXNK</label>
                             </div>
                             <div className="col-sm-2">
                                 <input type="text" className="form-control" id="inputEnterYourName" placeholder="Nhập tên LHXNK" />
                             </div>
                             <div className="col-sm-2">
-                                <label className="col-form-label">Tình trạng</label>
+                                <label className="col-form-label">Tên viết tắt LHXNK</label>
                             </div>
                             <div className="col-sm-2">
                                 <input type="text" className="form-control" id="inputEnterYourName1" placeholder="Nhập tên viết tắt LHXNK" />
@@ -123,7 +121,7 @@ const MaChuong = () => {
                                 </button>
                                 <button type="button" className="btn crud-btn px-5 radius-30">
                                     <i className="fadeIn animated bx bx-search-alt mr-1"></i>
-                                    <BasicModal children={<CreateFormMC />} title={'Thêm mới'} />
+                                    <BasicModal children={<CreateFormCQT />} title={'Thêm mới'} />
                                 </button>
                                 <button type="button" className="btn crud-btn px-5 radius-30" >
                                     <i className="fadeIn animated bx bx-eraser mr-1"></i>
@@ -143,4 +141,4 @@ const MaChuong = () => {
     )
 }
 
-export default MaChuong
+export default CoQuanThu

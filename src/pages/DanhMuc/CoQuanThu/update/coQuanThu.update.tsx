@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Button from '~/components/Button'
-import { findById, getAllDMMaChuong, updateMC } from '~/features/DM/MaChuong/dmMaChuongSlice';
-import { maChuong } from '~/types/DM/maChuong';
 import { useAppDispatch, useAppSelector } from '~/hook/hook';
+import { findById, getAllDmCQT, updateCQT } from '~/features/DM/CoQuanThu/dmCoQuanThuSlide';
+import { ICoQuanThu } from '~/types/DM/coQuanThu';
 
-const EditFormQG = ({ id }: any) => {
+const EditFormCQT = ({ id }: any) => {
 
     const dispatch = useAppDispatch();
 
-    const item: maChuong = useAppSelector(state => state.danhmuc.item);
+    const item: ICoQuanThu = useAppSelector(state => state.danhmuc.item);
 
     useEffect(() => {
         dispatch(findById(id)).then(
@@ -24,7 +24,7 @@ const EditFormQG = ({ id }: any) => {
         item
     )
 
-    const formatData = (formData: maChuong) => {
+    const formatData = (formData: ICoQuanThu) => {
         if (formData.tinhTrang === 'True') {
             formData.tinhTrang = true;
         } else if (formData.tinhTrang === 'False') {
@@ -41,9 +41,9 @@ const EditFormQG = ({ id }: any) => {
             formatData(formData);
         }
         console.log(formData);
-        dispatch(updateMC(formData)).then(
+        dispatch(updateCQT(formData)).then(
             response => {
-                dispatch(getAllDMMaChuong())
+                dispatch(getAllDmCQT())
             }
         );
     }
@@ -92,4 +92,4 @@ const EditFormQG = ({ id }: any) => {
     )
 }
 
-export default EditFormQG
+export default EditFormCQT

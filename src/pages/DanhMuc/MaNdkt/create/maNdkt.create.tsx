@@ -1,52 +1,30 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+// import './style.css'
+import Button from '~/components/Button';
 import { useNavigate } from 'react-router-dom';
-import Button from '~/components/Button'
-import { findById, getAllDMMaChuong, updateMC } from '~/features/DM/MaChuong/dmMaChuongSlice';
-import { maChuong } from '~/types/DM/maChuong';
-import { useAppDispatch, useAppSelector } from '~/hook/hook';
+import { useAppDispatch } from '~/hook/hook';
+import { ImaNDKT } from '~/types/DM/maNDKT';
+import { createMaNDKT, getAllMaNDKT } from '~/features/DM/MaNDKT/dmMaNDKTSlice';
 
-const EditFormQG = ({ id }: any) => {
+const CreateFormNDKT = () => {
+
+    // interface FormProps {
+    //     onSubmit: (data: dataTable) => void;
+    // }
 
     const dispatch = useAppDispatch();
 
-    const item: maChuong = useAppSelector(state => state.danhmuc.item);
-
-    useEffect(() => {
-        dispatch(findById(id)).then(
-            res => {
-                setFormData(res.payload)
-                return
-            }
-        );
-    }, [dispatch, id])
 
     const [formData, setFormData] = React.useState(
-        item
+        {
+            maQG: '',
+            ten: '',
+            tinhTrang: 'True'
+        }
     )
 
-    const formatData = (formData: maChuong) => {
-        if (formData.tinhTrang === 'True') {
-            formData.tinhTrang = true;
-        } else if (formData.tinhTrang === 'False') {
-            formData.tinhTrang = false;
-        }
-
-        return formData;
-    }
 
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        if (formData) {
-            formatData(formData);
-        }
-        console.log(formData);
-        dispatch(updateMC(formData)).then(
-            response => {
-                dispatch(getAllDMMaChuong())
-            }
-        );
-    }
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
@@ -58,10 +36,42 @@ const EditFormQG = ({ id }: any) => {
         setFormData({ ...formData, [name]: value })
     }
 
+    //format lại data
+    const formatData = (formData: ImaNDKT) => {
+        if (formData.tinhTrang === 'True') {
+            formData.tinhTrang = true;
+        } else if (formData.tinhTrang === 'False') {
+            formData.tinhTrang = false;
+        }
+
+        return formData;
+    }
+
+    //Tao moi
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        if (formData) {
+            formatData(formData);
+        }
+        dispatch(createMaNDKT(formData)).then(
+            response => {
+                dispatch(getAllMaNDKT())
+            }
+        );
+
+        setFormData({
+            maQG: '',
+            ten: '',
+            tinhTrang: 'True'
+        })
+    }
+
+
     const navtigate = useNavigate();
     const handleExit = () => {
         navtigate(0);
     }
+
 
     return (
         <div className='crud-form'>
@@ -92,4 +102,4 @@ const EditFormQG = ({ id }: any) => {
     )
 }
 
-export default EditFormQG
+export default CreateFormNDKT

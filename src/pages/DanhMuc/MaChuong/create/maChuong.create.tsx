@@ -1,10 +1,10 @@
 import React from 'react'
-import { dataTable } from '~/types/DM/quocGia';
 import './style.css'
 import Button from '~/components/Button';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '~/hook/hook';
-import { createQG, getAllDMQuocGia } from '~/features/DM/QuocGia/dmQuocGiaSlice';
+import { createMC, getAllDMMaChuong } from '~/features/DM/MaChuong/dmMaChuongSlice';
+import { maChuong } from '~/types/DM/maChuong';
 
 const CreateFormMC = () => {
 
@@ -17,7 +17,7 @@ const CreateFormMC = () => {
 
     const [formData, setFormData] = React.useState(
         {
-            maQG: 'nam',
+            maQG: '',
             ten: '',
             tinhTrang: 'True'
         }
@@ -37,7 +37,7 @@ const CreateFormMC = () => {
     }
 
     //format lại data
-    const formatData = (formData: dataTable) => {
+    const formatData = (formData: maChuong) => {
         if (formData.tinhTrang === 'True') {
             formData.tinhTrang = true;
         } else if (formData.tinhTrang === 'False') {
@@ -47,18 +47,23 @@ const CreateFormMC = () => {
         return formData;
     }
 
-
+    //Tao moi
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (formData) {
             formatData(formData);
         }
-        console.log(formData);
-        dispatch(createQG(formData)).then(
+        dispatch(createMC(formData)).then(
             response => {
-                dispatch(getAllDMQuocGia())
+                dispatch(getAllDMMaChuong())
             }
         );
+
+        setFormData({
+            maQG: '',
+            ten: '',
+            tinhTrang: 'True'
+        })
     }
 
 

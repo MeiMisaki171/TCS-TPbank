@@ -4,6 +4,8 @@ import NotFoundPage from "./pages/404";
 import LapChungTuThueHQ from "./pages/XuLyChungTuThue/LapChungTu/LapChungTuThueHQ";
 import Login from "./pages/Account/Login";
 import MaChuong from "./pages/DanhMuc/MaChuong/maChuong";
+import MaNdkt from "./pages/DanhMuc/MaNdkt/maNDKT";
+import CoQuanThu from "./pages/DanhMuc/CoQuanThu/coQuanThu";
 // import MaNdkt from "./pages/DanhMuc/MaNdkt";
 // import CoQuanKhoBac from "./pages/DanhMuc/CoQuanKhoBac";
 // import DiaBanHanhChinh from "./pages/DanhMuc/DiaBanHanhChinh";
@@ -36,16 +38,16 @@ export const router = createBrowserRouter([
     //     element: <CreateNew />,
     //     errorElement: <NotFoundPage />
     // },
-    // {
-    //     path: '/danhmuc/NDKT',
-    //     element: <MaNdkt />,
-    //     errorElement: <NotFoundPage />
-    // },
-    // {
-    //     path: '/danhmuc/CQT',
-    //     element: <CoQuanThu />,
-    //     errorElement: <NotFoundPage />
-    // },
+    {
+        path: '/danhmuc/NDKT',
+        element: <MaNdkt />,
+        errorElement: <NotFoundPage />
+    },
+    {
+        path: '/danhmuc/CQT',
+        element: <CoQuanThu />,
+        errorElement: <NotFoundPage />
+    },
     // {
     //     path: '/danhmuc/CQKB',
     //     element: <CoQuanKhoBac />,

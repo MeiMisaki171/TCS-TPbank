@@ -1,25 +1,31 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import DMQuocGiaService from '~/features/DM/QuocGia/DMQuocGia.service'
-import { dataTable } from '~/types/DM/quocGia'
+import { ICoQuanThu } from '~/types/DM/coQuanThu'
+import DMCoQuanThuService from './dmCoQuanThu.service'
 
 interface danhmucState {
-    data: dataTable[],
+    item: ICoQuanThu
+    data: ICoQuanThu[],
     loading: boolean,
     error: string | null
 }
 
 const initialState: danhmucState = {
+    item: {
+        maQG: '',
+        ten: '',
+        tinhTrang: true
+    },
     data: [],
     loading: false,
     error: ''
 }
 
-export const getAllDMQuocGia = createAsyncThunk(
+export const getAllDmCQT = createAsyncThunk(
     "danhmuc",
     async () => {
         try {
-            const res = await DMQuocGiaService.getAll();
+            const res = await DMCoQuanThuService.getAll();
             return res.data;
         } catch (err) {
             console.error(err);
@@ -27,11 +33,11 @@ export const getAllDMQuocGia = createAsyncThunk(
     }
 )
 
-export const createQG = createAsyncThunk(
+export const createCQT = createAsyncThunk(
     "danhmuc/create",
-    async (QG: dataTable) => {
+    async (QG: ICoQuanThu) => {
         try {
-            const res = await DMQuocGiaService.createQG(QG);
+            const res = await DMCoQuanThuService.createCQT(QG);
             return res.data
         } catch (err) {
             alert(`Them moi khong thanh cong ${err}`);
@@ -44,7 +50,7 @@ export const findById = createAsyncThunk(
     "danhmuc/findById",
     async (maQG: string) => {
         try {
-            const res = await DMQuocGiaService.findById(maQG);
+            const res = await DMCoQuanThuService.findById(maQG);
             return res.data;
         } catch (err) {
             console.error(err)
@@ -52,11 +58,12 @@ export const findById = createAsyncThunk(
     }
 )
 
-export const updateQG = createAsyncThunk(
+export const updateCQT = createAsyncThunk(
     "danhmuc/update",
-    async (qg: dataTable) => {
+    async (qg: ICoQuanThu) => {
         try {
-            const res = await DMQuocGiaService.updateQG(qg)
+            const res = await DMCoQuanThuService.updateCQT(qg);
+            console.log(res)
             return res.data;
         } catch (err) {
             console.error(err)
@@ -68,7 +75,7 @@ export const deleteById = createAsyncThunk(
     "danhmuc/delete",
     async (maQG: string) => {
         try {
-            const res = await DMQuocGiaService.deleteById(maQG);
+            const res = await DMCoQuanThuService.deleteById(maQG);
             return res.data;
         } catch (err) {
             console.error(err);
@@ -82,17 +89,17 @@ export const danhmucSlice = createSlice({
     reducers: {},
     extraReducers(builder) {
         builder
-            .addCase(getAllDMQuocGia.pending, (state) => {
+            .addCase(getAllDmCQT.pending, (state) => {
                 state.loading = true;
                 console.log('isLoading')
             })
-            .addCase(getAllDMQuocGia.fulfilled, (state, action) => {
+            .addCase(getAllDmCQT.fulfilled, (state, action) => {
                 state.loading = false;
                 state.error = null;
                 state.data = action.payload;
                 console.log('isFullfilled')
             })
-            .addCase(getAllDMQuocGia.rejected, (state, action: PayloadAction<any>) => {
+            .addCase(getAllDmCQT.rejected, (state, action: PayloadAction<any>) => {
                 state.loading = false;
                 state.error = action.payload;
                 state.data = [];
@@ -111,20 +118,17 @@ export const danhmucSlice = createSlice({
                 }
 
             })
-            .addCase(createQG.pending, (state) => {
+            .addCase(createCQT.pending, (state) => {
                 state.loading = true;
             })
-            .addCase(createQG.fulfilled, (state, action) => {
+            .addCase(createCQT.fulfilled, (state, action) => {
                 state.loading = false;
             })
             .addCase(findById.fulfilled, (state, action) => {
                 state.loading = false;
-                const maQG: string = action.payload;
-                if (maQG) {
-                    state.data = state.data.filter((item) => item.maQG === maQG)
-                }
+                state.item = action.payload;
             })
-            .addCase(updateQG.fulfilled, (state, action) => {
+            .addCase(updateCQT.fulfilled, (state, action) => {
                 state.loading = false;
             })
     }

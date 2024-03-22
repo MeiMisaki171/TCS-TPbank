@@ -1,5 +1,5 @@
 import http from "~/api/http-common";
-import { dataTable } from "~/types/DM/quocGia";
+import { ImaNDKT } from "~/types/DM/maNDKT";
 
 const getAll = () => {
     return http.get("/DMQuocGia")
@@ -9,7 +9,7 @@ const findById = (id: string) => {
     return http.get(`/DMQuocGia/${id}`)
 }
 
-const updateQG = (qg: dataTable) => {
+const updateMaNDKT = (qg: ImaNDKT) => {
     return http.put(`/DMQuocGia`, qg)
 }
 
@@ -17,16 +17,16 @@ const deleteById = (id: string) => {
     return http.delete(`/DMQuocGia/${id}`);
 }
 
-const createQG = (qg: dataTable) => {
+const createMaNDKT = (qg: ImaNDKT) => {
     return http.post(`/DMQuocGia`, qg)
 }
 
-const DMQuocGiaService = {
+const DMMaNDKTService = {
     getAll,
     findById,
-    updateQG,
-    createQG,
+    updateMaNDKT,
+    createMaNDKT,
     deleteById,
 }
 
-export default DMQuocGiaService;
+export default DMMaNDKTService;

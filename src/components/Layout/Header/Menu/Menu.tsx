@@ -1,4 +1,4 @@
-import { BiCog, BiCopyAlt, BiFoodMenu, BiLayer, BiLogOut, BiLogoInternetExplorer, BiRecycle, BiSolidAmbulance, BiSolidArchiveOut, BiSolidBook, BiSolidLayer, BiSolidUser, BiSolidUserCircle } from "react-icons/bi";
+import { BiBookOpen, BiCog, BiCopyAlt, BiFoodMenu, BiIdCard, BiLayer, BiLogOut, BiLogoInternetExplorer, BiPencil, BiRecycle, BiSearchAlt, BiSolidAmbulance, BiSolidArch, BiSolidArchiveOut, BiSolidBank, BiSolidBook, BiSolidCopyAlt, BiSolidCopyright, BiSolidFoodMenu, BiSolidLayer, BiSolidUser, BiSolidUserCircle } from "react-icons/bi";
 
 export interface Children {
     url?: string;
@@ -162,71 +162,71 @@ export const IMenuData: MenuData[] = [
         title: 'Xử lý chứng từ thuế',
         children: [
             {
-                icon: 'any',
+                icon: <BiSolidFoodMenu className='second-icon' />,
                 title: 'Lập chứng từ',
                 children: [
                     {
-                        icon: <BiCog className='second-icon' />,
+                        icon: <BiPencil className='third-icon' />,
                         title: 'Lập chứng từ thuế nội địa'
                     },
                     {
-                        icon: <BiCog className='second-icon' />,
+                        icon: <BiPencil className='third-icon' />,
                         title: 'Lập chứng từ thuế cá nhân'
                     },
                     {
-                        icon: <BiCog className='second-icon' />,
+                        icon: <BiPencil className='third-icon' />,
                         title: 'Lập chứng từ thuế hải quan',
                         url: '/lapChungTuThueHQ'
                     },
                     {
-                        icon: <BiCog className='second-icon' />,
+                        icon: <BiPencil className='third-icon' />,
                         title: 'Lập chứng từ phí hạ tầng'
                     },
                     {
-                        icon: <BiCog className='second-icon' />,
+                        icon: <BiPencil className='third-icon' />,
                         title: 'Lập biên lai thu'
                     },
                 ]
             },
             {
-                icon: '',
+                icon: <BiBookOpen className='second-icon' />,
                 title: 'Kiểm soát chứng từ'
             },
             {
-                icon: '',
+                icon: <BiSearchAlt className='second-icon' />,
                 title: 'Tra cứu chứng từ'
             },
             {
-                icon: '',
+                icon: <BiSearchAlt className='second-icon' />,
                 title: 'Tra cứu thông tin tờ khai HQ'
             },
             {
-                icon: '',
+                icon: <BiIdCard className='second-icon' />,
                 title: 'Xử lý bảo lãnh hải quan',
                 children: [
                     {
-                        icon: <BiCopyAlt className='second-icon' />,
+                        icon: <BiPencil className='third-icon' />,
                         title: 'Lập bảo lãnh hải quan',
                         url: '/lapBaoLanhHaiQuan'
                     },
                     {
-                        icon: <BiCopyAlt className='second-icon' />,
+                        icon: <BiBookOpen className='third-icon' />,
                         title: 'Kiểm soát bảo lãnh hải quan',
                         url: '/lapBaoLanhHaiQuan'
                     },
                     {
-                        icon: <BiCopyAlt className='second-icon' />,
+                        icon: <BiSearchAlt className='third-icon' />,
                         title: 'Tra cứu bảo lãnh hải quan',
                         url: '/lapBaoLanhHaiQuan'
                     }
                 ]
             },
             {
-                icon: '',
+                icon: <BiSearchAlt className='second-icon' />,
                 title: 'Tra cứu thông tin đăng ký thuế theo số CMT'
             },
             {
-                icon: '',
+                icon: <BiSearchAlt className='second-icon' />,
                 title: 'Tra cứu chứng từ phí hạ tầng'
             },
         ]
@@ -236,17 +236,17 @@ export const IMenuData: MenuData[] = [
         title: 'Xử lý chứng từ BBN',
         children: [
             {
-                icon: 'any',
+                icon: <BiPencil className="second-icon" />,
                 title: 'Lập chứng từ BBN',
                 url: '/lapChungTuBBN'
             },
             {
-                icon: 'any',
+                icon: <BiBookOpen className='second-icon' />,
                 title: 'Kiểm soát chứng từ BBN',
                 url: '/kiemSoatChungTuBBN'
             },
             {
-                icon: 'any',
+                icon: <BiSearchAlt className='second-icon' />,
                 title: 'Tra cứu chứng từ BBN',
                 url: '/traCuuChungTuBBN'
             }
@@ -257,7 +257,7 @@ export const IMenuData: MenuData[] = [
         title: 'Hải quan điện tử',
         children: [
             {
-                icon: 'any',
+                icon: <BiSolidArch className='second-icon' />,
                 title: 'Hải quan online 24/7',
                 children: [
                     {
@@ -293,7 +293,7 @@ export const IMenuData: MenuData[] = [
                 ]
             },
             {
-                icon: '',
+                icon: <BiSolidBank className='second-icon' />,
                 title: 'Hải quan điện tử DNNT',
                 children: [
                     {
@@ -340,31 +340,31 @@ export const IMenuData: MenuData[] = [
         title: 'Xử lý cuối ngày',
         children: [
             {
-                icon: 'any',
+                icon: <BiPencil className='second-icon' />,
                 title: 'Lập bảng kê chứng từ',
                 url: '/lapBangKe'
             },
             {
-                icon: 'any',
+                icon: <BiSolidCopyAlt className='second-icon' />,
                 title: 'Tạo bảng kê đối chiếu hải quan',
                 url: '/taoBangKeDoiChieuHQ'
             },
             {
-                icon: 'any',
+                icon: <BiSolidCopyright className='second-icon' />,
                 title: 'Hải quan online',
                 children: [
                     {
-                        icon: <BiCopyAlt className='second-icon' />,
+                        icon: <BiCopyAlt className='third-icon' />,
                         title: 'Báo cáo đối chiếu chứng từ với TCHQ',
                         url: '/baoCaoDoiChieuCT'
                     },
                     {
-                        icon: <BiCopyAlt className='second-icon' />,
+                        icon: <BiCopyAlt className='third-icon' />,
                         title: 'Báo cáo đối chiếu bảo lãnh với TCHQ',
                         url: '/baoCaoDoiChieuBaoLanh'
                     },
                     {
-                        icon: <BiCopyAlt className='second-icon' />,
+                        icon: <BiCopyAlt className='third-icon' />,
                         title: 'Báo cáo đối chiếu ban bộ ngành với TCHQ',
                         url: '/baoCaoDoiChieuBBN'
                     },

@@ -1,4 +1,4 @@
-export interface dataTable {
+export interface ICoQuanThu {
     maQG: string;
     ten: string;
     tinhTrang: boolean | string;
