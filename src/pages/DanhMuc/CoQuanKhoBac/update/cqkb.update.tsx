@@ -58,18 +58,13 @@ const EditFormCQKB = ({ id }: any) => {
         setFormData({ ...formData, [name]: value })
     }
 
-    const navigate = useNavigate();
-    const handleExit = () => {
-        navigate(0);
-    }
-
     return (
         <div className='crud-form'>
             <form onSubmit={handleSubmit}>
                 <div className='form-group row'>
                     <label className='col-sm-4 col-form-label mb-3'>Mã quốc gia:</label>
                     <div className='col-sm-8'>
-                        <input type='text' name='maQG' value={formData.maQG} onChange={handleInputChange} className='form-control'></input>
+                        <input type='text' name='maQG' readOnly value={formData.maQG} onChange={handleInputChange} className='form-control read-only'></input>
                     </div>
                     <label className='col-sm-4 col-form-label mb-3'>Tên:</label>
                     <div className='col-sm-8'>
@@ -77,7 +72,7 @@ const EditFormCQKB = ({ id }: any) => {
                     </div>
                     <label className='col-sm-4 col-form-label mb-3'> Tình trạng:</label>
                     <div className='col-sm-8'>
-                        <select name='tinhTrang' onChange={handleSelectChange} defaultValue='True'>
+                        <select name='tinhTrang' onChange={handleSelectChange} defaultValue='True' className='form-select'>
                             <option value='True'>True</option>
                             <option value='False'>False</option>
                         </select>
@@ -85,7 +80,6 @@ const EditFormCQKB = ({ id }: any) => {
                 </div>
                 <div className='form-button'>
                     <Button title={'Lưu'} ></Button>
-                    <button type='button' onClick={handleExit}>Thoat</button>
                 </div>
             </form>
         </div>

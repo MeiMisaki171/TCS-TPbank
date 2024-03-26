@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
 import Button from '~/components/Button'
 import { findById, getAllDmDBHC, updateDBHC } from '~/features/DM/DiaBanHanhChinh/dmDBHCSlice';
 import { useAppDispatch, useAppSelector } from '~/hook/redux-hook';
@@ -34,20 +33,6 @@ const EditFormDBHC = ({ id }: any) => {
         return formData;
     }
 
-
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        if (formData) {
-            formatData(formData);
-        }
-        console.log(formData);
-        dispatch(updateDBHC(formData)).then(
-            response => {
-                dispatch(getAllDmDBHC())
-            }
-        );
-    }
-
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value })
@@ -58,18 +43,26 @@ const EditFormDBHC = ({ id }: any) => {
         setFormData({ ...formData, [name]: value })
     }
 
-    const navigate = useNavigate();
-    const handleExit = () => {
-        navigate(0);
+    //submit
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        if (formData) {
+            formatData(formData);
+        }
+        dispatch(updateDBHC(formData)).then(
+            response => {
+                dispatch(getAllDmDBHC())
+            }
+        );
     }
 
     return (
         <div className='crud-form'>
             <form onSubmit={handleSubmit}>
                 <div className='form-group row'>
-                    <label className='col-sm-4 col-form-label mb-3'>Mã quốc gia:</label>
+                    <label className='col-sm-4 col-form-label mb-3'>Mã ĐBHC:</label>
                     <div className='col-sm-8'>
-                        <input type='text' name='maQG' value={formData.maQG} onChange={handleInputChange} className='form-control'></input>
+                        <input type='text' name='maQG' readOnly value={formData.maQG} onChange={handleInputChange} className='form-control read-only'></input>
                     </div>
                     <label className='col-sm-4 col-form-label mb-3'>Tên:</label>
                     <div className='col-sm-8'>
@@ -77,15 +70,14 @@ const EditFormDBHC = ({ id }: any) => {
                     </div>
                     <label className='col-sm-4 col-form-label mb-3'> Tình trạng:</label>
                     <div className='col-sm-8'>
-                        <select name='tinhTrang' onChange={handleSelectChange} defaultValue='True'>
-                            <option value='True'>True</option>
-                            <option value='False'>False</option>
+                        <select name='tinhTrang' onChange={handleSelectChange} defaultValue='True' className='form-select'>
+                            <option value='True'>Hiệu lực</option>
+                            <option value='False'>Hết hiệu lực</option>
                         </select>
                     </div>
                 </div>
                 <div className='form-button'>
                     <Button title={'Lưu'} ></Button>
-                    <button type='button' onClick={handleExit}>Thoat</button>
                 </div>
             </form>
         </div>

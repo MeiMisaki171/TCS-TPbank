@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import Body from '~/components/Layout/Body'
 import DataTable from '~/components/Layout/Body/DataTable'
 import Header from '~/components/Layout/Header'
@@ -12,43 +12,67 @@ import BasicModal from '~/components/Layout/Body/Modal'
 import CreateFormMC from './create/maChuong.create'
 import EditFormQG from './update/maChuong.update'
 import { useNavigate } from 'react-router-dom'
+import React from 'react'
 
 const MaChuong = () => {
 
     const dispatch = useAppDispatch();
 
     const data: maChuong[] = useAppSelector(state => state.danhmuc.data);
+    // const [resultSearch, setResultSearch] = useState<maChuong[]>();
+    // const [searching, setSearching] = useState<boolean>(false);
+    const [searchForm, setSearchForm] = React.useState<any>(
+        {
+            maQG: '',
+            ten: '',
+            tinhTrang: true
+        }
+    )
 
+    //call API getAll
     useEffect(() => {
         dispatch(getAllDMMaChuong());
     }, [dispatch])
 
 
-    //Format lại data
-    let newData = data.map(item => {
-        let newItem = { ...item };
-        if (item.tinhTrang === true) {
-            newItem.tinhTrang = "Hiệu lực"
-        } else {
-            newItem.tinhTrang = "Hết hiệu lực"
-        }
-        return newItem;
-    });
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = event.target;
+        setSearchForm({ ...searchForm, [name]: value })
+    }
 
-    // const [result, setResult] = useState(newData);
+    const handleSubmitSearchForm = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+    }
 
-    // const Filter = (event: any) => {
-    //     setResult(newData.filter(result => result.maQG.includes(event.target.value.toUpperCase())));
+
+
+    // const Filter = () => {
+    //     // setResultSearch(data.filter(result => result.maQG.toLowerCase().includes(searchForm.maQG.toLowerCase())));
+    //     // setSearching(true);
+    //     let tempArr: Array<any> = []
+    //     data.filter((item: any) => {
+    //         return Object.keys(searchForm).every(key => {
+    //             if (item[key].toUpperCase().includes(searchForm[key].toUpperCase())) {
+    //                 tempArr.push(item);
+    //             };
+    //             return 0;
+    //         })
+    //     })
+    //     console.log(searchForm);
+    //     setResultSearch(tempArr);
+    //     setSearching(true)
     // }
 
+
     //Xóa hàng
-    const handleDeleteRow = (id: any) => {
+    const handleDeleteRow = (id: string) => {
         dispatch(deleteById(id)).then(
             response => {
                 dispatch(getAllDMMaChuong());
             }
         )
     }
+
 
     const navigate = useNavigate();
     const exitPage = () => {
@@ -97,43 +121,47 @@ const MaChuong = () => {
                         </div>
                         <hr></hr>
                         <div className="row mb-2">
-                            <div className="col-sm-2">
-                                <label className="col-form-label">Chương</label>
-                            </div>
-                            <div className="col-sm-2">
-                                {/* onChange={Filter}s */}
-                                <input type="text" className="form-control" id="inputEnterYourMa" placeholder="Nhập mã LHXNK" />
-                            </div>
-                            <div className="col-sm-2">
-                                <label className="col-form-label">Tên</label>
-                            </div>
-                            <div className="col-sm-2">
-                                <input type="text" className="form-control" id="inputEnterYourName" placeholder="Nhập tên LHXNK" />
-                            </div>
-                            <div className="col-sm-2">
-                                <label className="col-form-label">Tình trạng</label>
-                            </div>
-                            <div className="col-sm-2">
-                                <input type="text" className="form-control" id="inputEnterYourName1" placeholder="Nhập tên viết tắt LHXNK" />
-                            </div>
+                            <form onSubmit={handleSubmitSearchForm} className='d-flex'>
+                                <div className="col-sm-2">
+                                    <label className="col-form-label d-flex justify-content-center">Chương</label>
+                                </div>
+                                <div className="col-sm-2">
+                                    <input type="text" name='maQG' className="form-control" id="inputEnterYourMa" placeholder="Nhập mã chương" onChange={handleInputChange} />
+                                </div>
+                                <div className="col-sm-2">
+                                    <label className="col-form-label d-flex justify-content-center" >Tên</label>
+                                </div>
+                                <div className="col-sm-2">
+                                    <input type="text" name='ten' className="form-control" id="inputEnterYourName" placeholder="Nhập tên chương" onChange={handleInputChange} />
+                                </div>
+                                <div className="col-sm-2">
+                                    <label className="col-form-label d-flex justify-content-center">Tình trạng</label>
+                                </div>
+                                <div className="col-sm-2">
+                                    <select name='tinhTrang' defaultValue='null' className='form-select'>
+                                        <option value='null'>Tất cả</option>
+                                        <option value='True'>Hiệu lực</option>
+                                        <option value='False'>Hết hiệu lực</option>
+                                    </select>
+                                </div>
+                            </form>
                         </div>
 
                         <hr></hr>
                         <div className="row mb-3 text-center">
                             <div className="col-sm-12">
-                                <button type="button" className="btn crud-btn px-5 radius-30" >
+                                <button type="button" className="crud-btn px-5 py-1" >
                                     <i className="fadeIn animated bx bx-search-alt mr-1"></i>
                                     Tìm kiếm
                                 </button>
-                                <button type="button" className="btn crud-btn px-5 radius-30">
-                                    <i className="fadeIn animated bx bx-search-alt mr-1"></i>
-                                    <BasicModal children={<CreateFormMC />} title={'Thêm mới'} />
+                                <button type="button" className='crud-btn'>
+                                    <BasicModal children={<CreateFormMC />} title={'   Thêm mới   '} />
                                 </button>
-                                <button type="button" className="btn crud-btn px-5 radius-30" >
+                                <button type="button" className="crud-btn px-5 py-1" >
                                     <i className="fadeIn animated bx bx-eraser mr-1"></i>
                                     Xoá
                                 </button>
-                                <button type="button" className="btn crud-btn px-5 radius-30" onClick={exitPage}>
+                                <button type="button" className="crud-btn px-5 py-1" onClick={exitPage}>
                                     <i className="fadeIn animated bx bx-log-out mr-1"></i>
                                     Thoát
                                 </button>
@@ -141,7 +169,8 @@ const MaChuong = () => {
                         </div>
                     </div>
                 </div>
-                <DataTable data={newData} tableHeader={tableHeader} />
+                <DataTable data={data} tableHeader={tableHeader}></DataTable>
+                {/* <DataTable data={searching ? resultSearch : data} tableHeader={tableHeader} /> */}
             </Body>
         </div>
     )

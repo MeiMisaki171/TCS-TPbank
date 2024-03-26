@@ -1,6 +1,6 @@
 import { GridActionsCellItem, GridColDef } from '@mui/x-data-grid'
 import { useEffect } from 'react'
-import { BiEdit, BiTrash } from 'react-icons/bi'
+import { BiEdit, BiSearch, BiTrash } from 'react-icons/bi'
 import Body from '~/components/Layout/Body'
 import DataTable from '~/components/Layout/Body/DataTable'
 import BasicModal from '~/components/Layout/Body/Modal'
@@ -11,7 +11,7 @@ import { ICoQuanThu } from '~/types/DM/coQuanThu'
 import EditFormCQT from './update/coQuanThu.update'
 import CreateFormCQT from './create/coQuanThu.create'
 import { useNavigate } from 'react-router-dom'
-import '../../DanhMuc/style.css'
+import './style.css'
 
 
 const CoQuanThu = () => {
@@ -99,22 +99,26 @@ const CoQuanThu = () => {
                         <hr></hr>
                         <div className="row mb-2">
                             <div className="col-sm-2">
-                                <label className="col-form-label">Mã LHXNK</label>
+                                <label className="col-form-label">Mã cơ quan thu</label>
                             </div>
                             <div className="col-sm-2">
-                                <input type="text" className="form-control" id="inputEnterYourMa" placeholder="Nhập mã LHXNK" />
+                                <input type="text" className="form-control" id="inputEnterYourMa" placeholder="" />
                             </div>
                             <div className="col-sm-2">
-                                <label className="col-form-label">Tên LHXNK</label>
+                                <label className="col-form-label">Tên cơ quan thu</label>
                             </div>
                             <div className="col-sm-2">
-                                <input type="text" className="form-control" id="inputEnterYourName" placeholder="Nhập tên LHXNK" />
+                                <input type="text" className="form-control" id="inputEnterYourName" placeholder="" />
                             </div>
                             <div className="col-sm-2">
-                                <label className="col-form-label">Tên viết tắt LHXNK</label>
+                                <label className="col-form-label">SHKB</label>
                             </div>
-                            <div className="col-sm-2">
-                                <input type="text" className="form-control" id="inputEnterYourName1" placeholder="Nhập tên viết tắt LHXNK" />
+                            <div className="col-sm-2" style={{ position: 'relative' }}>
+                                <input type="text" style={{ width: '80%' }} className="form-control" id="inputEnterYourName1" placeholder="" />
+                                <BasicModal
+                                    title={<BiSearch className='search-icon'></BiSearch>}
+                                    children={<>asdasdsa</>}
+                                ></BasicModal>
                             </div>
                         </div>
 

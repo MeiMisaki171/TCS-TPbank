@@ -1,19 +1,13 @@
 import React from 'react'
 import './style.css'
 import Button from '~/components/Button';
-import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '~/hook/redux-hook';
 import { createMC, getAllDMMaChuong } from '~/features/DM/MaChuong/dmMaChuongSlice';
 import { maChuong } from '~/types/DM/maChuong';
 
 const CreateFormMC = () => {
 
-    // interface FormProps {
-    //     onSubmit: (data: dataTable) => void;
-    // }
-
     const dispatch = useAppDispatch();
-
 
     const [formData, setFormData] = React.useState(
         {
@@ -22,8 +16,6 @@ const CreateFormMC = () => {
             tinhTrang: 'True'
         }
     )
-
-
 
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -55,6 +47,7 @@ const CreateFormMC = () => {
         }
         dispatch(createMC(formData)).then(
             response => {
+                console.log(formData)
                 dispatch(getAllDMMaChuong())
             }
         );
@@ -64,12 +57,6 @@ const CreateFormMC = () => {
             ten: '',
             tinhTrang: 'True'
         })
-    }
-
-
-    const navigate = useNavigate();
-    const handleExit = () => {
-        navigate(0);
     }
 
 
@@ -87,15 +74,14 @@ const CreateFormMC = () => {
                     </div>
                     <label className='col-sm-4 col-form-label mb-3'> Tình trạng:</label>
                     <div className='col-sm-8'>
-                        <select name='tinhTrang' onChange={handleSelectChange} defaultValue='True'>
-                            <option value='True'>True</option>
-                            <option value='False'>False</option>
+                        <select name='tinhTrang' onChange={handleSelectChange} defaultValue='True' disabled className='form-select'>
+                            <option value='True'>Hiệu lực</option>
+                            <option value='False'>Hết hiệu lực</option>
                         </select>
                     </div>
                 </div>
                 <div className='form-button'>
                     <Button title={'Lưu'} ></Button>
-                    <button type='button' onClick={handleExit}>Thoat</button>
                 </div>
             </form>
         </div>

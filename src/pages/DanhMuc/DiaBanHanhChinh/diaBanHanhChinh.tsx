@@ -24,18 +24,6 @@ const DiaBanHanhChinh = () => {
         dispatch(getAllDmDBHC());
     }, [dispatch])
 
-
-    //Format lại data
-    let newData = data.map(item => {
-        let newItem = { ...item };
-        if (item.tinhTrang === true) {
-            newItem.tinhTrang = "Hiệu lực"
-        } else {
-            newItem.tinhTrang = "Hết hiệu lực"
-        }
-        return newItem;
-    });
-
     // const [result, setResult] = useState(newData);
 
     // const Filter = (event: any) => {
@@ -97,50 +85,56 @@ const DiaBanHanhChinh = () => {
                         </div>
                         <hr></hr>
                         <div className="row mb-2">
-                            <div className="col-sm-2">
-                                <label className="col-form-label">Mã LHXNK</label>
+                            <div className="col-sm-6">
+                                <div className='d-flex mb-4'>
+                                    <label className="col-sm-4 col-form-label">Mã ĐBHC</label>
+                                    <input type="text" style={{ width: '50%' }} className="form-control col-sm-6" id="inputEnterYourMa" placeholder="" />
+                                </div>
+                                <div className="d-flex">
+                                    <label className="col-form-label col-sm-4"> Tình trạng</label>
+                                    <select name='tinhTrang' defaultValue='null' className='col-sm-8 form-select'>
+                                        <option value='null'>Tất cả</option>
+                                        <option value='True'>Hiệu lực</option>
+                                        <option value='False'>Hết hiệu lực</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div className="col-sm-2">
-                                <input type="text" className="form-control" id="inputEnterYourMa" placeholder="Nhập mã LHXNK" />
-                            </div>
-                            <div className="col-sm-2">
-                                <label className="col-form-label">Tên LHXNK</label>
-                            </div>
-                            <div className="col-sm-2">
-                                <input type="text" className="form-control" id="inputEnterYourName" placeholder="Nhập tên LHXNK" />
-                            </div>
-                            <div className="col-sm-2">
-                                <label className="col-form-label">Tên viết tắt LHXNK</label>
-                            </div>
-                            <div className="col-sm-2">
-                                <input type="text" className="form-control" id="inputEnterYourName1" placeholder="Nhập tên viết tắt LHXNK" />
+                            <div className="col-sm-6">
+                                <div className="d-flex mb-4">
+                                    <label className="col-sm-6 col-form-label">Tên địa bàn hành chính</label>
+                                    <input type="text" style={{ width: '50%' }} className="col-sm-6 form-control" id="inputEnterYourName" placeholder="" />
+                                </div>
+                                <div className="d-flex">
+                                    <label className="col-sm-6 col-form-label">Cấp đơn vị hành chính</label>
+                                    <select name='tinhTrang' defaultValue='null' className='col-sm-6 form-select'>
+                                        <option value='null'>Tỉnh/Thành phố</option>
+                                        <option value='True'>Quận/Huyện</option>
+                                        <option value='False'>Phường/Xã</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 
                         <hr></hr>
                         <div className="row mb-3 text-center">
                             <div className="col-sm-12">
-                                <button type="button" className="btn crud-btn px-5 radius-30" >
-                                    <i className="fadeIn animated bx bx-search-alt mr-1"></i>
+                                <button type="button" className="crud-btn px-5 py-1" >
                                     Tìm kiếm
                                 </button>
-                                <button type="button" className="btn crud-btn px-5 radius-30">
-                                    <i className="fadeIn animated bx bx-search-alt mr-1"></i>
+                                <button type="button" className="crud-btn ">
                                     <BasicModal children={<CreateFormDBHC />} title={'Thêm mới'} />
                                 </button>
-                                <button type="button" className="btn crud-btn px-5 radius-30" >
-                                    <i className="fadeIn animated bx bx-eraser mr-1"></i>
+                                <button type="button" className="crud-btn px-5 py-1" >
                                     Xoá
                                 </button>
-                                <button type="button" className="btn crud-btn px-5 radius-30" onClick={exitPage}>
-                                    <i className="fadeIn animated bx bx-log-out mr-1"></i>
+                                <button type="button" className="crud-btn px-5 py-1" onClick={exitPage}>
                                     Thoát
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <DataTable data={newData} tableHeader={tableHeader} />
+                <DataTable data={data} tableHeader={tableHeader} />
             </Body>
         </div>
     )

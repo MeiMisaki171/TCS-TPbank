@@ -38,6 +38,7 @@ export const createMC = createAsyncThunk(
     async (QG: maChuong) => {
         try {
             const res = await DMQuocGiaService.createMC(QG);
+            console.log(res)
             return res.data
         } catch (err) {
             alert(`Them moi khong thanh cong ${err}`);
@@ -96,7 +97,15 @@ export const danhmucSlice = createSlice({
             .addCase(getAllDMMaChuong.fulfilled, (state, action) => {
                 state.loading = false;
                 state.error = null;
-                state.data = action.payload;
+                state.data = action.payload.map((item: maChuong) => {
+                    let newItem = { ...item };
+                    if (item.tinhTrang === true) {
+                        newItem.tinhTrang = "Hiệu lực"
+                    } else {
+                        newItem.tinhTrang = "Hết hiệu lực"
+                    }
+                    return newItem;
+                });;
                 console.log('isFullfilled')
             })
             .addCase(getAllDMMaChuong.rejected, (state, action: PayloadAction<any>) => {

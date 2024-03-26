@@ -5,7 +5,7 @@ export interface ModalState {
 }
 
 const initialState: ModalState = {
-    show: true,
+    show: false,
 }
 
 export const modalSlide = createSlice({

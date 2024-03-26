@@ -7,10 +7,18 @@
 }
 
 .crud-btn {
-    color: #13477c !important;
+    color: #13477c ;
     border: 1px solid #13477c !important;
     text-decoration: none;
     margin: 0 20px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.crud-btn:hover {
+    background-color: #1b73d1;
+    border-radius: 10px;
+    color: #fff;
 }
 
 .textPrimary {

@@ -18,8 +18,8 @@ const deleteById = (id: string) => {
     return http.delete(`${dmMaChuong}/${id}`);
 }
 
-const createMC = (qg: maChuong) => {
-    return http.post(`${dmMaChuong}`, qg)
+const createMC = (QG: maChuong) => {
+    return http.post(`${dmMaChuong}`, QG)
 }
 
 const DMMaChuongService = {

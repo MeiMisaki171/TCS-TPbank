@@ -11,6 +11,12 @@
     width: fit-content;
 }
 
+.button:hover{
+    background-color: #1b73d1;
+    border-radius: 10px;
+    color: #fff;
+}
+
 .button-title {
     font-size: 17px;
 }

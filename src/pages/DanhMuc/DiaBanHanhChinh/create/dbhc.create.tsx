@@ -1,7 +1,6 @@
 import React from 'react'
 // import './style.css'
 import Button from '~/components/Button';
-import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '~/hook/redux-hook';
 import { createDBHC, getAllDmDBHC } from '~/features/DM/DiaBanHanhChinh/dmDBHCSlice';
 import { IDbhc } from '~/types/DM/diaBanHanhChinh';
@@ -66,18 +65,11 @@ const CreateFormDBHC = () => {
         })
     }
 
-
-    const navigate = useNavigate();
-    const handleExit = () => {
-        navigate(0);
-    }
-
-
     return (
         <div className='crud-form'>
             <form onSubmit={handleSubmit}>
                 <div className='form-group row'>
-                    <label className='col-sm-4 col-form-label mb-3'>Mã quốc gia:</label>
+                    <label className='col-sm-4 col-form-label mb-3'>Mã ĐBHC:</label>
                     <div className='col-sm-8'>
                         <input type='text' name='maQG' value={formData.maQG} onChange={handleInputChange} className='form-control'></input>
                     </div>
@@ -87,15 +79,14 @@ const CreateFormDBHC = () => {
                     </div>
                     <label className='col-sm-4 col-form-label mb-3'> Tình trạng:</label>
                     <div className='col-sm-8'>
-                        <select name='tinhTrang' onChange={handleSelectChange} defaultValue='True'>
-                            <option value='True'>True</option>
-                            <option value='False'>False</option>
+                        <select name='tinhTrang' onChange={handleSelectChange} defaultValue='True' className='form-select' >
+                            <option value='True'>Hiệu lực</option>
+                            <option value='False'>Hết hiệu lực</option>
                         </select>
                     </div>
                 </div>
                 <div className='form-button'>
                     <Button title={'Lưu'} ></Button>
-                    <button type='button' onClick={handleExit}>Thoat</button>
                 </div>
             </form>
         </div>

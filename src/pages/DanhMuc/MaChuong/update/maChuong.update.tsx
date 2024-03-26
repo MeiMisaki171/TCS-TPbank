@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
 import Button from '~/components/Button'
 import { findById, getAllDMMaChuong, updateMC } from '~/features/DM/MaChuong/dmMaChuongSlice';
 import { maChuong } from '~/types/DM/maChuong';
 import { useAppDispatch, useAppSelector } from '~/hook/redux-hook';
 // import { hideModal } from '~/features/Modal/modalSlice';
 
-const EditFormQG = ({ id }: any) => {
+const EditFormQG = ({ id, state }: any) => {
 
     const dispatch = useAppDispatch();
 
@@ -14,7 +13,7 @@ const EditFormQG = ({ id }: any) => {
 
     useEffect(() => {
         dispatch(findById(id)).then(
-            res => {
+            (res: any) => {
                 setFormData(res.payload)
                 return
             }
@@ -25,6 +24,8 @@ const EditFormQG = ({ id }: any) => {
         item
     )
 
+
+    //format lai data
     const formatData = (formData: maChuong) => {
         if (formData.tinhTrang === 'True') {
             formData.tinhTrang = true;
@@ -33,19 +34,6 @@ const EditFormQG = ({ id }: any) => {
         }
 
         return formData;
-    }
-
-
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        if (formData) {
-            formatData(formData);
-        }
-        dispatch(updateMC(formData)).then(
-            response => {
-                dispatch(getAllDMMaChuong())
-            }
-        );
     }
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,9 +46,17 @@ const EditFormQG = ({ id }: any) => {
         setFormData({ ...formData, [name]: value })
     }
 
-    const navigate = useNavigate();
-    const handleClose = () => {
-        navigate(0)
+    // submit
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        if (formData) {
+            formatData(formData);
+        }
+        dispatch(updateMC(formData)).then(
+            response => {
+                dispatch(getAllDMMaChuong())
+            }
+        );
     }
 
     return (
@@ -77,7 +73,7 @@ const EditFormQG = ({ id }: any) => {
                     </div>
                     <label className='col-sm-4 col-form-label mb-3'> Tình trạng:</label>
                     <div className='col-sm-8'>
-                        <select name='tinhTrang' onChange={handleSelectChange} defaultValue='True'>
+                        <select name='tinhTrang' onChange={handleSelectChange} defaultValue='True' className='form-select'>
                             <option value='True'>Hiệu lực</option>
                             <option value='False'>Hết hiệu lực</option>
                         </select>
@@ -85,7 +81,6 @@ const EditFormQG = ({ id }: any) => {
                 </div>
                 <div className='form-button'>
                     <Button title={'Lưu'} ></Button>
-                    <button type='button' onClick={handleClose}>Thoat</button>
                 </div>
             </form>
         </div>

@@ -96,7 +96,15 @@ export const danhmucSlice = createSlice({
             .addCase(getAllDmCQT.fulfilled, (state, action) => {
                 state.loading = false;
                 state.error = null;
-                state.data = action.payload;
+                state.data = action.payload.map((item: ICoQuanThu) => {
+                    let newItem = { ...item };
+                    if (item.tinhTrang === true) {
+                        newItem.tinhTrang = "Hiệu lực"
+                    } else {
+                        newItem.tinhTrang = "Hết hiệu lực"
+                    }
+                    return newItem;
+                });;
                 console.log('isFullfilled')
             })
             .addCase(getAllDmCQT.rejected, (state, action: PayloadAction<any>) => {

@@ -1,7 +1,6 @@
 import React from 'react'
 // import './style.css'
 import Button from '~/components/Button';
-import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '~/hook/redux-hook';
 import { ICoQuanKB } from '~/types/DM/coQuanKhoBac';
 import { createCQKB, getAllDmCQKB } from '~/features/DM/CoQuanKhoBac/dmCoQuanKhoBacSlide';
@@ -22,9 +21,6 @@ const CreateFormCQKB = () => {
             tinhTrang: 'True'
         }
     )
-
-
-
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
@@ -66,13 +62,6 @@ const CreateFormCQKB = () => {
         })
     }
 
-
-    const navigate = useNavigate();
-    const handleExit = () => {
-        navigate(0);
-    }
-
-
     return (
         <div className='crud-form'>
             <form onSubmit={handleSubmit}>
@@ -87,7 +76,7 @@ const CreateFormCQKB = () => {
                     </div>
                     <label className='col-sm-4 col-form-label mb-3'> Tình trạng:</label>
                     <div className='col-sm-8'>
-                        <select name='tinhTrang' onChange={handleSelectChange} defaultValue='True'>
+                        <select name='tinhTrang' onChange={handleSelectChange} defaultValue='True' className='form-select'>
                             <option value='True'>True</option>
                             <option value='False'>False</option>
                         </select>
@@ -95,7 +84,6 @@ const CreateFormCQKB = () => {
                 </div>
                 <div className='form-button'>
                     <Button title={'Lưu'} ></Button>
-                    <button type='button' onClick={handleExit}>Thoat</button>
                 </div>
             </form>
         </div>

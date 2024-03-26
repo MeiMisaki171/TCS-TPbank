@@ -97,8 +97,16 @@ export const danhmucSlice = createSlice({
             .addCase(getAllMaNDKT.fulfilled, (state, action) => {
                 state.loading = false;
                 state.error = null;
-                state.data = action.payload;
-                console.log('isFullfilled')
+                state.data = action.payload.map((item: ImaNDKT) => {
+                    let newItem = { ...item };
+                    if (item.tinhTrang === true) {
+                        newItem.tinhTrang = "Hiệu lực"
+                    } else {
+                        newItem.tinhTrang = "Hết hiệu lực"
+                    }
+                    return newItem;
+                });;
+                console.log('isFullfilled');
             })
             .addCase(getAllMaNDKT.rejected, (state, action: PayloadAction<any>) => {
                 state.loading = false;
