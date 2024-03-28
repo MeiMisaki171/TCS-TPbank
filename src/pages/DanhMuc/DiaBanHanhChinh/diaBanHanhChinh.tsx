@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { BiEdit, BiTrash } from 'react-icons/bi'
 import Body from '~/components/Layout/Body'
 import DataTable from '~/components/Layout/Body/DataTable'
-import BasicModal from '~/components/Layout/Body/Modal'
+import BasicModal from '~/components/Layout/Body/Modal/basic'
 import Header from '~/components/Layout/Header'
 import { deleteById, getAllDmDBHC } from '~/features/DM/DiaBanHanhChinh/dmDBHCSlice'
 import { useAppDispatch, useAppSelector } from '~/hook/redux-hook'
@@ -122,7 +122,7 @@ const DiaBanHanhChinh = () => {
                                     Tìm kiếm
                                 </button>
                                 <button type="button" className="crud-btn ">
-                                    <BasicModal children={<CreateFormDBHC />} title={'Thêm mới'} />
+                                    <BasicModal children={<CreateFormDBHC />} title={'Thêm mới'} styles='px-5 py-1' />
                                 </button>
                                 <button type="button" className="crud-btn px-5 py-1" >
                                     Xoá

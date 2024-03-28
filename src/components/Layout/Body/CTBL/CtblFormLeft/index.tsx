@@ -42,11 +42,11 @@ const CtblFormLeft = () => {
             </div>
             <div className='row mb-2 text-center'>
                 <div className='d-flex justify-content-center col-sm-12'>
-                    <Button icon={<BiRefresh />} title={buttonTitle} btnStyle={ btnPrimary } />
+                    <Button icon={<BiRefresh />} title={buttonTitle} btnStyle={btnPrimary} />
                 </div>
             </div>
-      </div>
-  )
+        </div>
+    )
 }
 
 export default CtblFormLeft

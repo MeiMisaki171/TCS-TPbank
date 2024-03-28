@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import NotFoundPage from "./pages/404";
-import LapChungTuThueHQ from "./pages/XuLyChungTuThue/LapChungTu/LapChungTuThueHQ";
+import LapChungTuThueHQ from "./pages/XuLyChungTuThue/LapChungTu/LapChungTuThueHQ/lapChungTuThueHaiQuan";
 import Login from "./pages/Account/Login";
 import MaChuong from "./pages/DanhMuc/MaChuong/maChuong";
 import MaNdkt from "./pages/DanhMuc/MaNdkt/maNDKT";

@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { BiEdit, BiTrash } from 'react-icons/bi'
 import Body from '~/components/Layout/Body'
 import DataTable from '~/components/Layout/Body/DataTable'
-import BasicModal from '~/components/Layout/Body/Modal'
+import BasicModal from '~/components/Layout/Body/Modal/basic'
 import Header from '~/components/Layout/Header'
 import { deleteById, getAllMaNDKT } from '~/features/DM/MaNDKT/dmMaNDKTSlice'
 import { useAppDispatch, useAppSelector } from '~/hook/redux-hook'
@@ -128,7 +128,7 @@ const MaNdkt = () => {
                                 </button>
 
                                 <button type="button" className='crud-btn'>
-                                    <BasicModal children={<CreateFormNDKT />} title={'Thêm mới'} />
+                                    <BasicModal children={<CreateFormNDKT />} title={'Thêm mới'} styles='px-5 py-1' />
                                 </button>
 
                                 <button type="button" className="crud-btn px-5 py-1" >

@@ -8,7 +8,7 @@ import { GridActionsCellItem, GridColDef } from '@mui/x-data-grid'
 import { BiEdit, BiTrash } from 'react-icons/bi'
 import { maChuong } from '~/types/DM/maChuong'
 import { deleteById, getAllDMMaChuong } from '~/features/DM/MaChuong/dmMaChuongSlice'
-import BasicModal from '~/components/Layout/Body/Modal'
+import BasicModal from '~/components/Layout/Body/Modal/basic'
 import CreateFormMC from './create/maChuong.create'
 import EditFormQG from './update/maChuong.update'
 import { useNavigate } from 'react-router-dom'
@@ -155,7 +155,7 @@ const MaChuong = () => {
                                     Tìm kiếm
                                 </button>
                                 <button type="button" className='crud-btn'>
-                                    <BasicModal children={<CreateFormMC />} title={'   Thêm mới   '} />
+                                    <BasicModal children={<CreateFormMC />} title={'Thêm mới'} styles={'px-5 py-1'} />
                                 </button>
                                 <button type="button" className="crud-btn px-5 py-1" >
                                     <i className="fadeIn animated bx bx-eraser mr-1"></i>

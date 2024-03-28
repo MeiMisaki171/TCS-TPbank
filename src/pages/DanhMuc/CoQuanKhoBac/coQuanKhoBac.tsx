@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { BiEdit, BiTrash } from 'react-icons/bi'
 import Body from '~/components/Layout/Body'
 import DataTable from '~/components/Layout/Body/DataTable'
-import BasicModal from '~/components/Layout/Body/Modal'
+import BasicModal from '~/components/Layout/Body/Modal/basic'
 import Header from '~/components/Layout/Header'
 import { deleteById, getAllDmCQKB } from '~/features/DM/CoQuanKhoBac/dmCoQuanKhoBacSlide'
 import { useAppDispatch, useAppSelector } from '~/hook/redux-hook'
@@ -12,6 +12,7 @@ import EditFormCQKB from './update/cqkb.update'
 import CreateFormCQKB from './create/cqkb.create'
 import { useNavigate } from 'react-router-dom'
 import '../../DanhMuc/style.css'
+import MaNganHangSearch from '~/components/Layout/Body/Modal/MaNganHang/searchForm'
 
 
 const CoQuanKhoBac = () => {
@@ -98,44 +99,45 @@ const CoQuanKhoBac = () => {
                             <h5 className="mb-0 dktk-title">Điều kiện tìm kiếm</h5>
                         </div>
                         <hr></hr>
+                        <div className="row mb-5">
+                            <div className="col-sm-4 d-flex ">
+                                <label style={{ width: '200px' }} className="col-form-label">Số hiệu kho bạc</label>
+                                <input type="text" className="form-control" id="inputEnterYourMa" placeholder="" />
+                            </div>
+                            <div className="col-sm-4 d-flex ">
+                                <label style={{ width: '200px' }} className="col-form-label ">Tên kho bạc</label>
+                                <input type="text" className="form-control" id="inputEnterYourName" placeholder="" />
+                            </div>
+                            <div className="col-sm-4 d-flex ">
+                                <label style={{ width: '200px' }} className="col-form-label ">Mã ĐBHC</label>
+                                <input type="text" className="form-control" id="inputEnterYourName1" placeholder="" />
+                            </div>
+                        </div>
                         <div className="row mb-2">
-                            <div className="col-sm-2">
-                                <label className="col-form-label">Mã LHXNK</label>
+                            <div className="col-sm-4 d-flex ">
+                                <label style={{ width: '200px' }} className="col-form-label ">Mã tài khoản</label>
+                                <input type="text" className="form-control" id="inputEnterYourName1" placeholder="" />
                             </div>
-                            <div className="col-sm-2">
-                                <input type="text" className="form-control" id="inputEnterYourMa" placeholder="Nhập mã LHXNK" />
-                            </div>
-                            <div className="col-sm-2">
-                                <label className="col-form-label">Tên LHXNK</label>
-                            </div>
-                            <div className="col-sm-2">
-                                <input type="text" className="form-control" id="inputEnterYourName" placeholder="Nhập tên LHXNK" />
-                            </div>
-                            <div className="col-sm-2">
-                                <label className="col-form-label">Tên viết tắt LHXNK</label>
-                            </div>
-                            <div className="col-sm-2">
-                                <input type="text" className="form-control" id="inputEnterYourName1" placeholder="Nhập tên viết tắt LHXNK" />
+                            <div className="col-sm-4 d-flex" style={{ position: 'relative' }}>
+                                <label style={{ width: '200px' }} className="col-form-label ">Mã ngân hàng</label>
+                                <input type="text" style={{ width: '80%' }} className="form-control" id="inputEnterYourName1" placeholder="" />
+                                <MaNganHangSearch></MaNganHangSearch>
                             </div>
                         </div>
 
                         <hr></hr>
                         <div className="row mb-3 text-center">
                             <div className="col-sm-12">
-                                <button type="button" className="btn crud-btn px-5 radius-30" >
-                                    <i className="fadeIn animated bx bx-search-alt mr-1"></i>
+                                <button type="button" className="crud-btn px-5 py-1" >
                                     Tìm kiếm
                                 </button>
-                                <button type="button" className="btn crud-btn px-5 radius-30">
-                                    <i className="fadeIn animated bx bx-search-alt mr-1"></i>
-                                    <BasicModal children={<CreateFormCQKB />} title={'Thêm mới'} />
+                                <button type="button" className=" crud-btn">
+                                    <BasicModal children={<CreateFormCQKB />} title={'Thêm mới'} styles='px-5 py-1' />
                                 </button>
-                                <button type="button" className="btn crud-btn px-5 radius-30" >
-                                    <i className="fadeIn animated bx bx-eraser mr-1"></i>
+                                <button type="button" className="crud-btn px-5 py-1" >
                                     Xoá
                                 </button>
-                                <button type="button" className="btn crud-btn px-5 radius-30" onClick={exitPage}>
-                                    <i className="fadeIn animated bx bx-log-out mr-1"></i>
+                                <button type="button" className="crud-btn px-5 py-1" onClick={exitPage}>
                                     Thoát
                                 </button>
                             </div>

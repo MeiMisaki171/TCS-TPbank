@@ -1,9 +1,9 @@
 import { GridActionsCellItem, GridColDef } from '@mui/x-data-grid'
 import { useEffect } from 'react'
-import { BiEdit, BiSearch, BiTrash } from 'react-icons/bi'
+import { BiEdit, BiTrash } from 'react-icons/bi'
 import Body from '~/components/Layout/Body'
 import DataTable from '~/components/Layout/Body/DataTable'
-import BasicModal from '~/components/Layout/Body/Modal'
+import BasicModal from '~/components/Layout/Body/Modal/basic'
 import Header from '~/components/Layout/Header'
 import { deleteById, getAllDmCQT } from '~/features/DM/CoQuanThu/dmCoQuanThuSlide'
 import { useAppDispatch, useAppSelector } from '~/hook/redux-hook'
@@ -11,7 +11,7 @@ import { ICoQuanThu } from '~/types/DM/coQuanThu'
 import EditFormCQT from './update/coQuanThu.update'
 import CreateFormCQT from './create/coQuanThu.create'
 import { useNavigate } from 'react-router-dom'
-import './style.css'
+import ShkbSearch from '~/components/Layout/Body/Modal/SHKB/searchForm'
 
 
 const CoQuanThu = () => {
@@ -115,30 +115,23 @@ const CoQuanThu = () => {
                             </div>
                             <div className="col-sm-2" style={{ position: 'relative' }}>
                                 <input type="text" style={{ width: '80%' }} className="form-control" id="inputEnterYourName1" placeholder="" />
-                                <BasicModal
-                                    title={<BiSearch className='search-icon'></BiSearch>}
-                                    children={<>asdasdsa</>}
-                                ></BasicModal>
+                                <ShkbSearch></ShkbSearch>
                             </div>
                         </div>
 
                         <hr></hr>
                         <div className="row mb-3 text-center">
                             <div className="col-sm-12">
-                                <button type="button" className="btn crud-btn px-5 radius-30" >
-                                    <i className="fadeIn animated bx bx-search-alt mr-1"></i>
+                                <button type="button" className="crud-btn px-5 py-1" >
                                     Tìm kiếm
                                 </button>
-                                <button type="button" className="btn crud-btn px-5 radius-30">
-                                    <i className="fadeIn animated bx bx-search-alt mr-1"></i>
-                                    <BasicModal children={<CreateFormCQT />} title={'Thêm mới'} />
+                                <button type="button" className=" crud-btn">
+                                    <BasicModal children={<CreateFormCQT />} title={'Thêm mới'} styles='px-5 py-1' />
                                 </button>
-                                <button type="button" className="btn crud-btn px-5 radius-30" >
-                                    <i className="fadeIn animated bx bx-eraser mr-1"></i>
+                                <button type="button" className="crud-btn px-5 py-1" >
                                     Xoá
                                 </button>
-                                <button type="button" className="btn crud-btn px-5 radius-30" onClick={exitPage}>
-                                    <i className="fadeIn animated bx bx-log-out mr-1"></i>
+                                <button type="button" className="crud-btn px-5 py-1" onClick={exitPage}>
                                     Thoát
                                 </button>
                             </div>

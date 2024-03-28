@@ -1,0 +1,5 @@
+.result-HQ {
+    display: flex;
+    margin-bottom: 100px;
+    flex-direction: column;
+}
