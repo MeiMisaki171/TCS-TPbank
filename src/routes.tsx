@@ -8,6 +8,7 @@ import MaNdkt from "./pages/DanhMuc/MaNdkt/maNDKT";
 import CoQuanThu from "./pages/DanhMuc/CoQuanThu/coQuanThu";
 import CoQuanKhoBac from "./pages/DanhMuc/CoQuanKhoBac/coQuanKhoBac";
 import DiaBanHanhChinh from "./pages/DanhMuc/DiaBanHanhChinh/diaBanHanhChinh";
+import LapChungTuThueND from "./pages/XuLyChungTuThue/LapChungTu/LapChungTuThueND/lapChungTuThueND";
 // import DiaBanHanhChinh from "./pages/DanhMuc/DiaBanHanhChinh";
 // import TaiKhoan from "./pages/DanhMuc/TaiKhoan";
 // import MaPhi from "./pages/DanhMuc/MaPhi";
@@ -78,6 +79,11 @@ export const router = createBrowserRouter([
     {
         path: "/lapChungTuThueHQ",
         element: <LapChungTuThueHQ />,
+        errorElement: <NotFoundPage />
+    },
+    {
+        path: "/lapChungTuThueND",
+        element: <LapChungTuThueND />,
         errorElement: <NotFoundPage />
     },
 ])

@@ -167,7 +167,8 @@ export const IMenuData: MenuData[] = [
                 children: [
                     {
                         icon: <BiPencil className='third-icon' />,
-                        title: 'Lập chứng từ thuế nội địa'
+                        title: 'Lập chứng từ thuế nội địa',
+                        url: '/lapChungTuThueND'
                     },
                     {
                         icon: <BiPencil className='third-icon' />,

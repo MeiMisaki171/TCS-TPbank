@@ -1,10 +1,8 @@
 .button {
     display: flex;
     align-items: center;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     border: 1px solid;
     border-radius: 30px;
     font-size: 24px;
@@ -13,7 +11,7 @@
 
 .button:hover{
     background-color: #1b73d1;
-    border-radius: 10px;
+    border-radius: 30px;
     color: #fff;
 }
 

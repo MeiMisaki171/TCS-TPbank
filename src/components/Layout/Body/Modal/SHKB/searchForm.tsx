@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Button from '~/components/Button'
 import BasicModal from '../basic'
 import { Box, Modal } from '@mui/material'
-import { BiSearch } from 'react-icons/bi'
+import { BiSearch, BiSearchAlt } from 'react-icons/bi'
 import ResultSearch from './resultSearch'
 
 const ShkbSearch = () => {
@@ -25,7 +25,7 @@ const ShkbSearch = () => {
     return (
         <>
             <div onClick={handleOpen} >
-                <BiSearch className='search-icon'></BiSearch>
+                <Button icon={<BiSearchAlt />} />
             </div>
             <Modal
                 open={open}

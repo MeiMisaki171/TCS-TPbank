@@ -1,13 +1,13 @@
 import React from 'react'
-import CardTitle from '../../CardTitle'
 import './style.css'
-import Button from '~/components/Button'
-import { BiSearchAlt, BiSolidTrash } from 'react-icons/bi'
-import TruyVanHQ from '../../Modal/TruyVanHQ/truyVanHQ'
-import TruyVanTK from '../../Modal/TruyVanTK/truyVanTK'
-import Dbhc from '../../Modal/DBHC/dbhc'
-import Chuong from '../../Modal/Chuong/chuong'
-import CoQuanThu from '../../Modal/CoQuanThu/coQuanThu'
+import CardTitle from '../../../CardTitle'
+import TruyVanHQ from '../../../Modal/TruyVanHQ/truyVanHQ'
+import TruyVanTK from '../../../Modal/TruyVanTK/truyVanTK'
+import Dbhc from '../../../Modal/DBHC/dbhc'
+import Chuong from '../../../Modal/Chuong/chuong'
+import CoQuanThu from '../../../Modal/CoQuanThu/coQuanThu'
+import ShkbSearch from '../../../Modal/SHKB/searchForm'
+
 
 const HaiQuan = () => {
   const title1: string = 'Danh sách chứng từ đã nhập'
@@ -18,62 +18,62 @@ const HaiQuan = () => {
   return (
     <>
       <div>
-        <div className='p-4 border rounded box-ctbc1'>
+        <div className='pe-4 ps-4 border rounded box-ctbc1'>
           <CardTitle title={title1} />
-          <div className='row mb-2'>
+          <div className='row '>
             <div className='col-sm-2'>
-              <label className='col-form-label'>KHCT</label>
+              <label className=''>KHCT</label>
             </div>
             <div className='col-md-2'>
               <input type='text' className='form-control' id="inputnumber" placeholder='765432133'></input>
             </div>
             <div className='col-sm-2'>
-              <label className='col-form-label'>Số CT</label>
+              <label className=''>Số CT</label>
             </div>
             <div className='col-sm-2'>
               <input type='text' className='form-control' id="inputnumber2" placeholder='Số CT'></input>
             </div>
             <div className='col-sm-2'>
-              <label className='col-form-label'>Ngày CT</label>
+              <label className=''>Ngày CT</label>
             </div>
             <div className='col-sm-2'>
               <input type='date' className='form-control'></input>
             </div>
           </div>
-          <div className='row mb-2'>
+          <div className='row '>
             <div className='col-sm-2'>
-              <label className="col-form-label">Người lập</label>
+              <label className="">Người lập</label>
             </div>
             <div className='col-md-2'>
               <input type="text" className="form-control" id="inputnumber3" placeholder="user 2 " />
             </div>
             <div className='col-sm-2'>
-              <label className="col-form-label">Người KS</label>
+              <label className="">Người KS</label>
             </div>
             <div className='col-md-2'>
               <input type="text" className="form-control" id="inputnumber4" placeholder="Người KS " />
             </div>
             <div className='col-sm-2'>
-              <label className='col-form-label'>Ngày ĐC</label>
+              <label className=''>Ngày ĐC</label>
             </div>
             <div className='col-sm-2'>
               <input type='date' className='form-control'></input>
             </div>
           </div>
         </div>
-        <div className='p-4 border rounded box-ctbc1'>
+        <div className='pe-4 ps-4 border rounded box-ctbc1'>
           <CardTitle title={title5} />
-          <div className='row mb-2'>
+          <div className='row'>
             <div className='col-sm-2'>
-              <label className='col-form-label'>Tra cứu</label>
+              <label className=''>Tra cứu</label>
             </div>
             <div className='col-sm-6'>
               <input type="text" className='form-control' />
             </div>
           </div>
-          <div className='row mb-2'>
+          <div className='row '>
             <div className='col-sm-2'>
-              <label htmlFor="m" className='col-form-label'>Mã số thuế (*)</label>
+              <label htmlFor="m" className=''>Mã số thuế (*)</label>
             </div>
             <div className='col-sm-6'>
               <input type="text" className='form-control' />
@@ -83,11 +83,11 @@ const HaiQuan = () => {
             </div>
           </div>
         </div>
-        <div className='p-4 border rounded box-ctbc1'>
+        <div className='pe-4 ps-4 border rounded box-ctbc1'>
           <CardTitle title={title6}></CardTitle>
-          <div className='row mb-2'>
+          <div className='row '>
             <div className='col-sm-2'>
-              <label className='col-form-label'>KBNN thu (*)</label>
+              <label className=''>KBNN thu (*)</label>
             </div>
             <div className='col-md-2'>
               <input type='text' className='form-control' placeholder='KBNN thu' />
@@ -96,20 +96,20 @@ const HaiQuan = () => {
               <input type='text' className='form-control' placeholder='' />
             </div>
             <div className='col-sm-1'>
-              <Button icon={<BiSearchAlt />} />
+              <ShkbSearch></ShkbSearch>
             </div>
           </div>
-          <div className='row mb-2'>
+          <div className='row '>
             <div className='col-sm-2'>
-              <label className='col-form-label'>Hình thức thu</label>
+              <label className=''>Hình thức thu</label>
             </div>
             <div className='col-sm-8'>
               <input type='text' className='form-control' placeholder='' />
             </div>
           </div>
-          <div className='row mb-2'>
+          <div className='row'>
             <div className='col-sm-2'>
-              <label className='col-form-label'>Mã ngoại tệ</label>
+              <label className=''>Mã ngoại tệ</label>
             </div>
             <div className='col-sm-4'>
               <input type='text' className='form-control' placeholder='VND' />
@@ -118,18 +118,18 @@ const HaiQuan = () => {
               <input type='text' className='form-control' placeholder='VND' disabled />
             </div>
             <div className='col-sm-2'>
-              <label className='col-form-label'>Tỷ giá</label>
+              <label className=''>Tỷ giá</label>
             </div>
             <div className='col-sm-2'>
               <input type='text' className='form-control' placeholder='1' />
             </div>
           </div>
         </div>
-        <div className='p-4 border rounded box-ctbc1'>
+        <div className='pe-4 ps-4 border rounded box-ctbc1'>
           <CardTitle title={title2} />
-          <div className='row mb-2'>
+          <div className='row '>
             <div className='col-sm-2'>
-              <label className="col-form-label">TK Nợ (*)</label>
+              <label className="">TK Nợ (*)</label>
             </div>
             <div className='col-md-2'>
               <input type="text" className="form-control" id="" placeholder="TK Nợ " />
@@ -141,9 +141,9 @@ const HaiQuan = () => {
               <TruyVanTK></TruyVanTK>
             </div>
           </div>
-          <div className='row mb-2'>
+          <div className='row '>
             <div className='col-sm-2'>
-              <label className="col-form-label">Mã KH</label>
+              <label className="">Mã KH</label>
             </div>
             <div className='col-md-2'>
               <input type="text" className="form-control" id="" placeholder="" />
@@ -152,9 +152,9 @@ const HaiQuan = () => {
               <input type="text" className="form-control" id="" placeholder=" " />
             </div>
           </div>
-          <div className="row mb-2">
+          <div className="row">
             <div className="col-sm-2">
-              <label className="col-form-label">Mã citad GT</label>
+              <label className="">Mã citad GT</label>
             </div>
             <div className="col-md-2">
               <input type="text" className="form-control" id="" placeholder="" disabled />
@@ -163,38 +163,38 @@ const HaiQuan = () => {
               <input type="text" className="form-control" id="" placeholder=" " disabled />
             </div>
           </div>
-          <div className="row mb-2">
+          <div className="row ">
             <div className="col-sm-2">
-              <label className="col-form-label">Mã phí</label>
+              <label className="">Mã phí</label>
             </div>
             <div className="col-sm-8">
               <input type="text" className="form-control" id="" placeholder=" " />
             </div>
           </div>
-          <div className="row mb-2">
+          <div className="row ">
             <div className="col-sm-2">
-              <label className="col-form-label">Tiền phí</label>
+              <label className="">Tiền phí</label>
             </div>
             <div className="col-sm-2">
               <input type="text" className="form-control" id="" placeholder=" " disabled />
             </div>
             <div className="col-sm-2">
-              <label className="col-form-label d-flex justify-content-center">VAT</label>
+              <label className=" d-flex justify-content-center">VAT</label>
             </div>
             <div className="col-sm-2">
               <input type="text" className="form-control" id="" placeholder=" " disabled />
             </div>
             <div className='col-sm-4 d-flex'>
               <input type="checkbox" />
-              <label className="col-form-label ms-2">Phí khác</label>
+              <label className=" ms-2">Phí khác</label>
             </div>
           </div>
         </div>
-        <div className='p-4 border rounded box-ctbc1'>
+        <div className='pe-4 ps-4 border rounded box-ctbc1'>
           <CardTitle title={title3} />
-          <div className="row mb-2">
+          <div className="row">
             <div className="col-sm-2">
-              <label className="col-form-label">Mã số thuế (*)</label>
+              <label className="">Mã số thuế (*)</label>
             </div>
             <div className="col-sm-2">
               <input type="text" className="form-control" id="" placeholder="Mã số thuế" />
@@ -203,29 +203,29 @@ const HaiQuan = () => {
               <input type="text" className="form-control" id="" placeholder=" " />
             </div>
           </div>
-          <div className="row mb-2">
+          <div className="row ">
             <div className="col-sm-2">
-              <label className="col-form-label">Địa chỉ người nộp thuế (*)</label>
+              <label className="" style={{ whiteSpace: 'nowrap' }}>Địa chỉ người nộp thuế (*)</label>
             </div>
             <div className="col-md-2">
               <input type='text' className='form-control' />
             </div>
             <div className="col-sm-2">
-              <label className="col-form-label">Huyện</label>
+              <label className="">Huyện</label>
             </div>
             <div className="col-md-2">
               <input type='text' className='form-control' />
             </div>
             <div className="col-sm-2">
-              <label className="col-form-label">Tỉnh/TP</label>
+              <label className="">Tỉnh/TP</label>
             </div>
             <div className="col-md-2">
               <input type='text' className='form-control' />
             </div>
           </div>
-          <div className="row mb-2">
+          <div className="row ">
             <div className="col-sm-2">
-              <label className="col-form-label">MST người nộp thay</label>
+              <label className="">MST người nộp thay</label>
             </div>
             <div className="col-sm-2">
               <input type='text' className='form-control' />
@@ -234,25 +234,25 @@ const HaiQuan = () => {
               <input type='text' className='form-control' />
             </div>
           </div>
-          <div className="row mb-2">
+          <div className="row">
             <div className="col-sm-2">
-              <label className="col-form-label">Địa chỉ người nộp thay</label>
+              <label className="" style={{ whiteSpace: 'nowrap' }}>Địa chỉ người nộp thay</label>
             </div>
             <div className="col-sm-8">
               <input type="text" className="form-control" id="" placeholder=" " />
             </div>
           </div>
-          <div className="row mb-2">
+          <div className="row ">
             <div className="col-sm-2">
-              <label className="col-form-label">TK thu ngân sách(*)</label>
+              <label className="">TK thu ngân sách(*)</label>
             </div>
             <div className="col-sm-2">
               <input type="text" className="form-control" id="" placeholder=" " />
             </div>
           </div>
-          <div className="row mb-2">
+          <div className="row ">
             <div className="col-sm-2">
-              <label className="col-form-label">Mã địa bàn hành chính (*)</label>
+              <label className="" style={{ whiteSpace: 'nowrap' }}>Mã địa bàn hành chính (*)</label>
             </div>
             <div className="col-md-2">
               <input type="text" className="form-control" id="" placeholder=" " />
@@ -264,9 +264,9 @@ const HaiQuan = () => {
               <Dbhc></Dbhc>
             </div>
           </div>
-          <div className="row mb-2">
+          <div className="row ">
             <div className="col-sm-2">
-              <label className="col-form-label">Chương (*)</label>
+              <label className="">Chương (*)</label>
             </div>
             <div className="col-md-2">
               <input type="text" className="form-control" id="" placeholder="Chương " />
@@ -278,9 +278,9 @@ const HaiQuan = () => {
               <Chuong />
             </div>
           </div>
-          <div className="row mb-2">
+          <div className="row ">
             <div className="col-sm-2">
-              <label className="col-form-label">Cơ quan thu (*)</label>
+              <label className="">Cơ quan thu (*)</label>
             </div>
             <div className="col-md-2">
               <input type="text" className="form-control" id="" placeholder="Mã HQ " />
@@ -292,9 +292,9 @@ const HaiQuan = () => {
               <CoQuanThu />
             </div>
           </div>
-          <div className="row mb-2">
+          <div className="row">
             <div className="col-sm-2">
-              <label className="col-form-label">Diễn giải</label>
+              <label className="">Diễn giải</label>
             </div>
             <div className="col-sm-10">
               <input type="text" className="form-control" id="" placeholder=" " />
