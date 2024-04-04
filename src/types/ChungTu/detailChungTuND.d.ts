@@ -1,11 +1,10 @@
-export interface DetailChungTu {
-    STK: string;
-    ngayTK: string;
-    lhxnk: string;
+export interface DetailChungTuND {
+    chuong: string;
     ndkt: string;
-    tenNdkt: string;
+    noiDung: string;
     soTien: string;
     soTienVnd: string;
+    kyThue: string;
     createdBy?: string;
     updatedBy?: string;
     createdDate?: string;

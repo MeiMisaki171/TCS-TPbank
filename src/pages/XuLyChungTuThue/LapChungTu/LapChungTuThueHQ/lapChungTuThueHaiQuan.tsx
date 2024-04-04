@@ -5,7 +5,7 @@ import CtblFormLeft from '~/components/Layout/Body/CTBL/CtblFormLeft';
 import Body from '~/components/Layout/Body';
 import Button from '~/components/Button';
 import HaiQuan from '~/components/Layout/Body/CTBL/HaiQuan/FormHaiQuan';
-import CtblFormBottom from '~/components/Layout/Body/CTBL/HaiQuan/FormHQBottom/CtblFormBottom';
+import ChungTuHQDetail from '~/components/Layout/Body/CTBL/HaiQuan/FormHQBottom/chungTuHqDetail';
 
 const LapChungTuThueHQ = () => {
 
@@ -26,7 +26,7 @@ const LapChungTuThueHQ = () => {
               </div>
             </div>
             <div>
-              <CtblFormBottom></CtblFormBottom>
+              <ChungTuHQDetail></ChungTuHQDetail>
             </div>
             <div className='border rounded box-ctbc1 card-body'>
               <div className='d-flex justify-content-between align-items-center mb-4'>

@@ -1,32 +1,30 @@
 import React, { ChangeEvent, useState } from 'react'
-import TableRows from './TableRows/tableRows'
-import { DetailChungTu } from '~/types/ChungTu/detailChungTu'
-import { BiSolidAddToQueue } from 'react-icons/bi'
-import CardTitle from '../../../CardTitle'
+import { DetailChungTuND } from '~/types/ChungTu/detailChungTuND'
+import CardTitle from '../../../CardTitle';
+import { BiSolidAddToQueue } from 'react-icons/bi';
+import CtuNdDetailTable from './ctuNdDetailTable/ctuNdDetailTable';
 
-const CtblFormBottom = () => {
-
-    const title: string = 'Thông tin chi tiết (*)'
-    const [rows, initRow] = useState<DetailChungTu[]>([
+const ChungTuNdDetail = () => {
+    const title: string = 'Thông tin chi tiết'
+    const [rows, initRow] = useState<DetailChungTuND[]>([
         {
-            STK: '',
-            ngayTK: '',
-            lhxnk: '',
+            chuong: '',
             ndkt: '',
-            tenNdkt: '',
+            noiDung: '',
             soTien: '',
-            soTienVnd: ''
+            soTienVnd: '',
+            kyThue: '',
         }
     ]);
+
     const addRowTable = () => {
-        const data: DetailChungTu = {
-            STK: '',
-            ngayTK: '',
-            lhxnk: '',
+        const data: DetailChungTuND = {
+            chuong: '',
             ndkt: '',
-            tenNdkt: '',
+            noiDung: '',
             soTien: '',
-            soTienVnd: ''
+            soTienVnd: '',
+            kyThue: '',
         };
         initRow([...rows, data]);
     };
@@ -53,29 +51,27 @@ const CtblFormBottom = () => {
             <div className='p-4 border rounded box-ctbc1'>
                 <div className='d-flex justify-content-between'>
                     <CardTitle title={title} />
-                    <div onClick={addRowTable}><BiSolidAddToQueue /></div>
+                    <div onClick={addRowTable}><BiSolidAddToQueue></BiSolidAddToQueue></div>
                 </div>
                 <hr style={{ marginTop: '0' }}></hr>
-                <div className="table-responsive">
+                <div className='table-responsive'>
                     <table className="table mb-0 table-hover">
                         <thead className="table-light">
                             <tr>
-                                <th>Số tờ khai</th>
-                                <th>Ngày TK</th>
-                                <th>LHXNK</th>
+                                <th>Chương</th>
                                 <th>NDKT</th>
-                                <th>Tên NDKT</th>
-                                <th>Tiền NT</th>
+                                <th>Nội dung</th>
                                 <th>Số tiền</th>
-                                <th>Xoá</th>
+                                <th>Số tiền(VND)</th>
+                                <th>Kỳ thuế</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <TableRows
+                            <CtuNdDetailTable
                                 rows={rows}
                                 handleValUpdate={handleValUpdate}
                                 handleDelRow={handleDelRow}
-                            ></TableRows>
+                            ></CtuNdDetailTable>
                         </tbody>
                     </table>
                     <button onClick={submitForm}>Click</button>
@@ -85,4 +81,4 @@ const CtblFormBottom = () => {
     )
 }
 
-export default CtblFormBottom
+export default ChungTuNdDetail

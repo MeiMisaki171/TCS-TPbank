@@ -1,26 +1,26 @@
 import React, { ChangeEvent } from 'react'
 import { BiTrash } from 'react-icons/bi';
-import { DetailChungTuHQ } from '~/types/ChungTu/detailChungTuHQ'
+import { DetailChungTuND } from '~/types/ChungTu/detailChungTuND'
 
-interface IDetailChungTuHQ {
-    rows: DetailChungTuHQ[];
+interface IDetailChungTuND {
+    rows: DetailChungTuND[];
     handleValUpdate: (index: number, event: ChangeEvent<HTMLInputElement>) => void;
-    handleDelRow: (index: number) => void
+    handleDelRow: (index: number) => void;
 }
 
-const TableRows: React.FC<IDetailChungTuHQ> = ({ rows, handleValUpdate, handleDelRow }: IDetailChungTuHQ) => {
+const CtuNdDetailTable: React.FC<IDetailChungTuND> = ({ rows, handleValUpdate, handleDelRow }: IDetailChungTuND) => {
     return (
         <>
-            {rows.map((item: DetailChungTuHQ, index: number) => {
-                const { STK, ngayTK, lhxnk, ndkt, tenNdkt, soTien, soTienVnd }: DetailChungTuHQ = item
+            {rows.map((item: DetailChungTuND, index: number) => {
+                const { chuong, ndkt, noiDung, soTien, soTienVnd, kyThue }: DetailChungTuND = item
                 return (
                     <tr key={rows.indexOf(item)}>
                         <td>
                             <input
                                 className='form-control'
                                 type='text'
-                                name='STK'
-                                value={STK}
+                                name='chuong'
+                                value={chuong}
                                 onChange={event => handleValUpdate(index, event)}
                             />
                         </td>
@@ -28,28 +28,8 @@ const TableRows: React.FC<IDetailChungTuHQ> = ({ rows, handleValUpdate, handleDe
                             <input
                                 className='form-control'
                                 type='text'
-                                name='ngayTK'
-                                value={ngayTK}
-                                onChange={event => handleValUpdate(index, event)}
-
-                            />
-                        </td>
-                        <td>
-                            <input
-                                className='form-control'
-                                type='text'
-                                value={lhxnk}
-                                name='lhxnk'
-                                onChange={event => handleValUpdate(index, event)}
-
-                            />
-                        </td>
-                        <td>
-                            <input
-                                className='form-control'
-                                type='text'
-                                value={ndkt}
                                 name='ndkt'
+                                value={ndkt}
                                 onChange={event => handleValUpdate(index, event)}
 
                             />
@@ -58,8 +38,8 @@ const TableRows: React.FC<IDetailChungTuHQ> = ({ rows, handleValUpdate, handleDe
                             <input
                                 className='form-control'
                                 type='text'
-                                value={tenNdkt}
-                                name='tenNdkt'
+                                value={noiDung}
+                                name='noiDung'
                                 onChange={event => handleValUpdate(index, event)}
 
                             />
@@ -85,6 +65,16 @@ const TableRows: React.FC<IDetailChungTuHQ> = ({ rows, handleValUpdate, handleDe
                             />
                         </td>
                         <td>
+                            <input
+                                className='form-control'
+                                type='text'
+                                value={kyThue}
+                                name='kyThue'
+                                onChange={event => handleValUpdate(index, event)}
+
+                            />
+                        </td>
+                        <td>
                             <BiTrash onClick={() => { handleDelRow(index) }}></BiTrash>
                         </td>
                     </tr>
@@ -94,4 +84,4 @@ const TableRows: React.FC<IDetailChungTuHQ> = ({ rows, handleValUpdate, handleDe
     )
 }
 
-export default TableRows
+export default CtuNdDetailTable
