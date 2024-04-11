@@ -26,19 +26,19 @@ const HaiQuan = () => {
             <label className='' htmlFor="">KHCT</label>
           </div>
           <div className='col-md-2'>
-            <input type='text' className='form-control' id="inputnumber" placeholder='765432133'></input>
+            <input type='text' className='form-control ctbl-input' id="inputnumber" placeholder='765432133'></input>
           </div>
           <div className='col-sm-2'>
             <label className='' htmlFor="">Số CT</label>
           </div>
           <div className='col-sm-2'>
-            <input type='text' className='form-control' id="inputnumber2" placeholder='Số CT'></input>
+            <input type='text' className='form-control ctbl-input' id="inputnumber2" placeholder='Số CT'></input>
           </div>
           <div className='col-sm-2'>
             <label className='' htmlFor="">Ngày CT</label>
           </div>
           <div className='col-sm-2'>
-            <input type='date' className='form-control'></input>
+            <input type='date' className='form-control ctbl-input'></input>
           </div>
         </div>
         <div className='row '>
@@ -46,19 +46,19 @@ const HaiQuan = () => {
             <label className="">Người lập</label>
           </div>
           <div className='col-md-2'>
-            <input type="text" className="form-control" id="inputnumber3" placeholder="user 2 " />
+            <input type="text" className="form-control ctbl-input" id="inputnumber3" placeholder="user 2 " />
           </div>
           <div className='col-sm-2'>
             <label className="">Người KS</label>
           </div>
           <div className='col-md-2'>
-            <input type="text" className="form-control" id="inputnumber4" placeholder="Người KS " />
+            <input type="text" className="form-control ctbl-input" id="inputnumber4" placeholder="Người KS " />
           </div>
           <div className='col-sm-2'>
             <label className=''>Ngày ĐC</label>
           </div>
           <div className='col-sm-2'>
-            <input type='date' className='form-control'></input>
+            <input type='date' className='form-control ctbl-input'></input>
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@ const HaiQuan = () => {
             <label className=''>Tra cứu</label>
           </div>
           <div className='col-sm-6'>
-            <input type="text" className='form-control' />
+            <input type="text" className='form-control ctbl-input' />
           </div>
         </div>
         <div className='row '>
@@ -77,7 +77,7 @@ const HaiQuan = () => {
             <label htmlFor="m" className=''>Mã số thuế (*)</label>
           </div>
           <div className='col-sm-6'>
-            <input type="text" className='form-control' />
+            <input type="text" className='form-control ctbl-input' />
           </div>
           <div className='col-sm-2'>
             <TruyVanHQ></TruyVanHQ>
@@ -91,10 +91,10 @@ const HaiQuan = () => {
             <label className=''>KBNN thu (*)</label>
           </div>
           <div className='col-md-2'>
-            <input type='text' className='form-control' placeholder='KBNN thu' />
+            <input type='text' className='form-control ctbl-input' placeholder='KBNN thu' />
           </div>
           <div className='col-sm-6'>
-            <input type='text' className='form-control' placeholder='' />
+            <input type='text' className='form-control ctbl-input' placeholder='' />
           </div>
           <div className='col-sm-1'>
             <ShkbSearch></ShkbSearch>
@@ -105,7 +105,7 @@ const HaiQuan = () => {
             <label className=''>Hình thức thu</label>
           </div>
           <div className='col-sm-8'>
-            <input type='text' className='form-control' placeholder='' />
+            <input type='text' className='form-control ctbl-input' placeholder='' />
           </div>
         </div>
         <div className='row'>
@@ -113,16 +113,16 @@ const HaiQuan = () => {
             <label className=''>Mã ngoại tệ</label>
           </div>
           <div className='col-sm-4'>
-            <input type='text' className='form-control' placeholder='VND' />
+            <input type='text' className='form-control ctbl-input' placeholder='VND' />
           </div>
           <div className='col-sm-2'>
-            <input type='text' className='form-control' placeholder='VND' disabled />
+            <input type='text' className='form-control ctbl-input' placeholder='VND' disabled />
           </div>
           <div className='col-sm-2'>
             <label className=''>Tỷ giá</label>
           </div>
           <div className='col-sm-2'>
-            <input type='text' className='form-control' placeholder='1' />
+            <input type='text' className='form-control ctbl-input' placeholder='1' />
           </div>
         </div>
       </div>
@@ -133,10 +133,10 @@ const HaiQuan = () => {
             <label className="">TK Nợ (*)</label>
           </div>
           <div className='col-md-2'>
-            <input type="text" className="form-control" id="" placeholder="TK Nợ " />
+            <input type="text" className="form-control ctbl-input" id="" placeholder="TK Nợ " />
           </div>
           <div className='col-sm-4'>
-            <input type='text' className='form-control' placeholder='NH TNHH CTBC - Chi nhánh TP Hồ Chí Minh' />
+            <input type='text' className='form-control ctbl-input' placeholder='NH TNHH CTBC - Chi nhánh TP Hồ Chí Minh' />
           </div>
           <div className='col-sm-2'>
             <TruyVanTK></TruyVanTK>
@@ -147,10 +147,10 @@ const HaiQuan = () => {
             <label className="">Mã KH</label>
           </div>
           <div className='col-md-2'>
-            <input type="text" className="form-control" id="" placeholder="" />
+            <input type="text" className="form-control ctbl-input" id="" placeholder="" />
           </div>
           <div className='col-sm-6'>
-            <input type="text" className="form-control" id="" placeholder=" " />
+            <input type="text" className="form-control ctbl-input" id="" placeholder=" " />
           </div>
         </div>
         <div className="row">
@@ -158,10 +158,10 @@ const HaiQuan = () => {
             <label className="">Mã citad GT</label>
           </div>
           <div className="col-md-2">
-            <input type="text" className="form-control" id="" placeholder="" disabled />
+            <input type="text" className="form-control ctbl-input" id="" placeholder="" disabled />
           </div>
           <div className="col-sm-6">
-            <input type="text" className="form-control" id="" placeholder=" " disabled />
+            <input type="text" className="form-control ctbl-input" id="" placeholder=" " disabled />
           </div>
         </div>
         <div className="row ">
@@ -169,7 +169,7 @@ const HaiQuan = () => {
             <label className="">Mã phí</label>
           </div>
           <div className="col-sm-8">
-            <input type="text" className="form-control" id="" placeholder=" " />
+            <input type="text" className="form-control ctbl-input" id="" placeholder=" " />
           </div>
         </div>
         <div className="row ">
@@ -177,13 +177,13 @@ const HaiQuan = () => {
             <label className="">Tiền phí</label>
           </div>
           <div className="col-sm-2">
-            <input type="text" className="form-control" id="" placeholder=" " disabled />
+            <input type="text" className="form-control ctbl-input" id="" placeholder=" " disabled />
           </div>
           <div className="col-sm-2">
             <label className=" d-flex justify-content-center">VAT</label>
           </div>
           <div className="col-sm-2">
-            <input type="text" className="form-control" id="" placeholder=" " disabled />
+            <input type="text" className="form-control ctbl-input" id="" placeholder=" " disabled />
           </div>
           <div className='col-sm-4 d-flex'>
             <input type="checkbox" />
@@ -198,10 +198,10 @@ const HaiQuan = () => {
             <label className="">Mã số thuế (*)</label>
           </div>
           <div className="col-sm-2">
-            <input type="text" className="form-control" id="" placeholder="Mã số thuế" />
+            <input type="text" className="form-control ctbl-input" id="" placeholder="Mã số thuế" />
           </div>
           <div className="col-sm-6">
-            <input type="text" className="form-control" id="" placeholder=" " />
+            <input type="text" className="form-control ctbl-input" id="" placeholder=" " />
           </div>
         </div>
         <div className="row ">
@@ -209,19 +209,19 @@ const HaiQuan = () => {
             <label className="" style={{ whiteSpace: 'nowrap' }}>Địa chỉ người nộp thuế (*)</label>
           </div>
           <div className="col-md-2">
-            <input type='text' className='form-control' />
+            <input type='text' className='form-control ctbl-input' />
           </div>
           <div className="col-sm-2">
             <label className="">Huyện</label>
           </div>
           <div className="col-md-2">
-            <input type='text' className='form-control' />
+            <input type='text' className='form-control ctbl-input' />
           </div>
           <div className="col-sm-2">
             <label className="">Tỉnh/TP</label>
           </div>
           <div className="col-md-2">
-            <input type='text' className='form-control' />
+            <input type='text' className='form-control ctbl-input' />
           </div>
         </div>
         <div className="row ">
@@ -229,10 +229,10 @@ const HaiQuan = () => {
             <label className="">MST người nộp thay</label>
           </div>
           <div className="col-sm-2">
-            <input type='text' className='form-control' />
+            <input type='text' className='form-control ctbl-input' />
           </div>
           <div className="col-sm-6">
-            <input type='text' className='form-control' />
+            <input type='text' className='form-control ctbl-input' />
           </div>
         </div>
         <div className="row">
@@ -240,7 +240,7 @@ const HaiQuan = () => {
             <label className="" style={{ whiteSpace: 'nowrap' }}>Địa chỉ người nộp thay</label>
           </div>
           <div className="col-sm-8">
-            <input type="text" className="form-control" id="" placeholder=" " />
+            <input type="text" className="form-control ctbl-input" id="" placeholder=" " />
           </div>
         </div>
         <div className="row ">
@@ -248,7 +248,7 @@ const HaiQuan = () => {
             <label className="">TK thu ngân sách(*)</label>
           </div>
           <div className="col-sm-2">
-            <input type="text" className="form-control" id="" placeholder=" " />
+            <input type="text" className="form-control ctbl-input" id="" placeholder=" " />
           </div>
         </div>
         <div className="row ">
@@ -256,10 +256,10 @@ const HaiQuan = () => {
             <label className="" style={{ whiteSpace: 'nowrap' }}>Mã địa bàn hành chính (*)</label>
           </div>
           <div className="col-md-2">
-            <input type="text" className="form-control" id="" placeholder=" " />
+            <input type="text" className="form-control ctbl-input" id="" placeholder=" " />
           </div>
           <div className="col-sm-6">
-            <input type="text" className="form-control" id="" placeholder=" " />
+            <input type="text" className="form-control ctbl-input" id="" placeholder=" " />
           </div>
           <div className="col-sm-2">
             <Dbhc></Dbhc>
@@ -270,10 +270,10 @@ const HaiQuan = () => {
             <label className="">Chương (*)</label>
           </div>
           <div className="col-md-2">
-            <input type="text" className="form-control" id="" placeholder="Chương " />
+            <input type="text" className="form-control ctbl-input" id="" placeholder="Chương " />
           </div>
           <div className="col-sm-6">
-            <input type="text" className="form-control" id="" placeholder=" " />
+            <input type="text" className="form-control ctbl-input" id="" placeholder=" " />
           </div>
           <div className="col-sm-1">
             <Chuong />
@@ -284,10 +284,10 @@ const HaiQuan = () => {
             <label className="">Cơ quan thu (*)</label>
           </div>
           <div className="col-md-2">
-            <input type="text" className="form-control" id="" placeholder="Mã HQ " />
+            <input type="text" className="form-control ctbl-input" id="" placeholder="Mã HQ " />
           </div>
           <div className="col-sm-6">
-            <input type="text" className="form-control" id="" placeholder=" " />
+            <input type="text" className="form-control ctbl-input" id="" placeholder=" " />
           </div>
           <div className="col-sm-1">
             <CoQuanThu />
@@ -298,7 +298,7 @@ const HaiQuan = () => {
             <label className="">Diễn giải</label>
           </div>
           <div className="col-sm-10">
-            <input type="text" className="form-control" id="" placeholder=" " />
+            <input type="text" className="form-control ctbl-input" id="" placeholder=" " />
           </div>
         </div>
       </div>

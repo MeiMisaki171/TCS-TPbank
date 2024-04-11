@@ -2,7 +2,7 @@
     background: #e7f1fe;
     margin-bottom: 3px;
 }
-
-.form-control {
-    height: 30px !important;
+.ctbl-input {
+    height: 30px;
+    margin: 2px 0px;
 }

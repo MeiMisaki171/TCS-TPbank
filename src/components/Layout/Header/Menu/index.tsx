@@ -9,7 +9,7 @@ const Menu = () => {
       <ul className="menus">
         {IMenuData.map((item) => {
           return (
-            <MenuItems item={item} key={ item.title } depthLevel={depthLevel} />
+            <MenuItems item={item} key={item.title} depthLevel={depthLevel} />
           )
         })}
       </ul>

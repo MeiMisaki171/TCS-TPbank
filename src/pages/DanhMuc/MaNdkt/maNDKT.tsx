@@ -96,28 +96,30 @@ const MaNdkt = () => {
                         </div>
                         <hr></hr>
                         <div className="row mb-2">
-                            <div className="col-sm-2">
-                                <label className="col-form-label">Mã nội dung kinh tế</label>
-                            </div>
-                            <div className="col-sm-2">
-                                <input type="text" className="form-control" id="inputEnterYourMa" placeholder="" />
-                            </div>
-                            <div className="col-sm-2">
-                                <label className="col-form-label">Tên nội dung kinh tế</label>
-                            </div>
-                            <div className="col-sm-2">
-                                <input type="text" className="form-control" id="inputEnterYourName" placeholder="" />
-                            </div>
-                            <div className="col-sm-2">
-                                <label className="col-form-label">Tình trạng</label>
-                            </div>
-                            <div className="col-sm-2">
-                                <select name='tinhTrang' defaultValue='null' className='form-select'>
-                                    <option value='null'>Tất cả</option>
-                                    <option value='True'>Hiệu lực</option>
-                                    <option value='False'>Hết hiệu lực</option>
-                                </select>
-                            </div>
+                            <form className='d-flex'>
+                                <div className="col-sm-2 d-flex justify-content-center">
+                                    <label className="col-form-label">Mã nội dung kinh tế</label>
+                                </div>
+                                <div className="col-sm-2 ">
+                                    <input type="text" className="form-control" id="inputEnterYourMa" placeholder="" />
+                                </div>
+                                <div className="col-sm-2">
+                                    <label className="col-form-label d-flex justify-content-center">Tên nội dung kinh tế</label>
+                                </div>
+                                <div className="col-sm-2">
+                                    <input type="text" className="form-control" id="inputEnterYourName" placeholder="" />
+                                </div>
+                                <div className="col-sm-2">
+                                    <label className="col-form-label d-flex justify-content-center">Tình trạng</label>
+                                </div>
+                                <div className="col-sm-2">
+                                    <select name='tinhTrang' defaultValue='null' className='form-select'>
+                                        <option value='null'>Tất cả</option>
+                                        <option value='True'>Hiệu lực</option>
+                                        <option value='False'>Hết hiệu lực</option>
+                                    </select>
+                                </div>
+                            </form>
                         </div>
 
                         <hr></hr>

@@ -18,19 +18,19 @@ const formCaNhan = () => {
                         <label className=''>KHCT</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control'></input>
+                        <input type='text' className='form-control ctbl-input'></input>
                     </div>
                     <div className='col-sm-2'>
                         <label className=''>Số CT</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control'></input>
+                        <input type='text' className='form-control ctbl-input'></input>
                     </div>
                     <div className='col-sm-2'>
                         <label htmlFor="">Ngày CT</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control'></input>
+                        <input type='text' className='form-control ctbl-input'></input>
                     </div>
                 </div>
                 <div className='row '>
@@ -38,19 +38,19 @@ const formCaNhan = () => {
                         <label className="">Người lập</label>
                     </div>
                     <div className='col-md-2'>
-                        <input type="text" className="form-control" id="inputnumber3" placeholder="user 2 " />
+                        <input type="text" className="form-control ctbl-input" id="inputnumber3" placeholder="user 2 " />
                     </div>
                     <div className='col-sm-2'>
                         <label className="">Người KS</label>
                     </div>
                     <div className='col-md-2'>
-                        <input type="text" className="form-control" id="inputnumber4" placeholder="Người KS " />
+                        <input type="text" className="form-control ctbl-input" id="inputnumber4" placeholder="Người KS " />
                     </div>
                     <div className='col-sm-2'>
                         <label className=''>Ngày ĐC</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='date' className='form-control'></input>
+                        <input type='date' className='form-control ctbl-input'></input>
                     </div>
                 </div>
             </div>
@@ -61,10 +61,10 @@ const formCaNhan = () => {
                         <label>KBNN thu(*)</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input className='form-control' type='text'></input>
+                        <input className='form-control ctbl-input' type='text'></input>
                     </div>
                     <div className='col-sm-6'>
-                        <input className='form-control' type='text'></input>
+                        <input className='form-control ctbl-input' type='text'></input>
                     </div>
                     <div>
                         <>asd</>
@@ -89,10 +89,10 @@ const formCaNhan = () => {
                         <label htmlFor="">TK Nợ(*)</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type="text" className='form-control' />
+                        <input type="text" className='form-control ctbl-input' />
                     </div>
                     <div className='col-sm-4'>
-                        <input type="text" className='form-control' />
+                        <input type="text" className='form-control ctbl-input' />
                     </div>
                     <div className='col-sm-2'>Truy van TK</div>
                 </div>
@@ -101,10 +101,10 @@ const formCaNhan = () => {
                         <label htmlFor="">Mã KH(*)</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className='form-control' />
+                        <input type="text" className='form-control ctbl-input' />
                     </div>
                     <div className="col-sm-8">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -112,10 +112,10 @@ const formCaNhan = () => {
                         <label htmlFor="">Mã citad GT</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-8">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -135,13 +135,13 @@ const formCaNhan = () => {
                         <label htmlFor="">Tiền phí</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
                         <label htmlFor="">VAT</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
                         <input type="checkbox" />
@@ -155,7 +155,7 @@ const formCaNhan = () => {
                         <label htmlFor="">Mã MIS</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
             </div>
@@ -177,10 +177,10 @@ const formCaNhan = () => {
                         <label htmlFor="">Mã số thuế(*)</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-4">
                         <>Truy van thue</>
@@ -191,7 +191,7 @@ const formCaNhan = () => {
                         <label htmlFor="">Tên người nộp thuế(*)</label>
                     </div>
                     <div className="col-sm-10">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -199,7 +199,7 @@ const formCaNhan = () => {
                         <label htmlFor="" style={{ whiteSpace: 'nowrap' }}>Địa chỉ người nộp thuế(*)</label>
                     </div>
                     <div className="col-sm-10">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -207,10 +207,10 @@ const formCaNhan = () => {
                         <label htmlFor="">MST người nộp thay</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -218,7 +218,7 @@ const formCaNhan = () => {
                         <label htmlFor="">Tên người nộp thay</label>
                     </div>
                     <div className="col-sm-10">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -226,7 +226,7 @@ const formCaNhan = () => {
                         <label htmlFor="">Địa chỉ người nộp thay</label>
                     </div>
                     <div className="col-sm-10">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -234,7 +234,7 @@ const formCaNhan = () => {
                         <label htmlFor="">TK thu ngân sách(*)</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -242,10 +242,10 @@ const formCaNhan = () => {
                         <label htmlFor="" style={{ whiteSpace: 'nowrap' }}>Mã địa bàn hành chính(*)</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-6">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
                         <>ads</>
@@ -256,10 +256,10 @@ const formCaNhan = () => {
                         <label htmlFor="">Cơ quan thu(*)</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-6">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
                         <>ads</>
@@ -270,16 +270,16 @@ const formCaNhan = () => {
                         <label htmlFor="">Mã ngoại tệ(*)</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" placeholder='VND' />
+                        <input type="text" className="form-control ctbl-input" placeholder='VND' />
                     </div>
                     <div className="col-sm-4">
-                        <input type="text" className="form-control" placeholder='Tien VND' />
+                        <input type="text" className="form-control ctbl-input" placeholder='Tien VND' />
                     </div>
                     <div className="col-sm-2">
                         <label htmlFor="">Tỷ giá</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -287,7 +287,7 @@ const formCaNhan = () => {
                         <label htmlFor="">Số QĐ/TB</label>
                     </div>
                     <div className="col-sm-6">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -295,13 +295,13 @@ const formCaNhan = () => {
                         <label htmlFor="">Cơ quan quyết định</label>
                     </div>
                     <div className="col-sm-4">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
                         <label htmlFor="">Ngày quyết định</label>
                     </div>
                     <div className="col-sm-4">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -309,7 +309,7 @@ const formCaNhan = () => {
                         <label htmlFor="">Diễn giải</label>
                     </div>
                     <div className="col-sm-10">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
             </div>

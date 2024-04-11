@@ -20,19 +20,19 @@ const formPhiHT = () => {
                         <label htmlFor="">KHCT</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
                         <label htmlFor="">Số CT</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
                         <label htmlFor="">Ngày CT</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -40,19 +40,19 @@ const formPhiHT = () => {
                         <label htmlFor="">Người lập</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
                         <label htmlFor="">Người KS</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
                         <label htmlFor="">Ngày ĐC</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@ const formPhiHT = () => {
                         <label htmlFor="">Mã số thuế*</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
                         <>truy van HQ</>
@@ -77,10 +77,10 @@ const formPhiHT = () => {
                         <label htmlFor="">KBNN thu(*)</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-6">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
                         <>search</>
@@ -102,16 +102,16 @@ const formPhiHT = () => {
                         <label htmlFor="">Mã ngoại tệ</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" placeholder='VND' />
+                        <input type="text" className="form-control ctbl-input" placeholder='VND' />
                     </div>
                     <div className="col-sm-4">
-                        <input type="text" className="form-control" placeholder='Tien VND' disabled />
+                        <input type="text" className="form-control ctbl-input" placeholder='Tien VND' disabled />
                     </div>
                     <div className="col-sm-2">
                         <label htmlFor=""> Tỷ giá</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
             </div>
@@ -122,10 +122,10 @@ const formPhiHT = () => {
                         <label htmlFor="">TK Nợ (*)</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-6">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
                         <>Truy van TK</>
@@ -136,10 +136,10 @@ const formPhiHT = () => {
                         <label htmlFor="">Mã KH (*)</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-6">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -147,10 +147,10 @@ const formPhiHT = () => {
                         <label htmlFor="">Mã citad GT</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-8">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -170,13 +170,13 @@ const formPhiHT = () => {
                         <label htmlFor="">Tiền phí</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
                         <label htmlFor="">VAT</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className='col-sm-2'>
                         <input type="checkbox" />
@@ -193,10 +193,10 @@ const formPhiHT = () => {
                         <label htmlFor="">Mã số thuế (*)</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-8">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -204,7 +204,7 @@ const formPhiHT = () => {
                         <label htmlFor="">Địa chỉ người nộp thuế(*)</label>
                     </div>
                     <div className="col-sm-10">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -212,10 +212,10 @@ const formPhiHT = () => {
                         <label htmlFor="">MST người nộp thay</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-8">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -223,7 +223,7 @@ const formPhiHT = () => {
                         <label htmlFor="">Địa chỉ người nộp thay</label>
                     </div>
                     <div className="col-sm-10">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -231,7 +231,7 @@ const formPhiHT = () => {
                         <label htmlFor="">TK thu ngân sách (*)</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -239,10 +239,10 @@ const formPhiHT = () => {
                         <label htmlFor="">Chương (*)</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-6">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
                         <>search</>
@@ -253,10 +253,10 @@ const formPhiHT = () => {
                         <label htmlFor="">Mã CQT ĐV thu phí (*)</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-6">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
                         <>search</>
@@ -267,10 +267,10 @@ const formPhiHT = () => {
                         <label htmlFor="">Mã loại phí (*)</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-6">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
                         <>search</>
@@ -281,10 +281,10 @@ const formPhiHT = () => {
                         <label htmlFor="">Mã ĐV thu phí (*)	</label>
                     </div>
                     <div className="col-sm-2">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-6">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                     <div className="col-sm-2">
                         <>search</>
@@ -295,7 +295,7 @@ const formPhiHT = () => {
                         <label htmlFor="">Thông tin khác</label>
                     </div>
                     <div className="col-sm-10">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
                 <div className="row">
@@ -303,7 +303,7 @@ const formPhiHT = () => {
                         <label htmlFor="">Diễn giải</label>
                     </div>
                     <div className="col-sm-10">
-                        <input type="text" className="form-control" />
+                        <input type="text" className="form-control ctbl-input" />
                     </div>
                 </div>
             </div>

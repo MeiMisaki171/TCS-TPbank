@@ -99,21 +99,21 @@ const CoQuanThu = () => {
                         <hr></hr>
                         <div className="row mb-2">
                             <div className="col-sm-2">
-                                <label className="col-form-label">Mã cơ quan thu</label>
+                                <label className="col-form-label d-flex justify-content-center">Mã cơ quan thu</label>
                             </div>
                             <div className="col-sm-2">
                                 <input type="text" className="form-control" id="inputEnterYourMa" placeholder="" />
                             </div>
                             <div className="col-sm-2">
-                                <label className="col-form-label">Tên cơ quan thu</label>
+                                <label className="col-form-label d-flex justify-content-center">Tên cơ quan thu</label>
                             </div>
                             <div className="col-sm-2">
                                 <input type="text" className="form-control" id="inputEnterYourName" placeholder="" />
                             </div>
                             <div className="col-sm-2">
-                                <label className="col-form-label">SHKB</label>
+                                <label className="col-form-label d-flex justify-content-center">SHKB</label>
                             </div>
-                            <div className="col-sm-2" style={{ position: 'relative' }}>
+                            <div className="col-sm-2" style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
                                 <input type="text" style={{ width: '80%' }} className="form-control" id="inputEnterYourName1" placeholder="" />
                                 <ShkbSearch></ShkbSearch>
                             </div>

@@ -121,12 +121,14 @@ const MaChuong = () => {
                         </div>
                         <hr></hr>
                         <div className="row mb-2">
-                            <form onSubmit={handleSubmitSearchForm} className='d-flex'>
-                                <div className="col-sm-2">
-                                    <label className="col-form-label d-flex justify-content-center">Chương</label>
-                                </div>
-                                <div className="col-sm-2">
-                                    <input type="text" name='maQG' className="form-control" id="inputEnterYourMa" placeholder="Nhập mã chương" onChange={handleInputChange} />
+                            <form onSubmit={handleSubmitSearchForm} className='d-flex justify-content-center'>
+                                <div className='row'>
+                                    <div className="col-sm-4">
+                                        <label className="col-form-label d-flex justify-content-center">Chương</label>
+                                    </div>
+                                    <div className="col-sm-8">
+                                        <input type="text" name='maQG' className="form-control" id="inputEnterYourMa" placeholder="Nhập mã chương" onChange={handleInputChange} />
+                                    </div>
                                 </div>
                                 <div className="col-sm-2">
                                     <label className="col-form-label d-flex justify-content-center" >Tên</label>

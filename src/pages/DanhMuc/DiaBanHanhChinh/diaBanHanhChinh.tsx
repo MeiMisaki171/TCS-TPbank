@@ -87,11 +87,11 @@ const DiaBanHanhChinh = () => {
                         <div className="row mb-2">
                             <div className="col-sm-6">
                                 <div className='d-flex mb-4'>
-                                    <label className="col-sm-4 col-form-label">Mã ĐBHC</label>
+                                    <label className="col-sm-4 col-form-label d-flex justify-content-center">Mã ĐBHC</label>
                                     <input type="text" style={{ width: '50%' }} className="form-control col-sm-6" id="inputEnterYourMa" placeholder="" />
                                 </div>
                                 <div className="d-flex">
-                                    <label className="col-form-label col-sm-4"> Tình trạng</label>
+                                    <label className="col-form-label col-sm-4 d-flex justify-content-center"> Tình trạng</label>
                                     <select name='tinhTrang' defaultValue='null' className='col-sm-8 form-select'>
                                         <option value='null'>Tất cả</option>
                                         <option value='True'>Hiệu lực</option>
@@ -101,11 +101,11 @@ const DiaBanHanhChinh = () => {
                             </div>
                             <div className="col-sm-6">
                                 <div className="d-flex mb-4">
-                                    <label className="col-sm-6 col-form-label">Tên địa bàn hành chính</label>
+                                    <label className="col-sm-6 col-form-label d-flex justify-content-center">Tên địa bàn hành chính</label>
                                     <input type="text" style={{ width: '50%' }} className="col-sm-6 form-control" id="inputEnterYourName" placeholder="" />
                                 </div>
                                 <div className="d-flex">
-                                    <label className="col-sm-6 col-form-label">Cấp đơn vị hành chính</label>
+                                    <label className="col-sm-6 col-form-label d-flex justify-content-center">Cấp đơn vị hành chính</label>
                                     <select name='tinhTrang' defaultValue='null' className='col-sm-6 form-select'>
                                         <option value='null'>Tỉnh/Thành phố</option>
                                         <option value='True'>Quận/Huyện</option>

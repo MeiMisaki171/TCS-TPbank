@@ -20,19 +20,19 @@ const NoiDia = () => {
                         <label className=''>KHCT</label>
                     </div>
                     <div className='col-md-2'>
-                        <input type='text' className='form-control' id="inputnumber" placeholder='765432133'></input>
+                        <input type='text' className='form-control ctbl-input' id="inputnumber" placeholder='765432133'></input>
                     </div>
                     <div className='col-sm-2'>
                         <label className=''>Số CT</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="inputnumber2" placeholder='Số CT'></input>
+                        <input type='text' className='form-control ctbl-input' id="inputnumber2" placeholder='Số CT'></input>
                     </div>
                     <div className='col-sm-2'>
                         <label className=''>Ngày CT</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='date' className='form-control'></input>
+                        <input type='date' className='form-control ctbl-input'></input>
                     </div>
                 </div>
                 <div className='row '>
@@ -40,19 +40,19 @@ const NoiDia = () => {
                         <label className="">Người lập</label>
                     </div>
                     <div className='col-md-2'>
-                        <input type="text" className="form-control" id="inputnumber3" placeholder="user 2 " />
+                        <input type="text" className="form-control ctbl-input" id="inputnumber3" placeholder="user 2 " />
                     </div>
                     <div className='col-sm-2'>
                         <label className="">Người KS</label>
                     </div>
                     <div className='col-md-2'>
-                        <input type="text" className="form-control" id="inputnumber4" placeholder="Người KS " />
+                        <input type="text" className="form-control ctbl-input" id="inputnumber4" placeholder="Người KS " />
                     </div>
                     <div className='col-sm-2'>
                         <label className=''>Ngày ĐC</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='date' className='form-control'></input>
+                        <input type='date' className='form-control ctbl-input'></input>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@ const NoiDia = () => {
                         <label className=''>Tra cứu</label>
                     </div>
                     <div className='col-sm-6'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
                 <div className='row'>
@@ -71,7 +71,7 @@ const NoiDia = () => {
                         <label className=''>Mã số thuế</label>
                     </div>
                     <div className='col-sm-6'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
             </div>
@@ -82,10 +82,10 @@ const NoiDia = () => {
                         <label className=''>KBNN thu</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                     <div className='col-sm-6'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
                 <div className='row'>
@@ -93,7 +93,7 @@ const NoiDia = () => {
                         <label className=''>Hình thức thu</label>
                     </div>
                     <div className='col-sm-6'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
                 <div className='row'>
@@ -101,16 +101,16 @@ const NoiDia = () => {
                         <label className=''>Mã ngoại tệ</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                     <div className='col-sm-4'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                     <div className='col-sm-2 d-flex justify-content-center'>
                         <label className=''>Tỷ giá</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
             </div>
@@ -121,10 +121,10 @@ const NoiDia = () => {
                         <label className=''>TK Nợ</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                     <div className='col-sm-4'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
                 <div className='row'>
@@ -132,10 +132,10 @@ const NoiDia = () => {
                         <label className=''>Mã KH</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                     <div className='col-sm-6'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
                 <div className='row'>
@@ -143,10 +143,10 @@ const NoiDia = () => {
                         <label className=''>Mã citad GT</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                     <div className='col-sm-6'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
                 <div className='row'>
@@ -166,13 +166,13 @@ const NoiDia = () => {
                         <label className=''>Tiền phí</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                     <div className='col-sm-2'>
                         <label className=''>VAT</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                     <div className='col-sm-2'>
                         <Checkbox></Checkbox>
@@ -186,7 +186,7 @@ const NoiDia = () => {
                         <label className=''>Mã MIS</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
             </div>
@@ -197,10 +197,10 @@ const NoiDia = () => {
                         <label className=''>Mã số thuế</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                     <div className='col-sm-6'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
                 <div className='row'>
@@ -208,19 +208,19 @@ const NoiDia = () => {
                         <label className=''>Địa chỉ NNT</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                     <div className='col-sm-2'>
                         <label className=''>Huyện</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                     <div className='col-sm-2'>
                         <label className=''>Tỉnh/TP</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
                 <div className='row'>
@@ -228,10 +228,10 @@ const NoiDia = () => {
                         <label className=''>MST người nộp thay</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                     <div className='col-sm-6'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
                 <div className='row'>
@@ -239,7 +239,7 @@ const NoiDia = () => {
                         <label className=''>Địa chỉ người nộp thay</label>
                     </div>
                     <div className='col-sm-8'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
                 <div className='row'>
@@ -247,7 +247,7 @@ const NoiDia = () => {
                         <label className=''>TK thu ngân sách</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
                 <div className='row'>
@@ -255,10 +255,10 @@ const NoiDia = () => {
                         <label className=''>Mã ĐBHC</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                     <div className='col-sm-6'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
                 <div className='row'>
@@ -266,10 +266,10 @@ const NoiDia = () => {
                         <label className=''>Cơ quan thu</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                     <div className='col-sm-6'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
                 <div className='row'>
@@ -277,16 +277,16 @@ const NoiDia = () => {
                         <label className=''>Mã ngoại tệ</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                     <div className='col-sm-4'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                     <div className='col-sm-2'>
                         <label className=''>Tỷ giá</label>
                     </div>
                     <div className='col-sm-2'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
                 <div className='row'>
@@ -294,7 +294,7 @@ const NoiDia = () => {
                         <label className=''>Diễn giải</label>
                     </div>
                     <div className='col-sm-8'>
-                        <input type='text' className='form-control' id="" placeholder=''></input>
+                        <input type='text' className='form-control ctbl-input' id="" placeholder=''></input>
                     </div>
                 </div>
             </div>
