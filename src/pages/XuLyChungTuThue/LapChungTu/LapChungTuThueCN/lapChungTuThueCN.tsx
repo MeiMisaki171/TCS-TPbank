@@ -1,17 +1,16 @@
 import React from 'react'
-import Button from '~/components/Button'
-import Body from '~/components/Layout/Body'
-import CtblFormLeft from '~/components/Layout/Body/CTBL/CtblFormLeft'
-import NoiDia from '~/components/Layout/Body/CTBL/FormNoiDia/formNoiDia'
-import ChungTuDetail from '~/components/Layout/Body/CTBL/ctuDetail/chungTuDetail'
-import Header from '~/components/Layout/Header'
-import { DetailChungTuND } from '~/types/ChungTu/detailChungTuND'
+import Button from '~/components/Button';
+import Body from '~/components/Layout/Body';
+import CtblFormLeft from '~/components/Layout/Body/CTBL/CtblFormLeft';
+import FormCaNhan from '~/components/Layout/Body/CTBL/FormCaNhan/formCaNhan';
+import ChungTuDetail from '~/components/Layout/Body/CTBL/ctuDetail/chungTuDetail';
+import Header from '~/components/Layout/Header';
+import { DetailChungTuCN } from '~/types/ChungTu/detailChungTuCN';
 
-const lapChungTuThueND = () => {
-
+const lapChungTuThueCN = () => {
     const listBtn = ['Lập mới', 'In', 'Ghi', 'Hủy', 'In bản sao', 'Thoát'];
 
-    const data: DetailChungTuND = {
+    const data: DetailChungTuCN = {
         chuong: '',
         ndkt: '',
         noiDung: '',
@@ -19,7 +18,7 @@ const lapChungTuThueND = () => {
         soTienVnd: '',
         kyThue: '',
     };
-    const initialValue: DetailChungTuND[] = [{
+    const initialValue: DetailChungTuCN[] = [{
         chuong: '',
         ndkt: '',
         noiDung: '',
@@ -42,7 +41,7 @@ const lapChungTuThueND = () => {
                                 <CtblFormLeft />
                             </div>
                             <div className='col-sm-8'>
-                                <NoiDia></NoiDia>
+                                <FormCaNhan></FormCaNhan>
                             </div>
                         </div>
                         <div>
@@ -75,4 +74,4 @@ const lapChungTuThueND = () => {
     )
 }
 
-export default lapChungTuThueND
+export default lapChungTuThueCN

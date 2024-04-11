@@ -1,36 +1,12 @@
 import React from 'react'
-import Button from '~/components/Button'
-import Body from '~/components/Layout/Body'
-import CtblFormLeft from '~/components/Layout/Body/CTBL/CtblFormLeft'
-import NoiDia from '~/components/Layout/Body/CTBL/FormNoiDia/formNoiDia'
-import ChungTuDetail from '~/components/Layout/Body/CTBL/ctuDetail/chungTuDetail'
-import Header from '~/components/Layout/Header'
-import { DetailChungTuND } from '~/types/ChungTu/detailChungTuND'
+import Button from '~/components/Button';
+import Body from '~/components/Layout/Body';
+import CtblFormLeft from '~/components/Layout/Body/CTBL/CtblFormLeft';
+import Header from '~/components/Layout/Header';
 
-const lapChungTuThueND = () => {
-
+const lapBienLaiThu = () => {
     const listBtn = ['Lập mới', 'In', 'Ghi', 'Hủy', 'In bản sao', 'Thoát'];
 
-    const data: DetailChungTuND = {
-        chuong: '',
-        ndkt: '',
-        noiDung: '',
-        soTien: '',
-        soTienVnd: '',
-        kyThue: '',
-    };
-    const initialValue: DetailChungTuND[] = [{
-        chuong: '',
-        ndkt: '',
-        noiDung: '',
-        soTien: '',
-        soTienVnd: '',
-        kyThue: '',
-    }];
-
-    const header: string[] = [
-        'Chương', 'NDKT', "Nội dung", 'Số tiền', 'Số tiền(VND)', 'Kỳ thuế', 'Xóa'
-    ];
     return (
         <div>
             <Header></Header>
@@ -42,15 +18,9 @@ const lapChungTuThueND = () => {
                                 <CtblFormLeft />
                             </div>
                             <div className='col-sm-8'>
-                                <NoiDia></NoiDia>
                             </div>
                         </div>
                         <div>
-                            <ChungTuDetail
-                                data={data}
-                                initialValue={initialValue}
-                                header={header}
-                            ></ChungTuDetail>
                             <div className='border rounded box-ctbc1 card-body'>
                                 <div className='d-flex justify-content-between align-items-center mb-4'>
                                     <label className='fw-bold box-ctbl1'>Chế độ làm việc: Lập chứng từ</label>
@@ -75,4 +45,4 @@ const lapChungTuThueND = () => {
     )
 }
 
-export default lapChungTuThueND
+export default lapBienLaiThu

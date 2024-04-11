@@ -1,12 +1,13 @@
 import React from 'react'
-import './style.css'
-import CardTitle from '../../../CardTitle'
-import TruyVanHQ from '../../../Modal/TruyVanHQ/truyVanHQ'
-import TruyVanTK from '../../../Modal/TruyVanTK/truyVanTK'
-import Dbhc from '../../../Modal/DBHC/dbhc'
-import Chuong from '../../../Modal/Chuong/chuong'
-import CoQuanThu from '../../../Modal/CoQuanThu/coQuanThu'
-import ShkbSearch from '../../../Modal/SHKB/searchForm'
+import '../../style.css'
+import CardTitle from '../../CardTitle'
+import TruyVanHQ from '../../Modal/TruyVanHQ/truyVanHQ'
+import ShkbSearch from '../../Modal/SHKB/searchForm'
+import TruyVanTK from '../../Modal/TruyVanTK/truyVanTK'
+import Dbhc from '../../Modal/DBHC/dbhc'
+import Chuong from '../../Modal/Chuong/chuong'
+import CoQuanThu from '../../Modal/CoQuanThu/coQuanThu'
+
 
 
 const HaiQuan = () => {
@@ -15,26 +16,26 @@ const HaiQuan = () => {
   const title3: string = 'Thông tin về NNT'
   const title5: string = 'Truy vấn tờ khai'
   const title6: string = 'Chọn kênh thanh toán'
-  return (
 
+  return (
     <div>
       <div className='pe-4 ps-4 border rounded box-ctbc1'>
         <CardTitle title={title1} />
         <div className='row '>
           <div className='col-sm-2'>
-            <label className=''>KHCT</label>
+            <label className='' htmlFor="">KHCT</label>
           </div>
           <div className='col-md-2'>
             <input type='text' className='form-control' id="inputnumber" placeholder='765432133'></input>
           </div>
           <div className='col-sm-2'>
-            <label className=''>Số CT</label>
+            <label className='' htmlFor="">Số CT</label>
           </div>
           <div className='col-sm-2'>
             <input type='text' className='form-control' id="inputnumber2" placeholder='Số CT'></input>
           </div>
           <div className='col-sm-2'>
-            <label className=''>Ngày CT</label>
+            <label className='' htmlFor="">Ngày CT</label>
           </div>
           <div className='col-sm-2'>
             <input type='date' className='form-control'></input>

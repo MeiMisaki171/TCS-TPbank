@@ -9,6 +9,9 @@ import CoQuanThu from "./pages/DanhMuc/CoQuanThu/coQuanThu";
 import CoQuanKhoBac from "./pages/DanhMuc/CoQuanKhoBac/coQuanKhoBac";
 import DiaBanHanhChinh from "./pages/DanhMuc/DiaBanHanhChinh/diaBanHanhChinh";
 import LapChungTuThueND from "./pages/XuLyChungTuThue/LapChungTu/LapChungTuThueND/lapChungTuThueND";
+import LapChungTuThueCN from "./pages/XuLyChungTuThue/LapChungTu/LapChungTuThueCN/lapChungTuThueCN";
+import LapChungTuPhiHT from "./pages/XuLyChungTuThue/LapChungTu/LapChungTuPhiHT/lapChungTuPhiHT";
+import LapBienLaiThu from "./pages/XuLyChungTuThue/LapChungTu/LapBienLaiThu/lapBienLaiThu";
 // import DiaBanHanhChinh from "./pages/DanhMuc/DiaBanHanhChinh";
 // import TaiKhoan from "./pages/DanhMuc/TaiKhoan";
 // import MaPhi from "./pages/DanhMuc/MaPhi";
@@ -84,6 +87,21 @@ export const router = createBrowserRouter([
     {
         path: "/lapChungTuThueND",
         element: <LapChungTuThueND />,
+        errorElement: <NotFoundPage />
+    },
+    {
+        path: "/lapChungTuThueCN",
+        element: <LapChungTuThueCN />,
+        errorElement: <NotFoundPage />
+    },
+    {
+        path: "/lapChungTuPhiHT",
+        element: <LapChungTuPhiHT />,
+        errorElement: <NotFoundPage />
+    },
+    {
+        path: "/lapBienLaiThu",
+        element: <LapBienLaiThu />,
         errorElement: <NotFoundPage />
     },
 ])

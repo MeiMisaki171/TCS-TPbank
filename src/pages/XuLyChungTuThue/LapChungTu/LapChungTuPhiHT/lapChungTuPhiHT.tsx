@@ -1,36 +1,37 @@
 import React from 'react'
-import Button from '~/components/Button'
-import Body from '~/components/Layout/Body'
-import CtblFormLeft from '~/components/Layout/Body/CTBL/CtblFormLeft'
-import NoiDia from '~/components/Layout/Body/CTBL/FormNoiDia/formNoiDia'
-import ChungTuDetail from '~/components/Layout/Body/CTBL/ctuDetail/chungTuDetail'
-import Header from '~/components/Layout/Header'
-import { DetailChungTuND } from '~/types/ChungTu/detailChungTuND'
+import Button from '~/components/Button';
+import Body from '~/components/Layout/Body';
+import CtblFormLeft from '~/components/Layout/Body/CTBL/CtblFormLeft';
+import FormPhiHT from '~/components/Layout/Body/CTBL/FormPhiHT/formPhiHT';
+import ChungTuDetail from '~/components/Layout/Body/CTBL/ctuDetail/chungTuDetail';
+import Header from '~/components/Layout/Header';
+import { DetailChungTuPhiHT } from '~/types/ChungTu/detailChungTuPhiHT';
 
-const lapChungTuThueND = () => {
+const lapChungTuPhiHT = () => {
 
     const listBtn = ['Lập mới', 'In', 'Ghi', 'Hủy', 'In bản sao', 'Thoát'];
 
-    const data: DetailChungTuND = {
-        chuong: '',
-        ndkt: '',
-        noiDung: '',
+    const data: DetailChungTuPhiHT = {
+        id: '',
+        soCT: '',
+        kiHieuCT: '',
+        ngayCT: '',
+        soTKHQ: '',
         soTien: '',
-        soTienVnd: '',
-        kyThue: '',
     };
-    const initialValue: DetailChungTuND[] = [{
-        chuong: '',
-        ndkt: '',
-        noiDung: '',
+    const initialValue: DetailChungTuPhiHT[] = [{
+        id: '',
+        soCT: '',
+        kiHieuCT: '',
+        ngayCT: '',
+        soTKHQ: '',
         soTien: '',
-        soTienVnd: '',
-        kyThue: '',
     }];
 
     const header: string[] = [
-        'Chương', 'NDKT', "Nội dung", 'Số tiền', 'Số tiền(VND)', 'Kỳ thuế', 'Xóa'
+        'ID chứng từ', 'Số chứng từ', "Kí hiệu CT", 'Ngày chứng từ', 'Số TK HQ', 'Số tiền', 'Xóa'
     ];
+
     return (
         <div>
             <Header></Header>
@@ -42,7 +43,7 @@ const lapChungTuThueND = () => {
                                 <CtblFormLeft />
                             </div>
                             <div className='col-sm-8'>
-                                <NoiDia></NoiDia>
+                                <FormPhiHT></FormPhiHT>
                             </div>
                         </div>
                         <div>
@@ -75,4 +76,4 @@ const lapChungTuThueND = () => {
     )
 }
 
-export default lapChungTuThueND
+export default lapChungTuPhiHT

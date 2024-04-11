@@ -1,6 +1,7 @@
 import React from 'react'
-import CardTitle from '../../../CardTitle'
-import { Checkbox } from '@mui/material'
+import { Checkbox } from '@mui/material';
+import CardTitle from '../../CardTitle';
+import './../style.css';
 
 const NoiDia = () => {
     const title: string[] = [
@@ -189,7 +190,7 @@ const NoiDia = () => {
                     </div>
                 </div>
             </div>
-            <div className='pe-4 ps-5 border rounded box-ctbc1'>
+            <div className='pe-4 ps-4 border rounded box-ctbc1'>
                 <CardTitle title={title[4]}></CardTitle>
                 <div className='row'>
                     <div className='col-sm-2'>

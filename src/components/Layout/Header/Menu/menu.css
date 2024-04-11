@@ -21,21 +21,3 @@
         width: 100%;
     }
 }
-
-.first-icon {
-    font-size: 18px;
-    margin-left: 4px;
-    margin-right: 4px;
-}
-
-.second-icon {
-    font-size: 18px;
-    padding-right: 4px;
-    margin-left: 20px;
-}
-
-.third-icon {
-    font-size: 18px;
-    padding-right: 4px;
-    margin-left: 40px;
-}

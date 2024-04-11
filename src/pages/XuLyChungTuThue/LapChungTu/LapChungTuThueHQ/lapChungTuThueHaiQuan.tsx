@@ -4,12 +4,28 @@ import './style.css'
 import CtblFormLeft from '~/components/Layout/Body/CTBL/CtblFormLeft';
 import Body from '~/components/Layout/Body';
 import Button from '~/components/Button';
-import HaiQuan from '~/components/Layout/Body/CTBL/HaiQuan/FormHaiQuan';
-import ChungTuHQDetail from '~/components/Layout/Body/CTBL/HaiQuan/FormHQBottom/chungTuHqDetail';
+import { DetailChungTuHQ } from '~/types/ChungTu/detailChungTuHQ';
+import ChungTuDetail from '~/components/Layout/Body/CTBL/ctuDetail/chungTuDetail';
+import HaiQuan from '~/components/Layout/Body/CTBL/FormHaiQuan';
 
 const LapChungTuThueHQ = () => {
 
   const listBtn = ['Lập mới', 'In', 'Ghi', 'Hủy', 'In bản sao', 'Thoát'];
+  const data: DetailChungTuHQ = {
+    STK: '',
+    ngayTK: '',
+    lhxnk: '',
+    ndkt: '',
+    tenNdkt: '',
+    soTien: '',
+    soTienVnd: ''
+  };
+
+  const initialValue: DetailChungTuHQ[] = [data];
+
+  const header: string[] = [
+    'Số tờ khai', 'Ngày TK', 'LHXNK', 'NDKT', "Tên NDKT", 'Tiền NT', 'Số tiền', 'Xóa'
+  ];
 
   return (
     <div>
@@ -26,7 +42,11 @@ const LapChungTuThueHQ = () => {
               </div>
             </div>
             <div>
-              <ChungTuHQDetail></ChungTuHQDetail>
+              <ChungTuDetail
+                data={data}
+                initialValue={initialValue}
+                header={header}
+              ></ChungTuDetail>
             </div>
             <div className='border rounded box-ctbc1 card-body'>
               <div className='d-flex justify-content-between align-items-center mb-4'>
