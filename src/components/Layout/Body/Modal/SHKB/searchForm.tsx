@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Button from '~/components/Button'
 import BasicModal from '../basic'
 import { Box, Modal } from '@mui/material'
-import { BiSearch, BiSearchAlt } from 'react-icons/bi'
+import { BiSearchAlt } from 'react-icons/bi'
 import ResultSearch from './resultSearch'
 
 const ShkbSearch = () => {

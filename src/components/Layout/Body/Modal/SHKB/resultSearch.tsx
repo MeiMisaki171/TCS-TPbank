@@ -10,10 +10,10 @@ const ResultSearch = () => {
 
     return (
         <div className='result-search--container'>
-            <header className='search-modal--header'>Danh sách kết quả</header>
-            <body>
+            <div className='search-modal--header'>Danh sách kết quả</div>
+            <div>
                 <table className='table table-bordered'>
-                    <thead></thead>
+
                     <tbody>
                         <tr>
                             <th scope='col'>Số hiệu kho bạc</th>
@@ -27,7 +27,7 @@ const ResultSearch = () => {
                         </tr>
                     </tbody>
                 </table>
-            </body>
+            </div>
         </div>
     )
 }

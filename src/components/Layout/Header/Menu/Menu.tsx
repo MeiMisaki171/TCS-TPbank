@@ -3,15 +3,18 @@
 export interface Children {
     url?: string;
     title: string;
+    id?: string;
     // icon?: JSX.Element;
 }
 
 export interface MenuData {
     // icon?: any;
+    id?: string;
     title: string,
     url?: string;
     children?: {
         // icon?: any
+        id?: string; //  
         title: string;
         url?: string;
         children?: Children[]
@@ -87,102 +90,122 @@ export const IMenuData: MenuData[] = [
         children: [
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '1. Danh mục Mã chương',
+                id: '1.',
+                title: 'Danh mục Mã chương',
                 url: '/danhmuc/machuong'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '2. Danh mục Mã nội dung kinh tế',
+                id: '2.',
+                title: 'Danh mục Mã nội dung kinh tế',
                 url: '/danhmuc/NDKT'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '3. Danh mục Cơ quan thu',
+                id: '3.',
+                title: 'Danh mục Cơ quan thu',
                 url: '/danhmuc/CQT'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '4. Danh mục Cơ quan kho bạc',
+                id: '4.',
+                title: 'Danh mục Cơ quan kho bạc',
                 url: '/danhmuc/CQKB'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '5. Danh mục Địa bàn hành chính',
+                id: '5.',
+                title: 'Danh mục Địa bàn hành chính',
                 url: '/danhmuc/DBHC'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '6. Danh mục Tài khoản',
+                id: '6.',
+                title: 'Danh mục Tài khoản',
                 url: '/danhmuc/taiKhoan'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '7. Danh mục Ngân hàng',
+                id: '7.',
+                title: 'Danh mục Ngân hàng',
                 url: '/danhmuc/nganHang'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '8.Danh mục Loại thuế',
+                id: '8.',
+                title: 'Danh mục Loại thuế',
                 url: '/danhmuc/loaiThue'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '9. Danh mục Ngân hàng kết xuất',
+                id: '9.',
+                title: 'Danh mục Ngân hàng kết xuất',
                 url: '/danhmuc/NHKX'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '10. Danh mục Mã phí',
+                id: '10.',
+                title: 'Danh mục Mã phí',
                 url: '/danhmuc/maPhi'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '11. Danh mục Kênh thu',
+                id: '11.',
+                title: 'Danh mục Kênh thu',
                 url: '/danhmuc/kenhThu'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '12. Danh mục Hải quan',
+                id: '12.',
+                title: 'Danh mục Hải quan',
                 url: '/danhmuc/haiQuan'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '13. Danh mục Loại hình XNK',
+                id: '13.',
+                title: 'Danh mục Loại hình XNK',
                 url: '/danhmuc/loaiHinhXNK'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '14. Danh mục Mã NHTH',
+                id: '14.',
+                title: 'Danh mục Mã NHTH',
                 url: '/danhmuc/maNHTH'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '15. Danh mục Loại phí HT',
+                id: '15.',
+                title: 'Danh mục Loại phí HT',
                 url: '/danhmuc/loaiPhiHT'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '16. Danh mục Đơn vị thu phí HT cảng biển',
+                id: '16.',
+                title: 'Danh mục Đơn vị thu phí HT cảng biển',
                 url: '/danhmuc/HTcangbien'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '17. Danh mục Kho bạc ủy quyền',
+                id: '17.',
+                title: 'Danh mục Kho bạc ủy quyền',
                 url: '/danhmuc/kbuq'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '18. Danh mục Loại hình thu- Biên lai thu',
+                id: '18.',
+                title: 'Danh mục Loại hình thu- Biên lai thu',
                 url: '/danhmuc/lhtBlt'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '19. Danh mục Cơ quan quyết định- Biên lai thu',
+                id: '19.',
+                title: 'Danh mục Cơ quan quyết định- Biên lai thu',
                 url: '/danhmuc/cqqdBlt'
             },
             {
                 // icon: <BiCopyAlt className='second-icon' />,
-                title: '20. Ngày làm việc',
+                id: '20.',
+                title: 'Ngày làm việc',
                 url: '/danhmuc/ngayLamViec'
             },
         ]
@@ -219,6 +242,11 @@ export const IMenuData: MenuData[] = [
                         // icon: <BiPencil className='third-icon' />,
                         title: 'Lập biên lai thu',
                         url: '/lapBienLaiThu'
+                    },
+                    {
+                        // icon: <BiPencil className='third-icon' />,
+                        title: 'Lập chứng từ liên ngân hàng',
+                        url: '/lapCtuLNH'
                     },
                 ]
             },

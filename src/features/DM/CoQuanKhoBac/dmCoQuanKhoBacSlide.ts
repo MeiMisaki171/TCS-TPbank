@@ -38,6 +38,7 @@ export const createCQKB = createAsyncThunk(
     async (QG: ICoQuanKB) => {
         try {
             const res = await DMCoQuanKBService.createCQKB(QG);
+            console.log('Them moi thanh cong')
             return res.data
         } catch (err) {
             alert(`Them moi khong thanh cong ${err}`);
@@ -63,7 +64,7 @@ export const updateCQKB = createAsyncThunk(
     async (qg: ICoQuanKB) => {
         try {
             const res = await DMCoQuanKBService.updateCQKB(qg);
-            console.log(res)
+            console.log('Sua thanh cong')
             return res.data;
         } catch (err) {
             console.error(err)

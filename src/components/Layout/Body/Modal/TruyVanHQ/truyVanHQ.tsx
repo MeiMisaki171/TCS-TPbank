@@ -59,14 +59,19 @@ const TruyVanHQ = () => {
                                 </div>
                             </div>
                             <div className='d-flex justify-content-evenly'>
-                                <Button title={'Tìm kiếm'}></Button>
-                                <Button title={'Chọn'}></Button>
+                                <div onClick={() => {
+                                    console.log('search input');
+                                }}>Tim kiem</div>
+                                <div onClick={() => {
+                                    console.log('submitform');
+                                    handleClose()
+                                }}>chon</div>
                             </div>
                         </form>
                     </div>
                     <div className='result-HQ ms-4 me-4'>
+                        <div>Kết quả truy vấn</div>
                         <table className='table table-bordered'>
-                            <thead >Kết quả truy vấn</thead>
                             <tbody>
                                 <tr>
                                     <th scope='col' className='col-sm-2'>SHKB</th>

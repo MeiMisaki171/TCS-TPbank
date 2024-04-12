@@ -6,9 +6,10 @@ import CardTitle from '../../CardTitle'
 import { DetailChungTuND } from '~/types/ChungTu/detailChungTuND'
 import { DetailChungTuCN } from '~/types/ChungTu/detailChungTuCN'
 import { DetailChungTuPhiHT } from '~/types/ChungTu/detailChungTuPhiHT'
+import { DetailChungTuLNH } from '~/types/ChungTu/detailChungTuLNH'
 
 interface ctuDetailProps {
-    data: DetailChungTuHQ | DetailChungTuND | DetailChungTuCN | DetailChungTuPhiHT,
+    data: DetailChungTuHQ | DetailChungTuND | DetailChungTuCN | DetailChungTuPhiHT | DetailChungTuLNH,
     initialValue: any,
     header: string[]
 }

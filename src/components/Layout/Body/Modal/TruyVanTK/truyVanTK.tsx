@@ -63,7 +63,9 @@ const TruyVanTK = () => {
                                 </div>
                             </div>
                             <div className='d-flex justify-content-evenly'>
-                                <Button title={'Truy vấn'}></Button>
+                                <div onClick={() => {
+                                    console.log('Truy van tai khoan')
+                                }}>Truy vấn</div>
                                 {/* <Button title={'Chọn'}></Button> */}
                             </div>
                         </form>

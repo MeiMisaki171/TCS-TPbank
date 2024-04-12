@@ -60,8 +60,9 @@ const CoQuanThu = () => {
                                 </div>
                             </div>
                             <div className='d-flex justify-content-evenly'>
-                                <Button title={'Tìm kiếm'}></Button>
-                                {/* <Button title={'Chọn'}></Button> */}
+                                <div onClick={() => {
+                                    console.log('Truy van tai khoan')
+                                }}>Truy vấn</div>
                             </div>
                         </form>
                     </div>

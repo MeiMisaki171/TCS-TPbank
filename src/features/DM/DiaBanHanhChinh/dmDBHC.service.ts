@@ -1,4 +1,4 @@
-import dmMaChuong from "~/api/danhmuc.api";
+import { dmMaChuong } from "~/api/danhmuc.api";
 import http from "~/api/http-common";
 import { IDbhc } from "~/types/DM/diaBanHanhChinh";
 

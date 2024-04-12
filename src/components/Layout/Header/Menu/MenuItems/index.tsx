@@ -46,7 +46,7 @@ const MenuItems = ({ item, depthLevel }: any) => {
           />
         </div>
       ) : (
-        <a href={item.url} className='menu-item__2'>{item.icon}{item.title}</a>
+        <a href={item.url} className='menu-item__2'>{item.id}&nbsp;{item.title}</a>
       )
       }
     </li>
