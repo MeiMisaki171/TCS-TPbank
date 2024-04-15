@@ -27,9 +27,9 @@ const EditFormQG = ({ id, state }: any) => {
 
     //format lai data
     const formatData = (formData: maChuong) => {
-        if (formData.tinhTrang === 'True') {
+        if (formData.tinhTrang === 'true') {
             formData.tinhTrang = true;
-        } else if (formData.tinhTrang === 'False') {
+        } else if (formData.tinhTrang === 'false') {
             formData.tinhTrang = false;
         }
 
@@ -73,9 +73,9 @@ const EditFormQG = ({ id, state }: any) => {
                     </div>
                     <label className='col-sm-4 col-form-label mb-3'> Tình trạng:</label>
                     <div className='col-sm-8'>
-                        <select name='tinhTrang' onChange={handleSelectChange} defaultValue='True' className='form-select'>
-                            <option value='True'>Hiệu lực</option>
-                            <option value='False'>Hết hiệu lực</option>
+                        <select name='tinhTrang' onChange={handleSelectChange} value={formData.tinhTrang.toString()} className='form-select'>
+                            <option value='true'>Hiệu lực</option>
+                            <option value='false'>Hết hiệu lực</option>
                         </select>
                     </div>
                 </div>

@@ -13,7 +13,7 @@ const CreateFormMC = () => {
         {
             maQG: '',
             ten: '',
-            tinhTrang: 'True'
+            tinhTrang: 'true'
         }
     )
 
@@ -30,9 +30,9 @@ const CreateFormMC = () => {
 
     //format lại data
     const formatData = (formData: maChuong) => {
-        if (formData.tinhTrang === 'True') {
+        if (formData.tinhTrang === 'true') {
             formData.tinhTrang = true;
-        } else if (formData.tinhTrang === 'False') {
+        } else if (formData.tinhTrang === 'false') {
             formData.tinhTrang = false;
         }
 
@@ -74,9 +74,9 @@ const CreateFormMC = () => {
                     </div>
                     <label className='col-sm-4 col-form-label mb-3'> Tình trạng:</label>
                     <div className='col-sm-8'>
-                        <select name='tinhTrang' onChange={handleSelectChange} defaultValue='True' disabled className='form-select'>
-                            <option value='True'>Hiệu lực</option>
-                            <option value='False'>Hết hiệu lực</option>
+                        <select name='tinhTrang' onChange={handleSelectChange} defaultValue='true' disabled className='form-select'>
+                            <option value='true'>Hiệu lực</option>
+                            <option value='talse'>Hết hiệu lực</option>
                         </select>
                     </div>
                 </div>

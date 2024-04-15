@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import Body from '~/components/Layout/Body'
 import DataTable from '~/components/Layout/Body/DataTable'
 import Header from '~/components/Layout/Header'
@@ -19,15 +19,31 @@ const MaChuong = () => {
     const dispatch = useAppDispatch();
 
     const data: maChuong[] = useAppSelector(state => state.danhmuc.data);
-    // const [resultSearch, setResultSearch] = useState<maChuong[]>();
-    // const [searching, setSearching] = useState<boolean>(false);
-    const [searchForm, setSearchForm] = React.useState<any>(
+
+    const [resultSearch, setResultSearch] = useState<maChuong[]>(data);
+    const [searching, setSearching] = useState<boolean>(false);
+    const [searchForm, setSearchForm] = React.useState<maChuong>(
         {
             maQG: '',
             ten: '',
-            tinhTrang: true
+            tinhTrang: 'null'
         }
     )
+
+    //Format lại data
+    const convertData = (data: maChuong[]) => {
+        const arrTemp = data.map((item: maChuong) => {
+            let newItem = { ...item };
+            if (item.tinhTrang === true) {
+                newItem.tinhTrang = "Hiệu lực"
+            } else {
+                newItem.tinhTrang = "Hết hiệu lực"
+            }
+            return newItem;
+        });
+        return arrTemp
+    }
+    const newData = convertData(data);
 
     //call API getAll
     useEffect(() => {
@@ -35,33 +51,59 @@ const MaChuong = () => {
     }, [dispatch])
 
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
         const { name, value } = event.target;
         setSearchForm({ ...searchForm, [name]: value })
     }
 
-    const handleSubmitSearchForm = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
+
+    //Gộp kết quả tìm kiếm
+    const findCommonElement = (arr: any) => {
+        if (arr.length === 0) return [];
+        const referenceArray = arr[0];
+        const commonElements = [];
+        for (let i = 0; i < referenceArray.length; i++) {
+            const element = referenceArray[i];
+            let isCommon = true;
+            // Kiểm tra xem phần tử có tồn tại trong tất cả các mảng khác hay không
+            for (let j = 1; j < arr.length; j++) {
+                if (!arr[j].some((item: any) => item.maQG === element.maQG)) {
+                    isCommon = false;
+                    break;
+                }
+            }
+            // Nếu phần tử là chung, thêm vào mảng kết quả
+            if (isCommon) {
+                commonElements.push(element);
+            }
+        }
+        return commonElements;
     }
 
+    //Tìm kiếm
+    const search = useCallback(() => {
+        if (searchForm.tinhTrang === 'null') {
+            searchForm.tinhTrang = ''
+        }
 
+        const newData = Object.keys(searchForm).map(key => {
+            const result = data.filter(result => (result as any)[key].toString().toLowerCase().includes((searchForm as any)[key].toString().toLowerCase()));
+            return result;
+        });
+        setResultSearch(convertData(findCommonElement(newData)));
+        setSearching(false)
+        return newData;
+    }, [data, searchForm]);
 
-    // const Filter = () => {
-    //     // setResultSearch(data.filter(result => result.maQG.toLowerCase().includes(searchForm.maQG.toLowerCase())));
-    //     // setSearching(true);
-    //     let tempArr: Array<any> = []
-    //     data.filter((item: any) => {
-    //         return Object.keys(searchForm).every(key => {
-    //             if (item[key].toUpperCase().includes(searchForm[key].toUpperCase())) {
-    //                 tempArr.push(item);
-    //             };
-    //             return 0;
-    //         })
-    //     })
-    //     console.log(searchForm);
-    //     setResultSearch(tempArr);
-    //     setSearching(true)
-    // }
+    const handleSearch = () => {
+        search();
+        setSearching(true);
+    }
+
+    useEffect(() => {
+        search()
+    }, [search])
 
 
     //Xóa hàng
@@ -74,6 +116,7 @@ const MaChuong = () => {
     }
 
 
+    //Thoát
     const navigate = useNavigate();
     const exitPage = () => {
         navigate('/home')
@@ -121,7 +164,7 @@ const MaChuong = () => {
                         </div>
                         <hr></hr>
                         <div className="row mb-2">
-                            <form onSubmit={handleSubmitSearchForm} className='d-flex justify-content-center'>
+                            <form onSubmit={search} className='d-flex justify-content-center'>
                                 <div className='row'>
                                     <div className="col-sm-4">
                                         <label className="col-form-label d-flex justify-content-center">Chương</label>
@@ -140,19 +183,18 @@ const MaChuong = () => {
                                     <label className="col-form-label d-flex justify-content-center">Tình trạng</label>
                                 </div>
                                 <div className="col-sm-2">
-                                    <select name='tinhTrang' defaultValue='null' className='form-select'>
+                                    <select name='tinhTrang' defaultValue='null' className='form-select' onChange={handleInputChange}>
                                         <option value='null'>Tất cả</option>
-                                        <option value='True'>Hiệu lực</option>
-                                        <option value='False'>Hết hiệu lực</option>
+                                        <option value='true'>Hiệu lực</option>
+                                        <option value='false'>Hết hiệu lực</option>
                                     </select>
                                 </div>
                             </form>
                         </div>
-
                         <hr></hr>
                         <div className="row mb-3 text-center">
                             <div className="col-sm-12">
-                                <button type="button" className="crud-btn px-5 py-1" >
+                                <button type="button" className="crud-btn px-5 py-1" onClick={() => { handleSearch() }}>
                                     <i className="fadeIn animated bx bx-search-alt mr-1"></i>
                                     Tìm kiếm
                                 </button>
@@ -171,8 +213,13 @@ const MaChuong = () => {
                         </div>
                     </div>
                 </div>
-                <DataTable data={data} tableHeader={tableHeader}></DataTable>
-                {/* <DataTable data={searching ? resultSearch : data} tableHeader={tableHeader} /> */}
+
+                {searching
+                    ?
+                    (resultSearch.length > 0 ? <DataTable data={resultSearch} tableHeader={tableHeader}></DataTable> : <div>Không có </div>)
+                    :
+                    <DataTable data={newData} tableHeader={tableHeader}></DataTable>}
+
             </Body>
         </div>
     )

@@ -38,11 +38,11 @@ export const createMC = createAsyncThunk(
     async (QG: maChuong) => {
         try {
             const res = await DMQuocGiaService.createMC(QG);
-            console.log(res)
+            alert(`Them moi thanh cong`);
             return res.data
         } catch (err) {
             alert(`Them moi khong thanh cong ${err}`);
-            console.error(err)
+            console.error(err);
         }
     }
 )
@@ -64,10 +64,12 @@ export const updateMC = createAsyncThunk(
     async (qg: maChuong) => {
         try {
             const res = await DMQuocGiaService.updateMC(qg);
-            alert("Sua thanh cong")
+            alert('Sửa thành công');
+            console.log(qg);
             return res.data;
         } catch (err) {
-            console.error(err)
+            console.error(err);
+            alert('Sửa không thành công');
         }
     }
 )
@@ -97,15 +99,7 @@ export const danhmucSlice = createSlice({
             .addCase(getAllDMMaChuong.fulfilled, (state, action) => {
                 state.loading = false;
                 state.error = null;
-                state.data = action.payload.map((item: maChuong) => {
-                    let newItem = { ...item };
-                    if (item.tinhTrang === true) {
-                        newItem.tinhTrang = "Hiệu lực"
-                    } else {
-                        newItem.tinhTrang = "Hết hiệu lực"
-                    }
-                    return newItem;
-                });;
+                state.data = action.payload;
                 console.log('isFullfilled')
             })
             .addCase(getAllDMMaChuong.rejected, (state, action: PayloadAction<any>) => {
